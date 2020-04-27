@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBar from "./nav_bar/nav_bar";
 // import LoginFormContainer from "./session/login_form_container";
 // import SignupFormContainer from "./session/signup_form_container";
 import {Route} from 'react-router-dom';
@@ -9,6 +10,7 @@ const App = () => (
     <div>
         <header>
             <h1>TubeTube</h1>
+            <NavBar />
         </header>
 
         {/* <Route path="/"></Route> */}
