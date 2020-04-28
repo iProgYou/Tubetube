@@ -353,6 +353,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _session_signin_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./session/signin_form_container */ "./frontend/components/session/signin_form_container.js");
 /* harmony import */ var _session_signup_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./session/signup_form_container */ "./frontend/components/session/signup_form_container.js");
+/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.js");
+
 
 
 
@@ -364,11 +366,11 @@ var Root = function Root(_ref) {
   var store = _ref.store;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_1__["Provider"], {
     store: store
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["HashRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["HashRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["AuthRoute"], {
     exact: true,
     path: "/signup",
     component: _session_signup_form_container__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["AuthRoute"], {
     exact: true,
     path: "/signin",
     component: _session_signin_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
@@ -489,13 +491,15 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       console.log(this.props);
       var user = Object.assign({}, this.state);
-      this.props.action(user).then(function (res) {
-        // need to redirect to app here
-        _this3.setState({
-          email: "",
-          password: "",
-          username: ""
-        });
+      this.setState({
+        email: "",
+        password: "",
+        username: ""
+      });
+      this.props.action(user).then(function () {
+        console.log('made it to the then in handle submit'); // need to redirect to app here
+
+        _this3.props.history.replace('/');
       });
     }
   }, {
@@ -888,6 +892,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
+/***/ "./frontend/util/route_util.js":
+/*!*************************************!*\
+  !*** ./frontend/util/route_util.js ***!
+  \*************************************/
+/*! exports provided: AuthRoute */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthRoute", function() { return AuthRoute; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+ // Auth routes are routes only non-logged_in users can get to
+// Protected routes are routes only logged in users can get to
+
+var Auth = function Auth(_ref) {
+  var Component = _ref.component,
+      path = _ref.path,
+      loggedIn = _ref.loggedIn,
+      exact = _ref.exact;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: path,
+    exact: exact,
+    render: function render(props) {
+      return !loggedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+        to: "/"
+      });
+    }
+  });
+};
+
+var mapSTP = function mapSTP(state) {
+  return {
+    loggedIn: Boolean(state.session.id)
+  };
+};
+
+var AuthRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapSTP, null)(Auth));
+
+/***/ }),
+
 /***/ "./frontend/util/session_api_util.js":
 /*!*******************************************!*\
   !*** ./frontend/util/session_api_util.js ***!
@@ -1051,7 +1100,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".fIB4stndRkuqS0iTFBl2q {\n    /* position: absolute; */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    vertical-align: middle;\n    background-color: rgb(36, 41, 44);\n    font-family: Arial, Helvetica, sans-serif;\n    margin: auto;\n    border-radius: 8px;\n    color: floralwhite;\n    width: 448px;\n    height: 500px;\n    border: 3px;\n    /* padding: 20% 2% 20% 2%; */\n}\n\n._3fVdo7Jolftti9U9zHC01W {\n    /* margin-bottom: 5px; */\n    /* display: flex; */\n    padding: 0px 10% 10px 10%;\n    font-size: 23px;\n}\n\n.a4EB4TwziEP7OEsmPijxM {\n    font-size: 18px;\n    color: #6E7E85;\n    margin: 10px;\n    padding-bottom: 11px;\n}\n\n._12TrLZY1d2KcTlIPSD88pa {\n    font-weight: bold;\n    width: 330px;\n    height: 43px;\n    margin-bottom: 20px;\n    /* max-width: 159;\n    max-height: 159; */\n}\n\n._3IqNp_q4SD8Ee5jBxxo17m {\n    position: absolute;\n    /* background-color: rgba(2550,0,0.5); */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n}\n\n\n\n.X2zZ9qtTLLeg8MrmsRnYV {\n    display: flex;\n    justify-content: space-between;\n    flex-direction: column;\n    height: 199px;\n    width: 382px;\n\n\n    /* width: 100%; */\n    /* height: 40%; */\n}\n\n._1wECgglJwCI7LzMYwAvwhW {\n    display: flex;\n    justify-content: space-around;\n    flex-direction: column;\n    height: 199px;\n    width: 382px;\n\n\n    /* width: 100%; */\n    /* height: 40%; */\n}\n\n.X2zZ9qtTLLeg8MrmsRnYV > input {\n    width: 366px;\n    height: 48px;\n    border-radius: 5px;\n    font-size: 16px;\n    padding-left: 15px;\n    background-color: rgb(161, 185, 196);\n    color: black;\n\n    border: 2px solid;\n    border-color: rgb(161, 185, 196);\n    /* text-shadow: gray; */\n}\n\n\n::placeholder {\n    color: rgb(32, 41, 44);\n}\n\n._1wECgglJwCI7LzMYwAvwhW > input {\n    width: 366px;\n    height: 48px;\n    border-radius: 5px;\n    font-size: 16px;\n    padding-left: 15px;\n    background-color: rgb(161, 185, 196);\n    border: 2px solid;\n    border-color: rgb(161, 185, 196);\n    color: black;\n}\n/* - sign up space between username and contiue need to be similar to \n    the top part\n    - sign in space between inputs needs be less\n*/\n\ninput:focus {\n    border-color: #2ba84a;\n}\n._2CBhnuHLpQjfENLsYTUX6y {\n    display: flex;\n    justify-content: space-between;\n    height: 99px;\n    width: 380px;\n    align-items: center;\n}\n\n._2CBhnuHLpQjfENLsYTUX6y > button {\n    background-color: #2ba84a;\n    border-radius: 3px;\n    border: none;\n    color: white;\n    padding: 15px 32px;\n    text-align: center;\n    text-decoration: none;\n    display: inline-block;\n    font-size: 16px;\n}\n\n._2CBhnuHLpQjfENLsYTUX6y > button:hover {\n    background-color: #248232;\n    cursor: pointer;\n}\n\n._2712Dr9uS2z1HMNxC9HWN {\n    color: #6E7E85;\n}", ""]);
+exports.push([module.i, ".fIB4stndRkuqS0iTFBl2q {\n    /* position: absolute; */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    vertical-align: middle;\n    background-color: rgb(36, 41, 44);\n    font-family: Arial, Helvetica, sans-serif;\n    margin: auto;\n    border-radius: 8px;\n    color: floralwhite;\n    width: 448px;\n    height: 500px;\n    border: 3px;\n    /* padding: 20% 2% 20% 2%; */\n}\n\n._3fVdo7Jolftti9U9zHC01W {\n    /* margin-bottom: 5px; */\n    /* display: flex; */\n    padding: 0px 10% 10px 10%;\n    font-size: 23px;\n}\n\n.a4EB4TwziEP7OEsmPijxM {\n    font-size: 18px;\n    color: #6E7E85;\n    margin: 10px;\n    padding-bottom: 11px;\n}\n\n._12TrLZY1d2KcTlIPSD88pa {\n    font-weight: bold;\n    width: 285px;\n    height: 37px;\n    margin-bottom: 20px;\n    /* max-width: 159;\n    max-height: 159; */\n}\n\n._3IqNp_q4SD8Ee5jBxxo17m {\n    position: absolute;\n    /* background-color: rgba(2550,0,0.5); */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n}\n\n\n\n.X2zZ9qtTLLeg8MrmsRnYV {\n    display: flex;\n    justify-content: space-between;\n    flex-direction: column;\n    height: 199px;\n    width: 382px;\n\n\n    /* width: 100%; */\n    /* height: 40%; */\n}\n\n._1wECgglJwCI7LzMYwAvwhW {\n    display: flex;\n    justify-content: space-around;\n    flex-direction: column;\n    height: 199px;\n    width: 382px;\n\n\n    /* width: 100%; */\n    /* height: 40%; */\n}\n\n.X2zZ9qtTLLeg8MrmsRnYV > input {\n    width: 366px;\n    height: 48px;\n    border-radius: 5px;\n    font-size: 16px;\n    padding-left: 15px;\n    background-color: rgb(161, 185, 196);\n    color: black;\n\n    border: 2px solid;\n    border-color: rgb(161, 185, 196);\n    /* text-shadow: gray; */\n}\n\n\n::placeholder {\n    color: rgb(32, 41, 44);\n}\n\n._1wECgglJwCI7LzMYwAvwhW > input {\n    width: 366px;\n    height: 48px;\n    border-radius: 5px;\n    font-size: 16px;\n    padding-left: 15px;\n    background-color: rgb(161, 185, 196);\n    border: 2px solid;\n    border-color: rgb(161, 185, 196);\n    color: black;\n}\n/* - sign up space between username and contiue need to be similar to \n    the top part\n    - sign in space between inputs needs be less\n*/\n\ninput:focus {\n    border-color: #2ba84a;\n}\n._2CBhnuHLpQjfENLsYTUX6y {\n    display: flex;\n    justify-content: space-between;\n    height: 99px;\n    width: 380px;\n    align-items: center;\n}\n\n._2CBhnuHLpQjfENLsYTUX6y > button {\n    background-color: #2ba84a;\n    border-radius: 3px;\n    border: none;\n    color: white;\n    padding: 15px 32px;\n    text-align: center;\n    text-decoration: none;\n    display: inline-block;\n    font-size: 16px;\n}\n\n._2CBhnuHLpQjfENLsYTUX6y > button:hover {\n    background-color: #248232;\n    cursor: pointer;\n}\n\n._2712Dr9uS2z1HMNxC9HWN {\n    color: #6E7E85;\n}", ""]);
 // Exports
 exports.locals = {
 	"container": "fIB4stndRkuqS0iTFBl2q",

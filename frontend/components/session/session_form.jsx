@@ -25,14 +25,16 @@ class SessionForm extends React.Component {
         e.preventDefault();
         console.log(this.props)
         let user = Object.assign({},this.state);
+        this.setState({
+            email: "",
+            password: "",
+            username: ""
+        })
         this.props.action(user)
-            .then(res => {
+            .then(() => {
+                console.log('made it to the then in handle submit')
                 // need to redirect to app here
-                this.setState({
-                    email: "",
-                    password: "",
-                    username: ""
-                })
+                this.props.history.replace('/')
             });
     }
 
