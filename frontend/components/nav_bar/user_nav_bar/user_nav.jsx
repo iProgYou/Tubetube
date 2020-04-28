@@ -1,11 +1,15 @@
 import React from 'react';
+import UserInfo from './user_info';
+import { Link } from 'react-router-dom';
 
 const UserNav = ({ currentUser,logout }) => {
+    console.log(currentUser)
     const content = currentUser ? (
-        <button>Sign In</button>
+        <UserInfo logout={logout} currentUser={currentUser}/>        
     ) : (
-        <UserInfo logout={logout}/>
+        <Link to="/signup">Sign In</Link>
     )
+    return <>{content}</>
 }
 
 export default UserNav;
