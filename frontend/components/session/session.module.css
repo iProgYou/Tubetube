@@ -27,13 +27,13 @@
     font-size: 18px;
     color: #6E7E85;
     margin: 10px;
-
+    padding-bottom: 11px;
 }
 
 .logo {
     font-weight: bold;
-    width: 159px;
-    height: 33px;
+    width: 330px;
+    height: 43px;
     margin-bottom: 20px;
     /* max-width: 159;
     max-height: 159; */
@@ -85,12 +85,16 @@
     padding-left: 15px;
     background-color: rgb(161, 185, 196);
     color: black;
+
+    border: 2px solid;
+    border-color: rgb(161, 185, 196);
     /* text-shadow: gray; */
 }
 
+
 ::placeholder {
     color: rgb(32, 41, 44);
-  }
+}
 
 .twoInputContainer > input {
     width: 366px;
@@ -99,14 +103,22 @@
     font-size: 16px;
     padding-left: 15px;
     background-color: rgb(161, 185, 196);
-    color: black;;
-    /* text-shadow: gray; */
+    border: 2px solid;
+    border-color: rgb(161, 185, 196);
+    color: black;
 }
+/* - sign up space between username and contiue need to be similar to 
+    the top part
+    - sign in space between inputs needs be less
+*/
 
+input:focus {
+    border-color: #2ba84a;
+}
 .buttonContainer {
     display: flex;
     justify-content: space-between;
-    height: 111px;
+    height: 99px;
     width: 380px;
     align-items: center;
 }
