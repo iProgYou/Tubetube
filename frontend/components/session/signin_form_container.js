@@ -8,7 +8,7 @@ const mapStateToProps = ({errors},ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch,ownProps) => ({
-    login: (user) => dispatch(login(user))
+    signin: (user) => dispatch(login(user))
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(LoginForm)

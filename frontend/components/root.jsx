@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import App from './app';
+import App from './app/app';
 import { HashRouter, Switch, Route } from "react-router-dom";
 import LoginFormContainer from "./session/signin_form_container";
 import SignupFormContainer from "./session/signup_form_container";
