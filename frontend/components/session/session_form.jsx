@@ -23,23 +23,23 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.props)
+        // console.log(this.props)
         let user = Object.assign({},this.state);
-        this.setState({
-            email: "",
-            password: "",
-            username: ""
-        })
+        // this.setState({
+        //     email: "",
+        //     password: "",
+        //     username: ""
+        // })
         this.props.action(user)
             .then(() => {
-                console.log('made it to the then in handle submit')
+                // console.log('made it to the then in handle submit')
                 // need to redirect to app here
                 this.props.history.replace('/')
             });
     }
 
     renderErrors() {
-        return this.props.errors.map((error,i) => <li key={i}>{error}</li>)
+        return this.props.errors.map((error,i) => <div key={i}>{error}</div>)
     }
 
     render() {
