@@ -411,10 +411,10 @@ module.exports = content.locals || {};
 
 /***/ }),
 
-/***/ "./frontend/components/session/signin_form.jsx":
-/*!*****************************************************!*\
-  !*** ./frontend/components/session/signin_form.jsx ***!
-  \*****************************************************/
+/***/ "./frontend/components/session/session_form.jsx":
+/*!******************************************************!*\
+  !*** ./frontend/components/session/session_form.jsx ***!
+  \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -453,25 +453,26 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var LoginForm = /*#__PURE__*/function (_React$Component) {
-  _inherits(LoginForm, _React$Component);
+var SessionForm = /*#__PURE__*/function (_React$Component) {
+  _inherits(SessionForm, _React$Component);
 
-  var _super = _createSuper(LoginForm);
+  var _super = _createSuper(SessionForm);
 
-  function LoginForm(props) {
+  function SessionForm(props) {
     var _this;
 
-    _classCallCheck(this, LoginForm);
+    _classCallCheck(this, SessionForm);
 
     _this = _super.call(this, props);
     _this.state = {
       email: "",
-      password: ""
+      password: "",
+      username: ""
     };
     return _this;
   }
 
-  _createClass(LoginForm, [{
+  _createClass(SessionForm, [{
     key: "handleChange",
     value: function handleChange(inputType) {
       var _this2 = this;
@@ -488,10 +489,12 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       console.log(this.props);
       var user = Object.assign({}, this.state);
-      this.props.signin(user).then(function (res) {
+      this.props.action(user).then(function (res) {
+        // need to redirect to app here
         _this3.setState({
           email: "",
-          password: ""
+          password: "",
+          username: ""
         });
       });
     }
@@ -511,23 +514,49 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
 
       var _this$state = this.state,
           email = _this$state.email,
-          password = _this$state.password;
+          password = _this$state.password,
+          username = _this$state.username;
+      var formType = this.props.formType;
+      var usernameInput = formType === "Create Account" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        placeholder: "Username",
+        value: username,
+        onChange: this.handleChange("username")
+      }) : '';
+      var buttonContainer = formType === "Sign In" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.buttonContainer
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.link,
+        to: "/signup"
+      }, "Create Account"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Demo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.nextButton
+      }, "Next")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.buttonContainer
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.link,
+        to: "/signin"
+      }, "Sign In instead"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Next"));
+      var header = formType === "Sign In" ? "Sign in" : "Create Your Account";
+      var inputClass = formType === "Create Account" ? _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.threeInputContainer : _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.twoInputContainer;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.fullscreen
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.container
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.logo
-      }, "Tubetube"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.logo,
+        src: window.logoURL
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.header
-      }, "Sign in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, header), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.subHead
       }, "to continue to Tubetube"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.inputs,
         onSubmit: function onSubmit(e) {
           return _this4.handleSubmit(e);
         }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: inputClass
+      }, usernameInput, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         placeholder: "Email",
         value: email,
@@ -537,20 +566,15 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         placeholder: "Password",
         value: password,
         onChange: this.handleChange("password")
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.nextButton
-      }, "Next")), this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.link,
-        to: "/signup"
-      }, "Create Account")));
+      })), buttonContainer), this.renderErrors()));
     }
   }]);
 
-  return LoginForm;
+  return SessionForm;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 ;
-/* harmony default export */ __webpack_exports__["default"] = (LoginForm);
+/* harmony default export */ __webpack_exports__["default"] = (SessionForm);
 
 /***/ }),
 
@@ -563,160 +587,30 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _signin_form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./signin_form */ "./frontend/components/session/signin_form.jsx");
+/* harmony import */ var _session_form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./session_form */ "./frontend/components/session/session_form.jsx");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 
 
 
 
-var mapStateToProps = function mapStateToProps(_ref, ownProps) {
+var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
   return {
-    errors: errors.session
+    errors: errors.session,
+    formType: "Sign In"
   };
 };
 
-var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    signin: function signin(user) {
+    action: function action(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_signin_form__WEBPACK_IMPORTED_MODULE_0__["default"]));
-
-/***/ }),
-
-/***/ "./frontend/components/session/signup_form.jsx":
-/*!*****************************************************!*\
-  !*** ./frontend/components/session/signup_form.jsx ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-
-var SignupForm = /*#__PURE__*/function (_React$Component) {
-  _inherits(SignupForm, _React$Component);
-
-  var _super = _createSuper(SignupForm);
-
-  function SignupForm(props) {
-    var _this;
-
-    _classCallCheck(this, SignupForm);
-
-    _this = _super.call(this, props);
-    _this.state = {
-      username: "",
-      password: "",
-      email: ""
-    };
-    return _this;
-  }
-
-  _createClass(SignupForm, [{
-    key: "handleChange",
-    value: function handleChange(inputType) {
-      var _this2 = this;
-
-      return function (e) {
-        _this2.setState(_defineProperty({}, inputType, e.target.value));
-      };
-    }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      e.preventDefault();
-      console.log(this.props);
-      var user = Object.assign({}, this.state);
-      this.props.signup(user);
-      this.setState({
-        email: "",
-        password: "",
-        username: ""
-      });
-    }
-  }, {
-    key: "renderErrors",
-    value: function renderErrors() {
-      return this.props.errors.map(function (error, i) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: i
-        }, error);
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this3 = this;
-
-      var _this$state = this.state,
-          email = _this$state.email,
-          password = _this$state.password,
-          username = _this$state.username;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Create Account"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "to continue to Tubetube"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: function onSubmit(e) {
-          return _this3.handleSubmit(e);
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        placeholder: "Username",
-        value: username,
-        onChange: this.handleChange("username")
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        placeholder: "Email",
-        value: email,
-        onChange: this.handleChange("email")
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "password",
-        placeholder: "Password",
-        value: password,
-        onChange: this.handleChange("password")
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Next")), this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/signin"
-      }, "Sign in instead"));
-    }
-  }]);
-
-  return SignupForm;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-;
-/* harmony default export */ __webpack_exports__["default"] = (SignupForm);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_session_form__WEBPACK_IMPORTED_MODULE_0__["default"]));
 
 /***/ }),
 
@@ -729,7 +623,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _signup_form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./signup_form */ "./frontend/components/session/signup_form.jsx");
+/* harmony import */ var _session_form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./session_form */ "./frontend/components/session/session_form.jsx");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 
@@ -739,20 +633,20 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
   return {
-    errors: errors.session // formType: "Sign Up"
-
+    errors: errors.session,
+    formType: "Create Account"
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    signup: function signup(user) {
+    action: function action(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["signup"])(user));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_signup_form__WEBPACK_IMPORTED_MODULE_0__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_session_form__WEBPACK_IMPORTED_MODULE_0__["default"]));
 
 /***/ }),
 
@@ -1157,7 +1051,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".fIB4stndRkuqS0iTFBl2q {\n    /* position: absolute; */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    vertical-align: middle;\n    background-color: rgb(26, 29, 31);\n    font-family: Arial, Helvetica, sans-serif;\n    margin: auto;\n    border-radius: 8px;\n    color: floralwhite;\n    width: 448px;\n    height: 500px;\n    border: 3px;\n    /* padding: 20% 2% 20% 2%; */\n}\n\n._3fVdo7Jolftti9U9zHC01W {\n    /* margin-bottom: 5px; */\n    /* display: flex; */\n    padding: 0px 10% 10px 10%;\n    font-size: 25px;\n}\n\n.a4EB4TwziEP7OEsmPijxM {\n    font-size: 22px;\n    color: #6E7E85;\n    margin: 10px;\n\n}\n\n._12TrLZY1d2KcTlIPSD88pa {\n    font-weight: bold;\n    font-size: 35px;\n}\n\n._3IqNp_q4SD8Ee5jBxxo17m {\n    position: absolute;\n    /* background-color: rgba(2550,0,0.5); */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n}\n\n._1S2axbmVzj44aiGYKjCStR {\n    display: flex;\n    flex-direction: column;\n\n    /* width: 100%; */\n    /* height: 40%; */\n    \n}\n\n._1S2axbmVzj44aiGYKjCStR > input {\n    width: 366px;\n    height: 48px;\n    border-radius: 5px;\n    font-size: 15px;\n    padding-left: 15px;\n    /* text-shadow: gray; */\n}\n\n._343vXJ4lLbHjHE_JNBC9YJ {\n    background-color: #2ba84a;\n    border-radius: 25px;\n\n}\n\n._343vXJ4lLbHjHE_JNBC9YJ:hover {\n    background-color: #248232;\n}\n\n._2712Dr9uS2z1HMNxC9HWN {\n    color: #6E7E85;\n}", ""]);
+exports.push([module.i, ".fIB4stndRkuqS0iTFBl2q {\n    /* position: absolute; */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    vertical-align: middle;\n    background-color: rgb(36, 41, 44);\n    font-family: Arial, Helvetica, sans-serif;\n    margin: auto;\n    border-radius: 8px;\n    color: floralwhite;\n    width: 448px;\n    height: 500px;\n    border: 3px;\n    /* padding: 20% 2% 20% 2%; */\n}\n\n._3fVdo7Jolftti9U9zHC01W {\n    /* margin-bottom: 5px; */\n    /* display: flex; */\n    padding: 0px 10% 10px 10%;\n    font-size: 23px;\n}\n\n.a4EB4TwziEP7OEsmPijxM {\n    font-size: 18px;\n    color: #6E7E85;\n    margin: 10px;\n\n}\n\n._12TrLZY1d2KcTlIPSD88pa {\n    font-weight: bold;\n    width: 159px;\n    height: 33px;\n    margin-bottom: 20px;\n    /* max-width: 159;\n    max-height: 159; */\n}\n\n._3IqNp_q4SD8Ee5jBxxo17m {\n    position: absolute;\n    /* background-color: rgba(2550,0,0.5); */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n}\n\n\n\n.X2zZ9qtTLLeg8MrmsRnYV {\n    display: flex;\n    justify-content: space-between;\n    flex-direction: column;\n    height: 199px;\n    width: 382px;\n\n\n    /* width: 100%; */\n    /* height: 40%; */\n}\n\n._1wECgglJwCI7LzMYwAvwhW {\n    display: flex;\n    justify-content: space-around;\n    flex-direction: column;\n    height: 199px;\n    width: 382px;\n\n\n    /* width: 100%; */\n    /* height: 40%; */\n}\n\n.X2zZ9qtTLLeg8MrmsRnYV > input {\n    width: 366px;\n    height: 48px;\n    border-radius: 5px;\n    font-size: 16px;\n    padding-left: 15px;\n    background-color: rgb(161, 185, 196);\n    color: black;\n    /* text-shadow: gray; */\n}\n\n::placeholder {\n    color: rgb(32, 41, 44);\n  }\n\n._1wECgglJwCI7LzMYwAvwhW > input {\n    width: 366px;\n    height: 48px;\n    border-radius: 5px;\n    font-size: 16px;\n    padding-left: 15px;\n    background-color: rgb(161, 185, 196);\n    color: black;;\n    /* text-shadow: gray; */\n}\n\n._2CBhnuHLpQjfENLsYTUX6y {\n    display: flex;\n    justify-content: space-between;\n    height: 111px;\n    width: 380px;\n    align-items: center;\n}\n\n._2CBhnuHLpQjfENLsYTUX6y > button {\n    background-color: #2ba84a;\n    border-radius: 3px;\n    border: none;\n    color: white;\n    padding: 15px 32px;\n    text-align: center;\n    text-decoration: none;\n    display: inline-block;\n    font-size: 16px;\n}\n\n._2CBhnuHLpQjfENLsYTUX6y > button:hover {\n    background-color: #248232;\n    cursor: pointer;\n}\n\n._2712Dr9uS2z1HMNxC9HWN {\n    color: #6E7E85;\n}", ""]);
 // Exports
 exports.locals = {
 	"container": "fIB4stndRkuqS0iTFBl2q",
@@ -1165,8 +1059,9 @@ exports.locals = {
 	"subHead": "a4EB4TwziEP7OEsmPijxM",
 	"logo": "_12TrLZY1d2KcTlIPSD88pa",
 	"fullscreen": "_3IqNp_q4SD8Ee5jBxxo17m",
-	"inputs": "_1S2axbmVzj44aiGYKjCStR",
-	"nextButton": "_343vXJ4lLbHjHE_JNBC9YJ",
+	"threeInputContainer": "X2zZ9qtTLLeg8MrmsRnYV",
+	"twoInputContainer": "_1wECgglJwCI7LzMYwAvwhW",
+	"buttonContainer": "_2CBhnuHLpQjfENLsYTUX6y",
 	"link": "_2712Dr9uS2z1HMNxC9HWN"
 };
 module.exports = exports;

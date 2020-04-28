@@ -5,7 +5,7 @@
     align-items: center;
     flex-direction: column;
     vertical-align: middle;
-    background-color: rgb(26, 29, 31);
+    background-color: rgb(36, 41, 44);
     font-family: Arial, Helvetica, sans-serif;
     margin: auto;
     border-radius: 8px;
@@ -20,11 +20,11 @@
     /* margin-bottom: 5px; */
     /* display: flex; */
     padding: 0px 10% 10px 10%;
-    font-size: 25px;
+    font-size: 23px;
 }
 
 .subHead {
-    font-size: 22px;
+    font-size: 18px;
     color: #6E7E85;
     margin: 10px;
 
@@ -32,7 +32,11 @@
 
 .logo {
     font-weight: bold;
-    font-size: 35px;
+    width: 159px;
+    height: 33px;
+    margin-bottom: 20px;
+    /* max-width: 159;
+    max-height: 159; */
 }
 
 .fullscreen {
@@ -47,32 +51,81 @@
     left: 0;
 }
 
-.inputs {
+
+
+.threeInputContainer {
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
+    height: 199px;
+    width: 382px;
+
 
     /* width: 100%; */
     /* height: 40%; */
-    
 }
 
-.inputs > input {
+.twoInputContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 199px;
+    width: 382px;
+
+
+    /* width: 100%; */
+    /* height: 40%; */
+}
+
+.threeInputContainer > input {
     width: 366px;
     height: 48px;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 16px;
     padding-left: 15px;
+    background-color: rgb(161, 185, 196);
+    color: black;
     /* text-shadow: gray; */
 }
 
-.nextButton {
-    background-color: #2ba84a;
-    border-radius: 25px;
+::placeholder {
+    color: rgb(32, 41, 44);
+  }
 
+.twoInputContainer > input {
+    width: 366px;
+    height: 48px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 15px;
+    background-color: rgb(161, 185, 196);
+    color: black;;
+    /* text-shadow: gray; */
 }
 
-.nextButton:hover {
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 111px;
+    width: 380px;
+    align-items: center;
+}
+
+.buttonContainer > button {
+    background-color: #2ba84a;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buttonContainer > button:hover {
     background-color: #248232;
+    cursor: pointer;
 }
 
 .link {
