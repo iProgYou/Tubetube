@@ -4,7 +4,7 @@ import {Route} from 'react-router-dom';
 
 const NavBar = () => (
     <div>
-        {/* <LeftNav /> */}
+        {/* <LogoNav /> */}
         {/* <SearchNav /> */}
         <UserNavContainer />
 

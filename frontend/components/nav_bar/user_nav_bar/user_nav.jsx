@@ -7,7 +7,7 @@ const UserNav = ({ currentUser,logout }) => {
     const content = currentUser ? (
         <UserInfo logout={logout} currentUser={currentUser}/>        
     ) : (
-        <Link to="/signup">Sign In</Link>
+        <Link to="/signin">Sign In</Link>
     )
     return <>{content}</>
 }
