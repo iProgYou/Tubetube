@@ -183,9 +183,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: _app_style_module_css__WEBPACK_IMPORTED_MODULE_5___default.a.header
-  }, "TubeTube"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -234,15 +232,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _user_nav_bar_user_nav_conatiner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user_nav_bar/user_nav_conatiner */ "./frontend/components/nav_bar/user_nav_bar/user_nav_conatiner.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _nav_bar_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nav_bar.module.css */ "./frontend/components/nav_bar/nav_bar.module.css");
+/* harmony import */ var _nav_bar_module_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nav_bar_module_css__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
 
 var NavBar = function NavBar() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_user_nav_bar_user_nav_conatiner__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _nav_bar_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.navContainer
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_user_nav_bar_user_nav_conatiner__WEBPACK_IMPORTED_MODULE_1__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
+
+/***/ }),
+
+/***/ "./frontend/components/nav_bar/nav_bar.module.css":
+/*!********************************************************!*\
+  !*** ./frontend/components/nav_bar/nav_bar.module.css ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./nav_bar.module.css */ "./node_modules/css-loader/dist/cjs.js?!./frontend/components/nav_bar/nav_bar.module.css");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+
+
+module.exports = content.locals || {};
 
 /***/ }),
 
@@ -282,6 +314,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _user_info__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user_info */ "./frontend/components/nav_bar/user_nav_bar/user_info.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _nav_bar_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../nav_bar.module.css */ "./frontend/components/nav_bar/nav_bar.module.css");
+/* harmony import */ var _nav_bar_module_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nav_bar_module_css__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -294,6 +329,7 @@ var UserNav = function UserNav(_ref) {
     logout: logout,
     currentUser: currentUser
   }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    className: _nav_bar_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.link,
     to: "/signin"
   }, "Sign In");
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, content);
@@ -1083,6 +1119,28 @@ exports.push([module.i, "._2g19qYZ9en00AcU8OW_Xpb {\n    color: red;\n}", ""]);
 // Exports
 exports.locals = {
 	"header": "_2g19qYZ9en00AcU8OW_Xpb"
+};
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./frontend/components/nav_bar/nav_bar.module.css":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./frontend/components/nav_bar/nav_bar.module.css ***!
+  \********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, "._2bgbaqmNKj0cuUI5nexLq2 {\n    display: flex;\n    justify-content: space-between;\n    width: 100vw;\n    height: 5vw;\n    background-color: #393E41;\n    color: rgb(36, 41, 44);\n}\n\n._3YK5v8mSzKCIXI699dBpf9 {\n    color: #6E7E85;\n}\n", ""]);
+// Exports
+exports.locals = {
+	"navContainer": "_2bgbaqmNKj0cuUI5nexLq2",
+	"link": "_3YK5v8mSzKCIXI699dBpf9"
 };
 module.exports = exports;
 

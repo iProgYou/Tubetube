@@ -10,7 +10,7 @@ import styles from './app_style.module.css'
 const App = () => (
     <div>
         <header>
-            <h1 className={styles.header}>TubeTube</h1>
+            {/* <h1 className={styles.header}>TubeTube</h1> */}
             <NavBar />
         </header>
 

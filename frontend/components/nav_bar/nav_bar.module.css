@@ -1,0 +1,12 @@
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 5vw;
+    background-color: #393E41;
+    color: rgb(36, 41, 44);
+}
+
+.link {
+    color: #6E7E85;
+}
