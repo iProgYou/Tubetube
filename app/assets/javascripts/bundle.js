@@ -365,9 +365,11 @@ var Root = function Root(_ref) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_1__["Provider"], {
     store: store
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["HashRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+    exact: true,
     path: "/signup",
     component: _session_signup_form_container__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+    exact: true,
     path: "/signin",
     component: _session_signin_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
@@ -481,13 +483,16 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
       console.log(this.props);
       var user = Object.assign({}, this.state);
-      this.props.signin(user);
-      this.setState({
-        email: "",
-        password: ""
+      this.props.signin(user).then(function (res) {
+        _this3.setState({
+          email: "",
+          password: ""
+        });
       });
     }
   }, {
@@ -502,7 +507,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       var _this$state = this.state,
           email = _this$state.email,
@@ -512,13 +517,18 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.container
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.logo
+      }, "Tubetube"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.header
-      }, "Sign in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "to continue to Tubetube"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, "Sign in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.subHead
+      }, "to continue to Tubetube"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.inputs,
         onSubmit: function onSubmit(e) {
-          return _this3.handleSubmit(e);
+          return _this4.handleSubmit(e);
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "email",
+        type: "text",
         placeholder: "Email",
         value: email,
         onChange: this.handleChange("email")
@@ -527,7 +537,10 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         placeholder: "Password",
         value: password,
         onChange: this.handleChange("password")
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Next")), this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.nextButton
+      }, "Next")), this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.link,
         to: "/signup"
       }, "Create Account")));
     }
@@ -1144,12 +1157,17 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".fIB4stndRkuqS0iTFBl2q {\n    /* position: absolute; */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    vertical-align: middle;\n    background-color: #393E41;\n    font-family: Arial, Helvetica, sans-serif;\n    margin: auto;\n    /* margin-top: auto;\n    margin-bottom: auto; */\n    width: 50%;\n    /* height: 50%; */\n    border: 3px;\n    padding: 10px;\n}\n\n._3fVdo7Jolftti9U9zHC01W {\n    margin-bottom: 5px;\n}\n\n._3IqNp_q4SD8Ee5jBxxo17m {\n    position: absolute;\n    /* background-color: rgba(255,0,0,0.5); */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    padding: 5%;\n    top: 0;\n    left: 0;\n}\n", ""]);
+exports.push([module.i, ".fIB4stndRkuqS0iTFBl2q {\n    /* position: absolute; */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    vertical-align: middle;\n    background-color: rgb(26, 29, 31);\n    font-family: Arial, Helvetica, sans-serif;\n    margin: auto;\n    border-radius: 8px;\n    color: floralwhite;\n    width: 448px;\n    height: 500px;\n    border: 3px;\n    /* padding: 20% 2% 20% 2%; */\n}\n\n._3fVdo7Jolftti9U9zHC01W {\n    /* margin-bottom: 5px; */\n    /* display: flex; */\n    padding: 0px 10% 10px 10%;\n    font-size: 25px;\n}\n\n.a4EB4TwziEP7OEsmPijxM {\n    font-size: 22px;\n    color: #6E7E85;\n    margin: 10px;\n\n}\n\n._12TrLZY1d2KcTlIPSD88pa {\n    font-weight: bold;\n    font-size: 35px;\n}\n\n._3IqNp_q4SD8Ee5jBxxo17m {\n    position: absolute;\n    /* background-color: rgba(2550,0,0.5); */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n}\n\n._1S2axbmVzj44aiGYKjCStR {\n    display: flex;\n    flex-direction: column;\n\n    /* width: 100%; */\n    /* height: 40%; */\n    \n}\n\n._1S2axbmVzj44aiGYKjCStR > input {\n    width: 366px;\n    height: 48px;\n    border-radius: 5px;\n    font-size: 15px;\n    padding-left: 15px;\n    /* text-shadow: gray; */\n}\n\n._343vXJ4lLbHjHE_JNBC9YJ {\n    background-color: #2ba84a;\n    border-radius: 25px;\n\n}\n\n._343vXJ4lLbHjHE_JNBC9YJ:hover {\n    background-color: #248232;\n}\n\n._2712Dr9uS2z1HMNxC9HWN {\n    color: #6E7E85;\n}", ""]);
 // Exports
 exports.locals = {
 	"container": "fIB4stndRkuqS0iTFBl2q",
 	"header": "_3fVdo7Jolftti9U9zHC01W",
-	"fullscreen": "_3IqNp_q4SD8Ee5jBxxo17m"
+	"subHead": "a4EB4TwziEP7OEsmPijxM",
+	"logo": "_12TrLZY1d2KcTlIPSD88pa",
+	"fullscreen": "_3IqNp_q4SD8Ee5jBxxo17m",
+	"inputs": "_1S2axbmVzj44aiGYKjCStR",
+	"nextButton": "_343vXJ4lLbHjHE_JNBC9YJ",
+	"link": "_2712Dr9uS2z1HMNxC9HWN"
 };
 module.exports = exports;
 

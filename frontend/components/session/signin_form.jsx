@@ -24,11 +24,14 @@ class LoginForm extends React.Component {
         e.preventDefault();
         console.log(this.props)
         let user = Object.assign({},this.state);
-        this.props.signin(user);
-        this.setState({
-            email: "",
-            password: ""
-        })
+        this.props.signin(user)
+            .then(res => {
+                
+                this.setState({
+                    email: "",
+                    password: ""
+                })
+            });
     }
 
     renderErrors() {
@@ -42,11 +45,12 @@ class LoginForm extends React.Component {
         return(
             <div className={styles.fullscreen}>
                 <div className={styles.container}>
-                    <h1 className={styles.header}>Sign in</h1>
-                    <p>to continue to Tubetube</p>
-                    <form onSubmit={e => this.handleSubmit(e)}>
+                    <h1 className={styles.logo}>Tubetube</h1>
+                    <h3 className={styles.header}>Sign in</h3>
+                    <p className={styles.subHead}>to continue to Tubetube</p>
+                    <form className={styles.inputs} onSubmit={e => this.handleSubmit(e)}>
                         <input 
-                            type="email" 
+                            type="text" 
                             placeholder="Email"
                             value={email}
                             onChange={this.handleChange("email")}
@@ -57,10 +61,10 @@ class LoginForm extends React.Component {
                             value={password}
                             onChange={this.handleChange("password")}
                         />
-                        <button>Next</button>
+                        <button className={styles.nextButton}>Next</button>
                     </form>
                     {this.renderErrors()}
-                    <Link to="/signup">Create Account</Link>
+                    <Link className={styles.link} to="/signup">Create Account</Link>
                 </div>
             </div>
         )
