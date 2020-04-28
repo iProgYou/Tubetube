@@ -16,7 +16,7 @@ class SignupForm extends React.Component {
         return(
             <div>
                 <h1>Sign up</h1>
-                <Link to="">Sign in instead</Link>
+                <Link to="/signin">Sign in instead</Link>
             </div>
         )
     }

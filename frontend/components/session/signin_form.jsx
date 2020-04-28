@@ -14,6 +14,11 @@ class LoginForm extends React.Component {
         return(
             <div>
                 <h1>Sign in</h1>
+                <form>
+                    <label>Email
+                        <input type="email" />
+                    </label>
+                </form>
                 <Link to="/signup">Create Account</Link>
 
             </div>
