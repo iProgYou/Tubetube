@@ -1,11 +1,11 @@
 .searchContainer {
-
+    /* height: 32px; */
 }
 
 .searchContainer > button {
-
+    border-radius: 0px 2px 2px 0px;
 }
 
 .searchContainer > input {
-    
+    border-radius: 2px 0px 0px 2px;
 }
