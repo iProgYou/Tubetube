@@ -357,6 +357,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _search_nav_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search_nav.module.css */ "./frontend/components/nav_bar/search_nav_bar/search_nav.module.css");
 /* harmony import */ var _search_nav_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_search_nav_module_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -382,6 +383,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var SearchNav = /*#__PURE__*/function (_React$Component) {
   _inherits(SearchNav, _React$Component);
 
@@ -392,10 +394,11 @@ var SearchNav = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, SearchNav);
 
-    _this.state = {
+    _this = _super.call(this, props), _this.state = {
       searchInput: ""
     };
-    return _possibleConstructorReturn(_this);
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(SearchNav, [{
@@ -412,25 +415,38 @@ var SearchNav = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      e.preventDefault();
-      this.props.submitSearch(this.state.searchInput); // Redirect here to search index
+      e.preventDefault(); // this.props.submitSearch(this.state.searchInput)
+      // Redirect here to search index
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.setState({
+        searchInput: ""
+      });
     }
   }, {
     key: "render",
     value: function render() {
       var searchInput = this.state.searchInput;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: submitSearch
+        onSubmit: function onSubmit(e) {
+          return handleSubmit(e);
+        }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        onChange: handleChange,
+        onChange: this.handleChange,
         value: searchInput
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Icon"));
     }
   }]);
 
   return SearchNav;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component); // const mapDTP = dispatch => ({
+//     submitSearch: searchInput => dispatch(search(searchInput));
+// })
+// export default connect(null,mapDTP)(SearchNav)
+
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchNav);
 
