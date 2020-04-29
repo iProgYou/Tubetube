@@ -11,7 +11,7 @@
     border-radius: 8px;
     color: floralwhite;
     width: 448px;
-    height: 500px;
+    height: 530px;
     border: 3px;
     /* padding: 20% 2% 20% 2%; */
 }
@@ -142,4 +142,14 @@ input:focus {
 
 .link {
     color: #6E7E85;
+}
+
+.errors {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: crimson;
+    flex-direction: column;
+    font-size: 13px;
 }

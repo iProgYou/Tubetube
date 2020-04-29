@@ -9,7 +9,8 @@ class SessionForm extends React.Component {
         this.state = {
             email: "",
             password: "",
-            username: ""
+            username: "",
+            // errors: this.props.errors
         }
     }
 
@@ -25,21 +26,33 @@ class SessionForm extends React.Component {
         e.preventDefault();
         // console.log(this.props)
         let user = Object.assign({},this.state);
-        // this.setState({
-        //     email: "",
-        //     password: "",
-        //     username: ""
-        // })
+ 
         this.props.action(user)
             .then(() => {
                 // console.log('made it to the then in handle submit')
                 // need to redirect to app here
                 this.props.history.replace('/')
+            }).fail(() => {
+                this.setState({
+                    email: "",
+                    password: "",
+                    username: ""
+                })
             });
     }
 
     renderErrors() {
-        return this.props.errors.map((error,i) => <div key={i}>{error}</div>)
+        return (
+            <ul className={styles.errors}>
+                {this.props.errors.map((error,i) => (
+                <li key={i}>{error}</li>
+                ))}
+            </ul>
+            )
+    }
+
+    componentWillUnmount() {
+        this.props.clearErrors();
     }
 
     render() {
@@ -95,9 +108,9 @@ class SessionForm extends React.Component {
                                 onChange={this.handleChange("password")}
                             />
                         </div>
+                        {this.renderErrors()}
                         {buttonContainer}
                     </form>
-                    {this.renderErrors()}
                 </div>
             </div>
         )
