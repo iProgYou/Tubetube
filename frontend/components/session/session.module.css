@@ -32,7 +32,6 @@
 
 .logo {
     font-weight: bold;
-    width: 285px;
     height: 37px;
     margin-bottom: 20px;
     /* max-width: 159;
@@ -153,3 +152,4 @@ input:focus {
     flex-direction: column;
     font-size: 13px;
 }
+

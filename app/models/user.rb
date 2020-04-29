@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    def self.find_by_credentials(un,pw)
-        user = User.find_by(username: un)
+    def self.find_by_credentials(em,pw)
+        user = User.find_by(email: em)
         return nil if user.nil?
         user.is_password?(pw) ? user : nil
     end

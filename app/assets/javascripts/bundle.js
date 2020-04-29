@@ -219,6 +219,68 @@ module.exports = content.locals || {};
 
 /***/ }),
 
+/***/ "./frontend/components/nav_bar/logo_nav_bar/logo_nav.jsx":
+/*!***************************************************************!*\
+  !*** ./frontend/components/nav_bar/logo_nav_bar/logo_nav.jsx ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _logo_nav_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./logo_nav.module.css */ "./frontend/components/nav_bar/logo_nav_bar/logo_nav.module.css");
+/* harmony import */ var _logo_nav_module_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_logo_nav_module_css__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+var LogoNav = function LogoNav(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _logo_nav_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.logoContainer
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: _logo_nav_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.logo,
+    src: window.logoURL
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LogoNav);
+
+/***/ }),
+
+/***/ "./frontend/components/nav_bar/logo_nav_bar/logo_nav.module.css":
+/*!**********************************************************************!*\
+  !*** ./frontend/components/nav_bar/logo_nav_bar/logo_nav.module.css ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js??ref--5-1!./logo_nav.module.css */ "./node_modules/css-loader/dist/cjs.js?!./frontend/components/nav_bar/logo_nav_bar/logo_nav.module.css");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+
+
+module.exports = content.locals || {};
+
+/***/ }),
+
 /***/ "./frontend/components/nav_bar/nav_bar.jsx":
 /*!*************************************************!*\
   !*** ./frontend/components/nav_bar/nav_bar.jsx ***!
@@ -231,9 +293,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _user_nav_bar_user_nav_conatiner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user_nav_bar/user_nav_conatiner */ "./frontend/components/nav_bar/user_nav_bar/user_nav_conatiner.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _nav_bar_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nav_bar.module.css */ "./frontend/components/nav_bar/nav_bar.module.css");
-/* harmony import */ var _nav_bar_module_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nav_bar_module_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _logo_nav_bar_logo_nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./logo_nav_bar/logo_nav */ "./frontend/components/nav_bar/logo_nav_bar/logo_nav.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _nav_bar_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./nav_bar.module.css */ "./frontend/components/nav_bar/nav_bar.module.css");
+/* harmony import */ var _nav_bar_module_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_nav_bar_module_css__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -241,8 +305,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var NavBar = function NavBar() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: _nav_bar_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.navContainer
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_user_nav_bar_user_nav_conatiner__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+    className: _nav_bar_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.navContainer
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_logo_nav_bar_logo_nav__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_user_nav_bar_user_nav_conatiner__WEBPACK_IMPORTED_MODULE_1__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -516,6 +580,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       username: "" // errors: this.props.errors
 
     };
+    _this.handleDemo = _this.handleDemo.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -549,6 +614,23 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
+    key: "handleDemo",
+    value: function handleDemo(e) {
+      var _this4 = this;
+
+      e.preventDefault();
+      var user = {
+        email: "demo@demo.com",
+        password: "123456",
+        username: "Demo"
+      };
+      this.props.action(user).then(function () {
+        // console.log('made it to the then in handle submit')
+        // need to redirect to app here
+        _this4.props.history.replace('/');
+      });
+    }
+  }, {
     key: "renderErrors",
     value: function renderErrors() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -567,7 +649,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this5 = this;
 
       var _this$state = this.state,
           email = _this$state.email,
@@ -585,7 +667,12 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.link,
         to: "/signup"
-      }, "Create Account"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Demo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Create Account"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        onClick: function onClick(e) {
+          return _this5.handleDemo(e);
+        }
+      }, "Demo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.nextButton
       }, "Next")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.buttonContainer
@@ -609,7 +696,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       }, "to continue to Tubetube"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.inputs,
         onSubmit: function onSubmit(e) {
-          return _this4.handleSubmit(e);
+          return _this5.handleSubmit(e);
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: inputClass
@@ -1166,6 +1253,28 @@ module.exports = exports;
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js?!./frontend/components/nav_bar/logo_nav_bar/logo_nav.module.css":
+/*!**********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./frontend/components/nav_bar/logo_nav_bar/logo_nav.module.css ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".pfb5FWv-UESjri4FLsM8x {\n    height: 24px;\n}\n\n._1bPoY1Q3JYxRl-8WrHQQrx {\n    padding-left: 15px;\n    /* display: block;\n    height: 24;\n    width: 80; */\n}", ""]);
+// Exports
+exports.locals = {
+	"logo": "pfb5FWv-UESjri4FLsM8x",
+	"logoContainer": "_1bPoY1Q3JYxRl-8WrHQQrx"
+};
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js?!./frontend/components/nav_bar/nav_bar.module.css":
 /*!********************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./frontend/components/nav_bar/nav_bar.module.css ***!
@@ -1177,7 +1286,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "._2bgbaqmNKj0cuUI5nexLq2 {\n    display: flex;\n    justify-content: space-between;\n    width: 100vw;\n    height: 5vw;\n    background-color: #393E41;\n    color: rgb(36, 41, 44);\n}\n\n._3YK5v8mSzKCIXI699dBpf9 {\n    color: #6E7E85;\n}\n", ""]);
+exports.push([module.i, "._2bgbaqmNKj0cuUI5nexLq2 {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 100vw;\n    height: 5vw;\n    background-color: #393E41;\n    color: rgb(36, 41, 44);\n}\n\n._3YK5v8mSzKCIXI699dBpf9 {\n    color: #6E7E85;\n    padding-right: 15px;\n}\n", ""]);
 // Exports
 exports.locals = {
 	"navContainer": "_2bgbaqmNKj0cuUI5nexLq2",
@@ -1199,7 +1308,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".fIB4stndRkuqS0iTFBl2q {\n    /* position: absolute; */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    vertical-align: middle;\n    background-color: rgb(36, 41, 44);\n    font-family: Arial, Helvetica, sans-serif;\n    margin: auto;\n    border-radius: 8px;\n    color: floralwhite;\n    width: 448px;\n    height: 530px;\n    border: 3px;\n    /* padding: 20% 2% 20% 2%; */\n}\n\n._3fVdo7Jolftti9U9zHC01W {\n    /* margin-bottom: 5px; */\n    /* display: flex; */\n    padding: 0px 10% 10px 10%;\n    font-size: 23px;\n}\n\n.a4EB4TwziEP7OEsmPijxM {\n    font-size: 18px;\n    color: #6E7E85;\n    margin: 10px;\n    padding-bottom: 11px;\n}\n\n._12TrLZY1d2KcTlIPSD88pa {\n    font-weight: bold;\n    width: 285px;\n    height: 37px;\n    margin-bottom: 20px;\n    /* max-width: 159;\n    max-height: 159; */\n}\n\n._3IqNp_q4SD8Ee5jBxxo17m {\n    position: absolute;\n    /* background-color: rgba(2550,0,0.5); */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n}\n\n\n\n.X2zZ9qtTLLeg8MrmsRnYV {\n    display: flex;\n    justify-content: space-between;\n    flex-direction: column;\n    height: 199px;\n    width: 382px;\n\n\n    /* width: 100%; */\n    /* height: 40%; */\n}\n\n._1wECgglJwCI7LzMYwAvwhW {\n    display: flex;\n    justify-content: space-around;\n    flex-direction: column;\n    height: 199px;\n    width: 382px;\n\n\n    /* width: 100%; */\n    /* height: 40%; */\n}\n\n.X2zZ9qtTLLeg8MrmsRnYV > input {\n    width: 366px;\n    height: 48px;\n    border-radius: 5px;\n    font-size: 16px;\n    padding-left: 15px;\n    background-color: rgb(161, 185, 196);\n    color: black;\n\n    border: 2px solid;\n    border-color: rgb(161, 185, 196);\n    /* text-shadow: gray; */\n}\n\n\n::placeholder {\n    color: rgb(32, 41, 44);\n}\n\n._1wECgglJwCI7LzMYwAvwhW > input {\n    width: 366px;\n    height: 48px;\n    border-radius: 5px;\n    font-size: 16px;\n    padding-left: 15px;\n    background-color: rgb(161, 185, 196);\n    border: 2px solid;\n    border-color: rgb(161, 185, 196);\n    color: black;\n}\n/* - sign up space between username and contiue need to be similar to \n    the top part\n    - sign in space between inputs needs be less\n*/\n\ninput:focus {\n    border-color: #2ba84a;\n}\n._2CBhnuHLpQjfENLsYTUX6y {\n    display: flex;\n    justify-content: space-between;\n    height: 99px;\n    width: 380px;\n    align-items: center;\n}\n\n._2CBhnuHLpQjfENLsYTUX6y > button {\n    background-color: #2ba84a;\n    border-radius: 3px;\n    border: none;\n    color: white;\n    padding: 15px 32px;\n    text-align: center;\n    text-decoration: none;\n    display: inline-block;\n    font-size: 16px;\n}\n\n._2CBhnuHLpQjfENLsYTUX6y > button:hover {\n    background-color: #248232;\n    cursor: pointer;\n}\n\n._2712Dr9uS2z1HMNxC9HWN {\n    color: #6E7E85;\n}\n\n._3t5xIzKpPNABtSgYSsvNIy {\n    padding-top: 10px;\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    color: crimson;\n    flex-direction: column;\n    font-size: 13px;\n}", ""]);
+exports.push([module.i, ".fIB4stndRkuqS0iTFBl2q {\n    /* position: absolute; */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    vertical-align: middle;\n    background-color: rgb(36, 41, 44);\n    font-family: Arial, Helvetica, sans-serif;\n    margin: auto;\n    border-radius: 8px;\n    color: floralwhite;\n    width: 448px;\n    height: 530px;\n    border: 3px;\n    /* padding: 20% 2% 20% 2%; */\n}\n\n._3fVdo7Jolftti9U9zHC01W {\n    /* margin-bottom: 5px; */\n    /* display: flex; */\n    padding: 0px 10% 10px 10%;\n    font-size: 23px;\n}\n\n.a4EB4TwziEP7OEsmPijxM {\n    font-size: 18px;\n    color: #6E7E85;\n    margin: 10px;\n    padding-bottom: 11px;\n}\n\n._12TrLZY1d2KcTlIPSD88pa {\n    font-weight: bold;\n    height: 37px;\n    margin-bottom: 20px;\n    /* max-width: 159;\n    max-height: 159; */\n}\n\n._3IqNp_q4SD8Ee5jBxxo17m {\n    position: absolute;\n    /* background-color: rgba(2550,0,0.5); */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n}\n\n\n\n.X2zZ9qtTLLeg8MrmsRnYV {\n    display: flex;\n    justify-content: space-between;\n    flex-direction: column;\n    height: 199px;\n    width: 382px;\n\n\n    /* width: 100%; */\n    /* height: 40%; */\n}\n\n._1wECgglJwCI7LzMYwAvwhW {\n    display: flex;\n    justify-content: space-around;\n    flex-direction: column;\n    height: 199px;\n    width: 382px;\n\n\n    /* width: 100%; */\n    /* height: 40%; */\n}\n\n.X2zZ9qtTLLeg8MrmsRnYV > input {\n    width: 366px;\n    height: 48px;\n    border-radius: 5px;\n    font-size: 16px;\n    padding-left: 15px;\n    background-color: rgb(161, 185, 196);\n    color: black;\n\n    border: 2px solid;\n    border-color: rgb(161, 185, 196);\n    /* text-shadow: gray; */\n}\n\n\n::placeholder {\n    color: rgb(32, 41, 44);\n}\n\n._1wECgglJwCI7LzMYwAvwhW > input {\n    width: 366px;\n    height: 48px;\n    border-radius: 5px;\n    font-size: 16px;\n    padding-left: 15px;\n    background-color: rgb(161, 185, 196);\n    border: 2px solid;\n    border-color: rgb(161, 185, 196);\n    color: black;\n}\n/* - sign up space between username and contiue need to be similar to \n    the top part\n    - sign in space between inputs needs be less\n*/\n\ninput:focus {\n    border-color: #2ba84a;\n}\n._2CBhnuHLpQjfENLsYTUX6y {\n    display: flex;\n    justify-content: space-between;\n    height: 99px;\n    width: 380px;\n    align-items: center;\n}\n\n._2CBhnuHLpQjfENLsYTUX6y > button {\n    background-color: #2ba84a;\n    border-radius: 3px;\n    border: none;\n    color: white;\n    padding: 15px 32px;\n    text-align: center;\n    text-decoration: none;\n    display: inline-block;\n    font-size: 16px;\n}\n\n._2CBhnuHLpQjfENLsYTUX6y > button:hover {\n    background-color: #248232;\n    cursor: pointer;\n}\n\n._2712Dr9uS2z1HMNxC9HWN {\n    color: #6E7E85;\n}\n\n._3t5xIzKpPNABtSgYSsvNIy {\n    padding-top: 10px;\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    color: crimson;\n    flex-direction: column;\n    font-size: 13px;\n}\n\n", ""]);
 // Exports
 exports.locals = {
 	"container": "fIB4stndRkuqS0iTFBl2q",

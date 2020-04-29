@@ -1,6 +1,7 @@
 .navContainer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100vw;
     height: 5vw;
     background-color: #393E41;
@@ -9,4 +10,5 @@
 
 .link {
     color: #6E7E85;
+    padding-right: 15px;
 }

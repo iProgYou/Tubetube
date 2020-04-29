@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
             username: "",
             // errors: this.props.errors
         }
+        this.handleDemo = this.handleDemo.bind(this);
     }
 
     handleChange(inputType) {
@@ -39,6 +40,21 @@ class SessionForm extends React.Component {
                     username: ""
                 })
             });
+    }
+
+    handleDemo(e) {
+        e.preventDefault()
+        let user = {
+            email: "demo@demo.com",
+            password: "123456",
+            username: "Demo"
+        }
+        this.props.action(user)
+            .then(() => {
+                // console.log('made it to the then in handle submit')
+                // need to redirect to app here
+                this.props.history.replace('/')
+            })
     }
 
     renderErrors() {
@@ -72,7 +88,7 @@ class SessionForm extends React.Component {
         const buttonContainer = formType === "Sign In" ? (
             <div className={styles.buttonContainer}>
                 <Link className={styles.link} to="/signup">Create Account</Link>
-                <button>Demo</button>
+                <button type="button" onClick={e => this.handleDemo(e)}>Demo</button>
                 <button className={styles.nextButton}>Next</button>
             </div>
         ) : (
