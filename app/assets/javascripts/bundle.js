@@ -397,7 +397,6 @@ var SearchNav = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props), _this.state = {
       searchInput: ""
     };
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -406,6 +405,7 @@ var SearchNav = /*#__PURE__*/function (_React$Component) {
     value: function handleChange() {
       var _this2 = this;
 
+      console.log(this.state);
       return function (e) {
         return _this2.setState({
           searchInput: e.target.value
@@ -429,15 +429,18 @@ var SearchNav = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var searchInput = this.state.searchInput;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: _search_nav_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.searchContainer
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: function onSubmit(e) {
           return handleSubmit(e);
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        onChange: this.handleChange,
-        value: searchInput
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Icon"));
+        onChange: this.handleChange(),
+        value: searchInput,
+        placeholder: "Search"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Icon")));
     }
   }]);
 
@@ -725,7 +728,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       return function (e) {
-        _this2.setState(_defineProperty({}, inputType, e.target.value));
+        return _this2.setState(_defineProperty({}, inputType, e.target.value));
       };
     }
   }, {
@@ -1436,8 +1439,11 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "._3kMT672XUboyYd3AVnkdS {\n\n}\n\n._3kMT672XUboyYd3AVnkdS > button {\n\n}\n\n._3kMT672XUboyYd3AVnkdS > input {\n    \n}", ""]);
 // Exports
+exports.locals = {
+	"searchContainer": "_3kMT672XUboyYd3AVnkdS"
+};
 module.exports = exports;
 
 

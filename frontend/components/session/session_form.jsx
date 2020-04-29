@@ -16,11 +16,11 @@ class SessionForm extends React.Component {
     }
 
     handleChange(inputType) {
-        return e => {
+        return e => (
             this.setState({
                 [inputType]: e.target.value
             })
-        }
+        )
     }
 
     handleSubmit(e) {

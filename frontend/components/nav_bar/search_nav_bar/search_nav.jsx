@@ -8,10 +8,10 @@ class SearchNav extends React.Component {
         this.state = {
             searchInput: ""
         }
-        this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange() {
+        console.log(this.state)
         return (e) => (
             this.setState({
                 searchInput: e.target.value
@@ -35,14 +35,17 @@ class SearchNav extends React.Component {
 
         const { searchInput } = this.state;
         return(
-            <form onSubmit={e => handleSubmit(e)}>
-                <input 
-                    type="text" 
-                    onChange={this.handleChange}
-                    value={searchInput}
-                />
-                <button>Icon</button>
-            </form>
+            <div  className={styles.searchContainer}>
+                <form onSubmit={e => handleSubmit(e)}>
+                    <input 
+                        type="text" 
+                        onChange={this.handleChange()}
+                        value={searchInput}
+                        placeholder="Search"
+                    />
+                    <button>Icon</button>
+                </form>
+            </div>
         )
     }
 }
