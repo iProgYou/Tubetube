@@ -5,7 +5,7 @@ import styles from './logo_nav.module.css';
 const LogoNav = props => (
     <div className={styles.logoContainer}>
         <Link to="/">
-            <img className={styles.logo} src={window.logoURL} />                    
+            <img className="small-logo" src={window.logoURL} />                    
         </Link>
     </div>
 )

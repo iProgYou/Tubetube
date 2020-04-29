@@ -30,14 +30,6 @@
     padding-bottom: 11px;
 }
 
-.logo {
-    font-weight: bold;
-    height: 37px;
-    margin-bottom: 20px;
-    /* max-width: 159;
-    max-height: 159; */
-}
-
 .fullscreen {
     position: absolute;
     /* background-color: rgba(2550,0,0.5); */
@@ -76,71 +68,17 @@
     /* height: 40%; */
 }
 
-.threeInputContainer > input {
-    width: 366px;
-    height: 48px;
-    border-radius: 5px;
-    font-size: 16px;
-    padding-left: 15px;
-    background-color: rgb(161, 185, 196);
-    color: black;
-
-    border: 2px solid;
-    border-color: rgb(161, 185, 196);
-    /* text-shadow: gray; */
-}
-
-
-::placeholder {
-    color: rgb(32, 41, 44);
-}
-
-.twoInputContainer > input {
-    width: 366px;
-    height: 48px;
-    border-radius: 5px;
-    font-size: 16px;
-    padding-left: 15px;
-    background-color: rgb(161, 185, 196);
-    border: 2px solid;
-    border-color: rgb(161, 185, 196);
-    color: black;
-}
 /* - sign up space between username and contiue need to be similar to 
     the top part
     - sign in space between inputs needs be less
 */
 
-input:focus {
-    border-color: #2ba84a;
-}
 .buttonContainer {
     display: flex;
     justify-content: space-between;
     height: 99px;
     width: 380px;
     align-items: center;
-}
-
-.buttonContainer > button {
-    background-color: #2ba84a;
-    border-radius: 3px;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-
-.buttonContainer > button:hover {
-    background-color: #248232;
-    cursor: pointer;
-}
-
-.link {
-    color: #6E7E85;
 }
 
 .errors {

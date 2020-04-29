@@ -317,6 +317,65 @@ html {
     background-color: black;
 }
 
+/* ----------------- */
+
+input {
+    width: 366px;
+    height: 48px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 15px;
+    background-color: rgb(161, 185, 196);
+    border: 2px solid;
+    border-color: rgb(161, 185, 196);
+    color: black;
+}
+/* - sign up space between username and contiue need to be similar to 
+    the top part
+    - sign in space between inputs needs be less
+*/
+
+input:focus {
+    border-color: #2ba84a;
+}
+
+::placeholder {
+    color: rgb(32, 41, 44);
+}
+
+a {
+    color: #6E7E85;
+}
+
+.small-logo {
+    height: 24px;
+}
+
+.med-logo {
+    /* font-weight: bold; */
+    height: 37px;
+    margin-bottom: 20px;
+    /* max-width: 159;
+    max-height: 159; */
+}
+
+button {
+    background-color: #2ba84a;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #248232;
+    cursor: pointer;
+}
+
 /* body {
     height: 100vh;
 }

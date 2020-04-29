@@ -87,13 +87,13 @@ class SessionForm extends React.Component {
 
         const buttonContainer = formType === "Sign In" ? (
             <div className={styles.buttonContainer}>
-                <Link className={styles.link} to="/signup">Create Account</Link>
+                <Link to="/signup">Create Account</Link>
                 <button type="button" onClick={e => this.handleDemo(e)}>Demo</button>
-                <button className={styles.nextButton}>Next</button>
+                <button>Next</button>
             </div>
         ) : (
             <div className={styles.buttonContainer}>
-                <Link className={styles.link} to="/signin">Sign In instead</Link>
+                <Link to="/signin">Sign In instead</Link>
                 <button>Next</button>
             </div>
         )
@@ -105,10 +105,10 @@ class SessionForm extends React.Component {
         return(
             <div className={styles.fullscreen}>
                 <div className={styles.container}>
-                <img className={styles.logo} src={window.logoURL} />                    
+                <img className="med-logo" src={window.logoURL} />                    
                 <h3 className={styles.header}>{header}</h3>
                     <p className={styles.subHead}>to continue to Tubetube</p>
-                    <form className={styles.inputs} onSubmit={e => this.handleSubmit(e)}>
+                    <form onSubmit={e => this.handleSubmit(e)}>
                         <div className={inputClass}>
                             {usernameInput}
                             <input 
