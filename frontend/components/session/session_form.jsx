@@ -42,13 +42,63 @@ class SessionForm extends React.Component {
             });
     }
 
-    handleDemo(e) {
-        e.preventDefault()
+    // ghostTyping() {
+    //     // console.log(this.emailInput.value);
+    //     // console.log(this.passwordInput.value);
+    //     // this.emailInput.value = "asdflkjasdlkfjasdkfj"
+    //     // console.log(email);
+    //     // console.log(password);
+
+  
+        
+    //     let ei = 0;
+    //     const typeEmail = () => {
+    //         if (ei <= user.email.length) {
+    //             console.log("here")
+    //             this.emailInput.value = user.email.substr(0,ei++)
+    //             setTimeout(() => {
+    //                 return typeEmail()
+    //             },30)
+    //         } else {
+    //             console.log("while")
+    //         }
+    //     }
+
+
+
+        // email.split().forEach(char => {
+            
+        //     word += char;
+
+        //     setTimeout(() => {
+        //         // this.emailInput.value += char
+        //         this.setState({
+        //             email: word
+        //         })
+        //     },300)
+        // })
+
+        // word = "";
+
+        // password.split().forEach(char => {
+        //     setTimeout(() => {
+        //         // this.passwordInput.value += char
+        //         this.setState({
+        //             email: word
+        //         })
+        //     },300)
+        // })
+    // }
+
+    handleDemo() {
+        // e.preventDefault()
+
         let user = {
             email: "demo@demo.com",
             password: "123456",
             username: "Demo"
         }
+
         this.props.action(user)
             .then(() => {
                 // console.log('made it to the then in handle submit')
@@ -88,7 +138,8 @@ class SessionForm extends React.Component {
         const buttonContainer = formType === "Sign In" ? (
             <div className={styles.buttonContainer}>
                 <Link to="/signup">Create Account</Link>
-                <button type="button" onClick={e => this.handleDemo(e)}>Demo</button>
+                <button type="button" onClick={() => this.handleDemo()}>Demo</button>
+                {/* <button type="button" onClick={() => this.ghostTyping()}>Demo</button> */}
                 <button>Next</button>
             </div>
         ) : (
@@ -111,13 +162,15 @@ class SessionForm extends React.Component {
                     <form onSubmit={e => this.handleSubmit(e)}>
                         <div className={inputClass}>
                             {usernameInput}
-                            <input 
+                            <input
+                                ref={node => this.emailInput = node}
                                 type="text" 
                                 placeholder="Email"
                                 value={email}
                                 onChange={this.handleChange("email")}
                             />
                             <input 
+                                ref={node => this.passwordInput = node}
                                 type="password"
                                 placeholder="Password"
                                 value={password}

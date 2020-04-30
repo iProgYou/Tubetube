@@ -952,13 +952,50 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
           username: ""
         });
       });
-    }
+    } // ghostTyping() {
+    //     // console.log(this.emailInput.value);
+    //     // console.log(this.passwordInput.value);
+    //     // this.emailInput.value = "asdflkjasdlkfjasdkfj"
+    //     // console.log(email);
+    //     // console.log(password);
+    //     let ei = 0;
+    //     const typeEmail = () => {
+    //         if (ei <= user.email.length) {
+    //             console.log("here")
+    //             this.emailInput.value = user.email.substr(0,ei++)
+    //             setTimeout(() => {
+    //                 return typeEmail()
+    //             },30)
+    //         } else {
+    //             console.log("while")
+    //         }
+    //     }
+    // email.split().forEach(char => {
+    //     word += char;
+    //     setTimeout(() => {
+    //         // this.emailInput.value += char
+    //         this.setState({
+    //             email: word
+    //         })
+    //     },300)
+    // })
+    // word = "";
+    // password.split().forEach(char => {
+    //     setTimeout(() => {
+    //         // this.passwordInput.value += char
+    //         this.setState({
+    //             email: word
+    //         })
+    //     },300)
+    // })
+    // }
+
   }, {
     key: "handleDemo",
-    value: function handleDemo(e) {
+    value: function handleDemo() {
       var _this4 = this;
 
-      e.preventDefault();
+      // e.preventDefault()
       var user = {
         email: "demo@demo.com",
         password: "123456",
@@ -1008,8 +1045,8 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         to: "/signup"
       }, "Create Account"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
-        onClick: function onClick(e) {
-          return _this5.handleDemo(e);
+        onClick: function onClick() {
+          return _this5.handleDemo();
         }
       }, "Demo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Next")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _session_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.buttonContainer
@@ -1036,11 +1073,17 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: inputClass
       }, usernameInput, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        ref: function ref(node) {
+          return _this5.emailInput = node;
+        },
         type: "text",
         placeholder: "Email",
         value: email,
         onChange: this.handleChange("email")
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        ref: function ref(node) {
+          return _this5.passwordInput = node;
+        },
         type: "password",
         placeholder: "Password",
         value: password,
