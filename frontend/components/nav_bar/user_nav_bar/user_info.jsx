@@ -13,8 +13,8 @@ class UserInfo extends React.Component {
             dropdownDisplay: false
             // !!!!!!!!!!!!!!!!!! should default to false
         }
-
         this.handleClick = this.handleClick.bind(this)
+        this.dropDisappear = this.dropDisappear.bind(this)
     }
 
     handleClick() {
@@ -29,42 +29,29 @@ class UserInfo extends React.Component {
         }
     }
 
+    dropDisappear(e) {
+        // console.log("still clickin")
+        if (!this.dropdown) return;
+
+        if (this.icon.contains(e.target)) {
+            return
+        } else if (this.dropdown.contains(e.target)) {
+            return
+        } else {
+            this.setState({
+                dropdownDisplay: false
+            })
+        }
+    }
+    
+
     componentDidMount() {
-        document.addEventListener('click', (e) => {
-            // Below works but uses jquery
-        //     if (!$(`.${styles.dropdown}`)[0]) return;
-
-        //     if ($(`.${styles.icon}`)[0].contains(e.target)) {
-        //         return
-        //     } else if ($(`.${styles.dropdown}`)[0].contains(e.target)) {
-        //         return
-        //     } else {
-        //         this.setState({
-        //             dropdownDisplay: false
-        //         })
-        //     }
-        ////////////////////////////////
-            console.log("still clickin")
-            if (!this.dropdown) return;
-
-            if (this.icon.contains(e.target)) {
-                return
-            } else if (this.dropdown.contains(e.target)) {
-                return
-            } else {
-                this.setState({
-                    dropdownDisplay: false
-                })
-            }
-        })
+        document.addEventListener('click', this.dropDisappear)
     }
 
     componentWillUnmount() {
-        console.log("removed")
-        document.removeEventListener('click',() => console.log("removed"))
+        document.removeEventListener('click',this.dropDisappear)
     }
-
-
     // stop propagation react closest
     
     render() {

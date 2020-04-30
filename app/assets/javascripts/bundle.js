@@ -574,6 +574,7 @@ var UserInfo = /*#__PURE__*/function (_React$Component) {
 
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    _this.dropDisappear = _this.dropDisappear.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -591,55 +592,41 @@ var UserInfo = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
+    key: "dropDisappear",
+    value: function dropDisappear(e) {
+      // console.log("still clickin")
+      if (!this.dropdown) return;
+
+      if (this.icon.contains(e.target)) {
+        return;
+      } else if (this.dropdown.contains(e.target)) {
+        return;
+      } else {
+        this.setState({
+          dropdownDisplay: false
+        });
+      }
+    }
+  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this2 = this;
-
-      document.addEventListener('click', function (e) {
-        // Below works but uses jquery
-        //     if (!$(`.${styles.dropdown}`)[0]) return;
-        //     if ($(`.${styles.icon}`)[0].contains(e.target)) {
-        //         return
-        //     } else if ($(`.${styles.dropdown}`)[0].contains(e.target)) {
-        //         return
-        //     } else {
-        //         this.setState({
-        //             dropdownDisplay: false
-        //         })
-        //     }
-        ////////////////////////////////
-        console.log("still clickin");
-        if (!_this2.dropdown) return;
-
-        if (_this2.icon.contains(e.target)) {
-          return;
-        } else if (_this2.dropdown.contains(e.target)) {
-          return;
-        } else {
-          _this2.setState({
-            dropdownDisplay: false
-          });
-        }
-      });
+      document.addEventListener('click', this.dropDisappear);
     }
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
-      console.log("removed");
-      document.removeEventListener('click', function () {
-        return console.log("removed");
-      });
+      document.removeEventListener('click', this.dropDisappear);
     } // stop propagation react closest
 
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
       var dropdownDisplay = this.state.dropdownDisplay;
       var content = dropdownDisplay ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         ref: function ref(node) {
-          return _this3.dropdown = node;
+          return _this2.dropdown = node;
         },
         className: _user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.dropdown
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -674,7 +661,7 @@ var UserInfo = /*#__PURE__*/function (_React$Component) {
         className: _user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.iconContainer
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         ref: function ref(node) {
-          return _this3.icon = node;
+          return _this2.icon = node;
         },
         className: _user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.icon,
         onClick: this.handleClick
