@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  creator_id: 1
+  title: MyString
+  description: MyText
+  plays: 1
+
+two:
+  creator_id: 1
+  title: MyString
+  description: MyText
+  plays: 1
