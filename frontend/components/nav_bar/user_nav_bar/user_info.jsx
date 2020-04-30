@@ -29,6 +29,23 @@ class UserInfo extends React.Component {
         }
     }
 
+    componentDidMount() {
+        document.addEventListener('click', (e) => {
+
+            if (!$(`.${styles.dropdown}`)[0]) return;
+
+            if ($(`.${styles.icon}`)[0].contains(e.target)) {
+                return
+            } else if ($(`.${styles.dropdown}`)[0].contains(e.target)) {
+                return
+            } else {
+                this.setState({
+                    dropdownDisplay: false
+                })
+            }
+        })
+    }
+    // stop propagation react closest
     
     render() {
         const { dropdownDisplay } = this.state;

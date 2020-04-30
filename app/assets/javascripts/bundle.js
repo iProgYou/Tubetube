@@ -591,6 +591,26 @@ var UserInfo = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      document.addEventListener('click', function (e) {
+        if (!$(".".concat(_user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.dropdown))[0]) return;
+
+        if ($(".".concat(_user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.icon))[0].contains(e.target)) {
+          return;
+        } else if ($(".".concat(_user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.dropdown))[0].contains(e.target)) {
+          return;
+        } else {
+          _this2.setState({
+            dropdownDisplay: false
+          });
+        }
+      });
+    } // stop propagation react closest
+
+  }, {
     key: "render",
     value: function render() {
       var dropdownDisplay = this.state.dropdownDisplay;
