@@ -11,7 +11,7 @@ class SearchNav extends React.Component {
     }
 
     handleChange() {
-        console.log(this.state)
+        // console.log(this.state)
         return (e) => (
             this.setState({
                 searchInput: e.target.value

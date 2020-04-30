@@ -405,7 +405,7 @@ var SearchNav = /*#__PURE__*/function (_React$Component) {
     value: function handleChange() {
       var _this2 = this;
 
-      console.log(this.state);
+      // console.log(this.state)
       return function (e) {
         return _this2.setState({
           searchInput: e.target.value
@@ -596,11 +596,24 @@ var UserInfo = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       document.addEventListener('click', function (e) {
-        if (!$(".".concat(_user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.dropdown))[0]) return;
+        // Below works but uses jquery
+        //     if (!$(`.${styles.dropdown}`)[0]) return;
+        //     if ($(`.${styles.icon}`)[0].contains(e.target)) {
+        //         return
+        //     } else if ($(`.${styles.dropdown}`)[0].contains(e.target)) {
+        //         return
+        //     } else {
+        //         this.setState({
+        //             dropdownDisplay: false
+        //         })
+        //     }
+        ////////////////////////////////
+        console.log("still clickin");
+        if (!_this2.dropdown) return;
 
-        if ($(".".concat(_user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.icon))[0].contains(e.target)) {
+        if (_this2.icon.contains(e.target)) {
           return;
-        } else if ($(".".concat(_user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.dropdown))[0].contains(e.target)) {
+        } else if (_this2.dropdown.contains(e.target)) {
           return;
         } else {
           _this2.setState({
@@ -608,13 +621,26 @@ var UserInfo = /*#__PURE__*/function (_React$Component) {
           });
         }
       });
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      console.log("removed");
+      document.removeEventListener('click', function () {
+        return console.log("removed");
+      });
     } // stop propagation react closest
 
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       var dropdownDisplay = this.state.dropdownDisplay;
       var content = dropdownDisplay ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        ref: function ref(node) {
+          return _this3.dropdown = node;
+        },
         className: _user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.dropdown
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.headSection
@@ -647,6 +673,9 @@ var UserInfo = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.iconContainer
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        ref: function ref(node) {
+          return _this3.icon = node;
+        },
         className: _user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.icon,
         onClick: this.handleClick
       }, this.props.currentUser.username[0]), content);
