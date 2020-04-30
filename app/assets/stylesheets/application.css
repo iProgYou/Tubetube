@@ -377,6 +377,14 @@ button:hover {
     cursor: pointer;
 }
 
+li {
+    list-style-type: none;
+}
+
+.icon {
+    color: rgb(161, 185, 196);
+}
+
 /* body {
     height: 100vh;
 }

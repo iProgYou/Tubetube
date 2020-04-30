@@ -19,7 +19,7 @@ const UserNav = ({ currentUser,logout }) => {
         <Link className={styles.signIn} to="/signin">
             <MdAccountCircle 
                 size={28}
-                className={styles.accIcon}
+                className="icon"
             />
             <div>SIGN IN</div>
         </Link>

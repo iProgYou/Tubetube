@@ -9,7 +9,7 @@
     width: 105px;
     height: 40px;
     /* /* border-radius: 3px; */
-    color: #6E7E85;
+    color: rgb(161, 185, 196);
     padding-right: 15px;
     text-align: center;
     font-size: 16px;
@@ -20,10 +20,6 @@
     border-radius: 4px;
     font-weight: bold;
      
-}
-
-.accIcon {
-    color: #6E7E85;
 }
 
 a {

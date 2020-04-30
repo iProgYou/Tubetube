@@ -1,0 +1,115 @@
+.iconContainer {
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+    height: 60px;
+    width: 40px;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 32px;
+    background-color: #248232;
+    color: white;
+    border-radius: 50%;
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+.biggerIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: #248232;
+    color: white;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.dropdown {
+    position: absolute;
+    top: 9vh;
+    right: 16px;
+    height: 317px;
+    width: 298px;
+    background-color: #393E41;
+}
+
+.headSection {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 71px;
+    padding-left: 15px;
+    border: solid;
+    border-color: #6E7E85;
+    /* columns: white; */
+    border-width: 1px;
+    color: rgb(161, 185, 196);
+    /* border-top: ; */
+}
+
+h3 {
+    padding-bottom: 7px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+div > p {
+    font-size: 14px;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #393E41;
+    height: 246px;
+    color: black;
+    border: solid;
+    border-color: #6E7E85;
+    color: rgb(161, 185, 196);
+    /* columns: white; */
+    border-width: 1px;
+    /* border-top: ; */
+    
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    color: rgb(161, 185, 196);
+    font-size: 18px;
+}
+
+a > div {
+    padding-left: 20px;
+}
+
+/* text color: rgb(161, 185, 196) 
+    border color: #6E7E85
+    icon color same as text
+*/
+/* 
+.fullscreen {
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+} */
