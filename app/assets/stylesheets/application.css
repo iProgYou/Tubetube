@@ -377,6 +377,10 @@ button:hover {
     cursor: pointer;
 }
 
+button:focus {
+    border-color: rgb(161, 185, 196);
+}
+
 li {
     list-style-type: none;
 }

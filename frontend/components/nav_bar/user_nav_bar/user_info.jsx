@@ -67,24 +67,24 @@ class UserInfo extends React.Component {
                         </div>
                     </div>
                     <div className={styles.main}>
-                        <Link onClick={this.handleClick} to="/">
+                        <Link className={styles.link} onClick={this.handleClick} to="/">
                             <MdHome 
                                 size={28}
-                                className="icon"
+                                className={`icon ${styles.dropdownIcon}`}
                             />
                             <div>Home</div>
                         </Link>
-                        <Link onClick={this.handleClick} to="/">
+                        <Link className={styles.link} onClick={this.handleClick} to="/">
                             <BsCameraVideoFill 
                                 size={28}
-                                className="icon"
+                                className={`icon ${styles.dropdownIcon}`}
                             />
                             <div>Upload</div>
                         </Link>
-                        <Link onClick={this.props.logout} to="/">
+                        <Link className={styles.link} onClick={this.props.logout} to="/">
                             <GoSignOut 
                                 size={28}
-                                className="icon"
+                                className={`icon ${styles.dropdownIcon}`}
                             />
                             <div>Sign Out</div>
                         </Link>
@@ -100,7 +100,7 @@ class UserInfo extends React.Component {
 
         return(
             <div className={styles.iconContainer} >
-                <div ref={node => this.icon = node} className={styles.icon} onClick={this.handleClick}>{this.props.currentUser.username[0]}</div>
+                <div ref={node => this.icon = node} className={styles.letterIcon} onClick={this.handleClick}>{this.props.currentUser.username[0]}</div>
                 {content}
             </div>
         )

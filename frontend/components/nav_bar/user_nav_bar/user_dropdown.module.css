@@ -1,14 +1,15 @@
 .iconContainer {
     /* position: relative; */
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     padding-right: 15px;
     height: 60px;
-    width: 40px;
+    /* width: 40px; */
+    width: 134px;
 }
 
-.icon {
+.letterIcon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,9 +18,10 @@
     background-color: #248232;
     color: white;
     border-radius: 50%;
+    
 }
 
-.icon:hover {
+.letterIcon:hover {
     cursor: pointer;
 }
 
@@ -85,18 +87,28 @@ div > p {
     
 }
 
-a {
+.link {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     color: rgb(161, 185, 196);
     font-size: 18px;
+    height: 100%;
+    width: 100%;
 }
 
-a > div {
-    padding-left: 20px;
+.link:hover {
+    background-color: rgb(47, 55, 59);
 }
+
+.dropdownIcon {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* a > div {
+    padding-left: 20px;
+} */
 
 /* text color: rgb(161, 185, 196) 
     border color: #6E7E85

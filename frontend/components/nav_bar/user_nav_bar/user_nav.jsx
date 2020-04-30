@@ -21,7 +21,7 @@ const UserNav = ({ currentUser,logout }) => {
                 size={28}
                 className="icon"
             />
-            <div>SIGN IN</div>
+            <div className={styles.text}>SIGN IN</div>
         </Link>
     )
     return <>{content}</>

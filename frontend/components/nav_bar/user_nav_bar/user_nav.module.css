@@ -4,13 +4,14 @@
 
 .signIn {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     /* width: 105px; */
     height: 40px;
+    width: 115px;
     /* /* border-radius: 3px; */
     color: rgb(161, 185, 196);
-    padding-right: 15px;
+    /* padding-right: 15px; */
     text-align: center;
     font-size: 16px;
     border-color: #6E7E85;
@@ -19,7 +20,15 @@
     margin: 15px;
     border-radius: 4px;
     font-weight: bold;
-     
+     /* 14px */
+}
+
+.signin > a {
+
+}
+
+.text {
+    padding-left: 8px;
 }
 
 a {

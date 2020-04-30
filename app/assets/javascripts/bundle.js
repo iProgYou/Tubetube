@@ -636,23 +636,26 @@ var UserInfo = /*#__PURE__*/function (_React$Component) {
       }, this.props.currentUser.username[0]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.currentUser.username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.currentUser.email))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.main
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: _user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.link,
         onClick: this.handleClick,
         to: "/"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_md__WEBPACK_IMPORTED_MODULE_3__["MdHome"], {
         size: 28,
-        className: "icon"
+        className: "icon ".concat(_user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.dropdownIcon)
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: _user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.link,
         onClick: this.handleClick,
         to: "/"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_bs__WEBPACK_IMPORTED_MODULE_5__["BsCameraVideoFill"], {
         size: 28,
-        className: "icon"
+        className: "icon ".concat(_user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.dropdownIcon)
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Upload")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: _user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.link,
         onClick: this.props.logout,
         to: "/"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_go__WEBPACK_IMPORTED_MODULE_4__["GoSignOut"], {
         size: 28,
-        className: "icon"
+        className: "icon ".concat(_user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.dropdownIcon)
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Sign Out")))) : ""; // <h3>{this.props.currentUser.username}</h3>
       // <p>{this.props.currentUser.email}</p>
       // <Link onClick={this.props.logout} to="/">Sign Out</Link>
@@ -663,7 +666,7 @@ var UserInfo = /*#__PURE__*/function (_React$Component) {
         ref: function ref(node) {
           return _this2.icon = node;
         },
-        className: _user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.icon,
+        className: _user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.letterIcon,
         onClick: this.handleClick
       }, this.props.currentUser.username[0]), content);
     }
@@ -714,7 +717,9 @@ var UserNav = function UserNav(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_md__WEBPACK_IMPORTED_MODULE_4__["MdAccountCircle"], {
     size: 28,
     className: "icon"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "SIGN IN"));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _user_nav_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.text
+  }, "SIGN IN"));
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, content);
 };
 
@@ -1705,15 +1710,17 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "._3FapX-GYz2cZEf3MocgHre {\n    /* position: relative; */\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding-right: 15px;\n    height: 60px;\n    width: 40px;\n}\n\n._3LwcKlCbmsGMbI5Q5qzrcQ {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 32px;\n    width: 32px;\n    background-color: #248232;\n    color: white;\n    border-radius: 50%;\n}\n\n._3LwcKlCbmsGMbI5Q5qzrcQ:hover {\n    cursor: pointer;\n}\n\n.ZaGcFmnh5A-bKGm5HqCBp {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 40px;\n    width: 40px;\n    background-color: #248232;\n    color: white;\n    border-radius: 50%;\n    margin-right: 15px;\n}\n\n.ck7urkJRYRsAHPF9OWryk {\n    position: absolute;\n    top: 9vh;\n    right: 16px;\n    height: 317px;\n    width: 298px;\n    background-color: #393E41;\n}\n\n._2dEXrXZ3AdjYhovXAXXrs4 {\n    display: flex;\n    justify-content: start;\n    align-items: center;\n    height: 71px;\n    padding-left: 15px;\n    border: solid;\n    border-color: #6E7E85;\n    /* columns: white; */\n    border-width: 1px;\n    color: rgb(161, 185, 196);\n    /* border-top: ; */\n}\n\nh3 {\n    padding-bottom: 7px;\n    font-weight: bolder;\n    font-size: 20px;\n}\n\ndiv > p {\n    font-size: 14px;\n}\n\n._1hYjzdbVobo9EPV_YQOSgr {\n    display: flex;\n    justify-content: space-around;\n    align-items: flex-start;\n    flex-direction: column;\n    background-color: #393E41;\n    height: 246px;\n    color: black;\n    border: solid;\n    border-color: #6E7E85;\n    color: rgb(161, 185, 196);\n    /* columns: white; */\n    border-width: 1px;\n    /* border-top: ; */\n    \n}\n\na {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding-left: 20px;\n    color: rgb(161, 185, 196);\n    font-size: 18px;\n}\n\na > div {\n    padding-left: 20px;\n}\n\n/* text color: rgb(161, 185, 196) \n    border color: #6E7E85\n    icon color same as text\n*/\n/* \n.fullscreen {\n    position: absolute;\n    display: flex;\n    justify-content: start;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n} */", ""]);
+exports.push([module.i, "._3FapX-GYz2cZEf3MocgHre {\n    /* position: relative; */\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    padding-right: 15px;\n    height: 60px;\n    /* width: 40px; */\n    width: 134px;\n}\n\n._278CTsWpTpMSISd9J7QolU {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 32px;\n    width: 32px;\n    background-color: #248232;\n    color: white;\n    border-radius: 50%;\n    \n}\n\n._278CTsWpTpMSISd9J7QolU:hover {\n    cursor: pointer;\n}\n\n.ZaGcFmnh5A-bKGm5HqCBp {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 40px;\n    width: 40px;\n    background-color: #248232;\n    color: white;\n    border-radius: 50%;\n    margin-right: 15px;\n}\n\n.ck7urkJRYRsAHPF9OWryk {\n    position: absolute;\n    top: 9vh;\n    right: 16px;\n    height: 317px;\n    width: 298px;\n    background-color: #393E41;\n}\n\n._2dEXrXZ3AdjYhovXAXXrs4 {\n    display: flex;\n    justify-content: start;\n    align-items: center;\n    height: 71px;\n    padding-left: 15px;\n    border: solid;\n    border-color: #6E7E85;\n    /* columns: white; */\n    border-width: 1px;\n    color: rgb(161, 185, 196);\n    /* border-top: ; */\n}\n\nh3 {\n    padding-bottom: 7px;\n    font-weight: bolder;\n    font-size: 20px;\n}\n\ndiv > p {\n    font-size: 14px;\n}\n\n._1hYjzdbVobo9EPV_YQOSgr {\n    display: flex;\n    justify-content: space-around;\n    align-items: flex-start;\n    flex-direction: column;\n    background-color: #393E41;\n    height: 246px;\n    color: black;\n    border: solid;\n    border-color: #6E7E85;\n    color: rgb(161, 185, 196);\n    /* columns: white; */\n    border-width: 1px;\n    /* border-top: ; */\n    \n}\n\n._27O-vRt39R8dLDr_XTdnpZ {\n    display: flex;\n    justify-content: start;\n    align-items: center;\n    /* padding-left: 20px; */\n    color: rgb(161, 185, 196);\n    font-size: 18px;\n    height: 100%;\n    width: 100%;\n}\n\n._27O-vRt39R8dLDr_XTdnpZ:hover {\n    background-color: rgb(47, 55, 59);\n}\n\n._2gZE0ppk58GWtS53VLcwE- {\n    padding-left: 15px;\n    padding-right: 15px;\n}\n/* a > div {\n    padding-left: 20px;\n} */\n\n/* text color: rgb(161, 185, 196) \n    border color: #6E7E85\n    icon color same as text\n*/\n/* \n.fullscreen {\n    position: absolute;\n    display: flex;\n    justify-content: start;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n} */", ""]);
 // Exports
 exports.locals = {
 	"iconContainer": "_3FapX-GYz2cZEf3MocgHre",
-	"icon": "_3LwcKlCbmsGMbI5Q5qzrcQ",
+	"letterIcon": "_278CTsWpTpMSISd9J7QolU",
 	"biggerIcon": "ZaGcFmnh5A-bKGm5HqCBp",
 	"dropdown": "ck7urkJRYRsAHPF9OWryk",
 	"headSection": "_2dEXrXZ3AdjYhovXAXXrs4",
-	"main": "_1hYjzdbVobo9EPV_YQOSgr"
+	"main": "_1hYjzdbVobo9EPV_YQOSgr",
+	"link": "_27O-vRt39R8dLDr_XTdnpZ",
+	"dropdownIcon": "_2gZE0ppk58GWtS53VLcwE-"
 };
 module.exports = exports;
 
@@ -1731,10 +1738,12 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "/* .userIcon {\n    padding-left: 15px;\n} */\n\n._349eDF7lcxHxeJq36MyHSo {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    /* width: 105px; */\n    height: 40px;\n    /* /* border-radius: 3px; */\n    color: rgb(161, 185, 196);\n    padding-right: 15px;\n    text-align: center;\n    font-size: 16px;\n    border-color: #6E7E85;\n    border-style: solid;\n    border-width: 2px;\n    margin: 15px;\n    border-radius: 4px;\n    font-weight: bold;\n     \n}\n\na {\n    text-decoration: none;\n}", ""]);
+exports.push([module.i, "/* .userIcon {\n    padding-left: 15px;\n} */\n\n._349eDF7lcxHxeJq36MyHSo {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    /* width: 105px; */\n    height: 40px;\n    width: 115px;\n    /* /* border-radius: 3px; */\n    color: rgb(161, 185, 196);\n    /* padding-right: 15px; */\n    text-align: center;\n    font-size: 16px;\n    border-color: #6E7E85;\n    border-style: solid;\n    border-width: 2px;\n    margin: 15px;\n    border-radius: 4px;\n    font-weight: bold;\n     /* 14px */\n}\n\n._1GX-8d8j9qzVEHZbInf1D8 > a {\n\n}\n\n._2FvcCBP24MRs_a2XvSSzYh {\n    padding-left: 8px;\n}\n\na {\n    text-decoration: none;\n}", ""]);
 // Exports
 exports.locals = {
-	"signIn": "_349eDF7lcxHxeJq36MyHSo"
+	"signIn": "_349eDF7lcxHxeJq36MyHSo",
+	"signin": "_1GX-8d8j9qzVEHZbInf1D8",
+	"text": "_2FvcCBP24MRs_a2XvSSzYh"
 };
 module.exports = exports;
 
