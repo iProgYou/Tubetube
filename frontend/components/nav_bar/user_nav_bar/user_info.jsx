@@ -43,14 +43,14 @@ class UserInfo extends React.Component {
                         </div>
                     </div>
                     <div className={styles.main}>
-                        <Link to="/">
+                        <Link onClick={this.handleClick} to="/">
                             <MdHome 
                                 size={28}
                                 className="icon"
                             />
                             <div>Home</div>
                         </Link>
-                        <Link to="/">
+                        <Link onClick={this.handleClick} to="/">
                             <BsCameraVideoFill 
                                 size={28}
                                 className="icon"

@@ -603,11 +603,13 @@ var UserInfo = /*#__PURE__*/function (_React$Component) {
       }, this.props.currentUser.username[0]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.currentUser.username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.currentUser.email))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _user_dropdown_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.main
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        onClick: this.handleClick,
         to: "/"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_md__WEBPACK_IMPORTED_MODULE_3__["MdHome"], {
         size: 28,
         className: "icon"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        onClick: this.handleClick,
         to: "/"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_bs__WEBPACK_IMPORTED_MODULE_5__["BsCameraVideoFill"], {
         size: 28,
@@ -1650,7 +1652,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "/* .userIcon {\n    padding-left: 15px;\n} */\n\n._349eDF7lcxHxeJq36MyHSo {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    width: 105px;\n    height: 40px;\n    /* /* border-radius: 3px; */\n    color: rgb(161, 185, 196);\n    padding-right: 15px;\n    text-align: center;\n    font-size: 16px;\n    border-color: #6E7E85;\n    border-style: solid;\n    border-width: 2px;\n    margin: 15px;\n    border-radius: 4px;\n    font-weight: bold;\n     \n}\n\na {\n    text-decoration: none;\n}", ""]);
+exports.push([module.i, "/* .userIcon {\n    padding-left: 15px;\n} */\n\n._349eDF7lcxHxeJq36MyHSo {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    /* width: 105px; */\n    height: 40px;\n    /* /* border-radius: 3px; */\n    color: rgb(161, 185, 196);\n    padding-right: 15px;\n    text-align: center;\n    font-size: 16px;\n    border-color: #6E7E85;\n    border-style: solid;\n    border-width: 2px;\n    margin: 15px;\n    border-radius: 4px;\n    font-weight: bold;\n     \n}\n\na {\n    text-decoration: none;\n}", ""]);
 // Exports
 exports.locals = {
 	"signIn": "_349eDF7lcxHxeJq36MyHSo"
