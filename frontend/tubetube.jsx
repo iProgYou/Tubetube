@@ -5,6 +5,7 @@ import configureStore from "./store/store";
 
 // --test
 import { login,logout,signup } from "./actions/session_actions";
+import { fetchVideo,fetchVideos,deleteVideo } from "./actions/video_actions";
 // --test
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,6 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.login = login;
     window.logout = logout;
     window.signup = signup;
+    window.fetchVideos = fetchVideos;
+    window.fetchVideo = fetchVideo;
+    window.deleteVideo = deleteVideo;
     // --test
 
     ReactDOM.render(<Root store={store}/>, root);
