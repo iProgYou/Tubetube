@@ -17,6 +17,7 @@ class Video < ApplicationRecord
         class_name: "User"
 
         
-    has_one_attached :video
+    has_one_attached :video_file
+    has_one_attached :thumbnail
 
 end

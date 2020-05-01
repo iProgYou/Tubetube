@@ -147,4 +147,47 @@ Video.create({
     description: "The OG"
 })
 
-
+thumb1 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/1.jpg')
+vid1 = open('') #baby lauhghin
+thumb2 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/2.jpg')
+vid2 = open('') # 50 hours opn leve1
+thumb3 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/3.jpg')
+vid3 = open('') #Rick astle1
+thumb4 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/4.jpg')
+vid4 = open('') # overwatc1
+thumb5 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/5.jpg')
+vid5 = open('') #Joe pas1
+thumb6 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/6.jpg')
+vid6 = open('') # Super warp zones
+thumb7 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/7.jpg')
+vid7 = open('') #5 mmusic theory
+thumb8 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/8.jpg')
+vid8 = open('') # Easy baked ziti
+thumb9 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/9.jpg')
+vid9 = open('') #Wes mont
+thumb10 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/10.jpg')
+vid10 = open('') # new york pizza
+thumb11 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/11.jpg')
+vid11 = open('') # Keyboard cat REincarnated
+thumb12 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/12.jpg')
+vid12 = open('') # John pizzarellu
+thumb13 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/13.jpg')
+vid13 = open('')# WR super mario
+thumb14 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/14.jpg')
+vid14 = open('')#HEYAYEAH
+thumb15 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/15.jpg')
+vid15 = open('')# Charliechmidts keyboard
+thumb16 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/16.jpg')
+vid16 = open('')#Dramatic squirel
+thumb17 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/17.jpg')
+vid17 = open('') # Yardbird suite
+thumb18 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/18.jpg')
+vid18 = open('') #TSM
+thumb19 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/19.jpg')
+vid19 = open('')# 30 mouth watering
+thumb20 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/20.jpg')
+vid20 = open('')# charlie bit my finger
+thumb21 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/21.jpg')
+vid21 = open('') # 25 unusual ways
+thumb22 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/22.jpg')
+vid22 = open('') # Chocolate rain

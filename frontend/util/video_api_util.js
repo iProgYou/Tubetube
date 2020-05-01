@@ -12,7 +12,7 @@ export const fetchVideo = videoId => (
 
 export const createVideo = video => (
     $.ajax({
-        url: '/api/videos',
+        url: `/api/users/${video.creator_id}/videos`,
         method: 'POST',
         data: { video }
     })
@@ -20,15 +20,15 @@ export const createVideo = video => (
 
 export const updateVideo = video => (
     $.ajax({
-        url: `/api/videos/${video.id}`,
+        url: `/api/users/${video.creator_id}/videos/${video.id}`,
         method: 'PATCH',
         data: { video }
     })
 )
 
-export const deleteVideo = videoId => (
+export const deleteVideo = video => (
     $.ajax({
-        url: `/api/videos/${videoId}`,
+        url: `/api/users/${video.creator_id}/videos/${video.id}`,
         method: 'DELETE'
     })
 )
