@@ -1,7 +1,24 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  username        :string           not null
+#  password_digest :string           not null
+#  email           :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class User < ApplicationRecord
     validates :username, :session_token, uniqueness: true, presence: true
     validates :password, length: { minimum: 6 }, allow_nil: true
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+
+    has_many :videos,
+        foreign_key: :creator_id,
+        class_name: "Video",
+        dependent: :destroy
 
     attr_reader :password
 
