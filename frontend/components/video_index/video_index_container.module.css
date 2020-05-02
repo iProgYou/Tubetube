@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     padding: 20px;
     width: 90%;
+    /* justify-content: center; */
 }
 
 /* Flex grid or flex wrap? */

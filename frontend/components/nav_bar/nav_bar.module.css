@@ -6,5 +6,6 @@
     height: 8vh;
     background-color: #393E41;
     color: rgb(36, 41, 44);
+    position: fixed;
 }
 

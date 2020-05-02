@@ -391,8 +391,8 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px;
-    width: 40px;
+    height: 36px;
+    width: 36px;
     background-color: #248232;
     color: white;
     border-radius: 50%;

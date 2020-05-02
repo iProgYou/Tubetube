@@ -16,9 +16,11 @@ const VideoIndexItem = ({ video }) => {
         </div>
         <div className={styles.thumbText}>
             <div className="biggerIcon">{video.creator[0].toUpperCase()}</div>
-            <div className={styles.head}>{video.title}</div>
-            <div>{video.creator}</div> 
-            <div>{video.plays}</div>
+            <div>
+                <div className={styles.head}>{video.title}</div>
+                <div>{video.creator}</div> 
+                <div>{video.plays}</div>
+            </div>
         </div>
     </div>
     )

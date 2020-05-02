@@ -1482,9 +1482,9 @@ var VideoIndexItem = function VideoIndexItem(_ref) {
     className: _video_index_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.thumbText
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "biggerIcon"
-  }, video.creator[0].toUpperCase()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, video.creator[0].toUpperCase()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _video_index_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.head
-  }, video.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, video.creator), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, video.plays)));
+  }, video.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, video.creator), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, video.plays))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (VideoIndexItem);
@@ -2075,7 +2075,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "._2bgbaqmNKj0cuUI5nexLq2 {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 100%;\n    height: 8vh;\n    background-color: #393E41;\n    color: rgb(36, 41, 44);\n}\n\n", ""]);
+exports.push([module.i, "._2bgbaqmNKj0cuUI5nexLq2 {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 100%;\n    height: 8vh;\n    background-color: #393E41;\n    color: rgb(36, 41, 44);\n    position: fixed;\n}\n\n", ""]);
 // Exports
 exports.locals = {
 	"navContainer": "_2bgbaqmNKj0cuUI5nexLq2"
@@ -2196,7 +2196,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "._1ZAzLBpcYKaMBJDB-1CjuY {\n    /* GOAL: height: 300px; */\n    /* height: 70vh; */\n    /* GOAL: width: 359px; */\n    height: 300px;\n    width: 359px;\n    padding-left: 10px;\n    padding-right: 10px;\n    padding-bottom: 40px;\n}\n\n._1wgW1JpiNsqwyZJYkW2O2l {\n    /* max-width: 315px;\n    height: 100%; */\n    display: block;\n    width: 100%;\n    height: 100%;\n    float: left;}\n\n._2zUnO7wxkBHjGEn1r4JaGU {\n    height: 201px;\n    width: 100%;\n}\n\n._1wzKw6rJZJqisH5cqVMRAP {\n    width: 100%;\n    height: 96px;\n    color: rgb(161, 185, 196);\n    font-size: 20px;\n}\n\n._1wxWjmpvBkrCkcfwObjyDd {\n    font-size: 30px;\n    font-weight: 900;\n}\n\n/* thumbnail in youtube:\n    pic: w 359 h 201\n    textbox: w 311 (doesnt includ icon) h 96 \n    between: 3ish pixels\n    padding: below: 40ishpx sides 10px */\n\n    /* screen width: 1598, vid width 361 */", ""]);
+exports.push([module.i, "._1ZAzLBpcYKaMBJDB-1CjuY {\n    /* GOAL: height: 300px; */\n    /* height: 70vh; */\n    /* GOAL: width: 359px; */\n    height: 300px;\n    width: 359px;\n    padding-left: 10px;\n    padding-right: 10px;\n    padding-bottom: 40px;\n}\n\n._1wgW1JpiNsqwyZJYkW2O2l {\n    /* max-width: 315px;\n    height: 100%; */\n    display: block;\n    width: 100%;\n    height: 100%;\n    float: left;}\n\n._2zUnO7wxkBHjGEn1r4JaGU {\n    height: 201px;\n    width: 100%;\n}\n\n._1wzKw6rJZJqisH5cqVMRAP {\n    display: flex;\n    justify-content: space-between;\n    width: 100%;\n    height: 96px;\n    color: rgb(161, 185, 196);\n    font-size: 20px;\n}\n\n._1wxWjmpvBkrCkcfwObjyDd {\n    font-size: 0.8em;\n    font-weight: 900;\n}\n\n/* .textContainer {\n\n} */\n/* thumbnail in youtube:\n    pic: w 359 h 201\n    textbox: w 311 (doesnt includ icon) h 96 \n    between: 3ish pixels\n    padding: below: 40ishpx sides 10px */\n\n    /* screen width: 1598, vid width 361 */", ""]);
 // Exports
 exports.locals = {
 	"item": "_1ZAzLBpcYKaMBJDB-1CjuY",
@@ -2221,7 +2221,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "._20pqIBo-HtcIe73COkIuLG {\n    display: flex;\n    flex-wrap: wrap;\n    padding: 20px;\n    width: 90%;\n}\n\n/* Flex grid or flex wrap? */", ""]);
+exports.push([module.i, "._20pqIBo-HtcIe73COkIuLG {\n    display: flex;\n    flex-wrap: wrap;\n    padding: 20px;\n    width: 90%;\n    /* justify-content: center; */\n}\n\n/* Flex grid or flex wrap? */", ""]);
 // Exports
 exports.locals = {
 	"videoIndexContainer": "_20pqIBo-HtcIe73COkIuLG"
