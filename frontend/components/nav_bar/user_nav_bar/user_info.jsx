@@ -60,7 +60,7 @@ class UserInfo extends React.Component {
         const content = dropdownDisplay ? (
                 <div ref={node => this.dropdown = node} className={styles.dropdown}>
                     <div className={styles.headSection}>
-                        <div className={styles.biggerIcon}>{this.props.currentUser.username[0]}</div>
+                        <div className="biggerIcon">{this.props.currentUser.username[0].toUpperCase()}</div>
                         <div>
                             <h3>{this.props.currentUser.username}</h3>
                             <p>{this.props.currentUser.email}</p>

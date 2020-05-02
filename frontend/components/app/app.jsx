@@ -2,10 +2,12 @@ import React from 'react';
 import NavBar from "../nav_bar/nav_bar";
 import LoginFormContainer from "../session/signin_form_container";
 import SignupFormContainer from "../session/signup_form_container";
+import VideoIndexContainer from '../video_index/video_index_container';
 import {Route} from 'react-router-dom';
 // import {AuthRoute} from '../util/route_util';
 
 import styles from './app_style.module.css'
+import VideoIndex from '../video_index/video_index';
 
 const App = () => (
     <div>
@@ -14,6 +16,7 @@ const App = () => (
             <NavBar />
         </header>
 
+        <VideoIndexContainer />
         
         {/* <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} /> */}

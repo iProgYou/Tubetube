@@ -1,0 +1,8 @@
+.videoIndexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 90%;
+}
+
+/* Flex grid or flex wrap? */
