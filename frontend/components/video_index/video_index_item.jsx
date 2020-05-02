@@ -3,7 +3,7 @@ import styles from './video_index.module.css'
 
 const VideoIndexItem = ({ video }) => {
     
-    console.log(video);
+    // console.log(video);
     // Clickin on creator should eventually link to page
     return(
     <div className={styles.item}>

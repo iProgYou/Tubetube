@@ -9,20 +9,20 @@ const receiveVideos = videos => ({
 })
 
 const receiveVideo = video => ({
-    type: RECEIVE_VIDEOS,
+    type: RECEIVE_VIDEO,
     video
 })
 
 const removeVideo = videoId => ({
-    type: REMOVE_VIDEOS,
+    type: REMOVE_VIDEO,
     videoId
 })
 
 export const fetchVideos = () => dispatch => VideoAPIUtil.fetchVideos()
     .then(videos => dispatch(receiveVideos(videos)))
 
-export const fetchVideo = () => dispatch => VideoAPIUtil.fetchVideo()
-    .then(video => dispatch(receiveVideos(video)))
+export const fetchVideo = videoId => dispatch => VideoAPIUtil.fetchVideo(videoId)
+    .then(video => dispatch(receiveVideo(video)))
 
 export const createVideo = video => dispatch => VideoAPIUtil.createVideo(video)
     .then(video => dispatch(receiveVideo(video)))

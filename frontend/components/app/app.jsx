@@ -15,11 +15,10 @@ const App = () => (
             {/* <h1 className={styles.header}>TubeTube</h1> */}
             <NavBar />
         </header>
-
+        <div></div>
         <VideoIndexContainer />
         
-        {/* <AuthRoute path="/login" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} /> */}
+
     </div>
 )
 

@@ -189,14 +189,14 @@ var receiveVideos = function receiveVideos(videos) {
 
 var receiveVideo = function receiveVideo(video) {
   return {
-    type: RECEIVE_VIDEOS,
+    type: RECEIVE_VIDEO,
     video: video
   };
 };
 
 var removeVideo = function removeVideo(videoId) {
   return {
-    type: REMOVE_VIDEOS,
+    type: REMOVE_VIDEO,
     videoId: videoId
   };
 };
@@ -208,10 +208,10 @@ var fetchVideos = function fetchVideos() {
     });
   };
 };
-var fetchVideo = function fetchVideo() {
+var fetchVideo = function fetchVideo(videoId) {
   return function (dispatch) {
-    return _util_video_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchVideo"]().then(function (video) {
-      return dispatch(receiveVideos(video));
+    return _util_video_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchVideo"](videoId).then(function (video) {
+      return dispatch(receiveVideo(video));
     });
   };
 };
@@ -269,7 +269,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar__WEBPACK_IMPORTED_MODULE_1__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_video_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], null));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar__WEBPACK_IMPORTED_MODULE_1__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_index_video_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -1468,8 +1468,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var VideoIndexItem = function VideoIndexItem(_ref) {
   var video = _ref.video;
-  console.log(video); // Clickin on creator should eventually link to page
-
+  // console.log(video);
+  // Clickin on creator should eventually link to page
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _video_index_module_css__WEBPACK_IMPORTED_MODULE_1___default.a.item
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2221,7 +2221,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "._20pqIBo-HtcIe73COkIuLG {\n    display: flex;\n    flex-wrap: wrap;\n    padding: 20px;\n    width: 90%;\n    /* justify-content: center; */\n}\n\n/* Flex grid or flex wrap? */", ""]);
+exports.push([module.i, "._20pqIBo-HtcIe73COkIuLG {\n    display: flex;\n    flex-wrap: wrap;\n    padding: 20px;\n    width: 90%;\n    /* justify-content: center; */\n    padding-top: 8vh;\n}\n\n/* Flex grid or flex wrap? */", ""]);
 // Exports
 exports.locals = {
 	"videoIndexContainer": "_20pqIBo-HtcIe73COkIuLG"
