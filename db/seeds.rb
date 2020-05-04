@@ -61,14 +61,14 @@ video6 = Video.create({
 
 video7 = Video.create({
     creator_id: rex.id,
-    title: "The 5 Music Theory_Composition Books That Most Influenced Me",
+    title: "The 5 Music Theory Composition Books That Most Influenced Me",
     description: "Music theory is great, Here are some books that influenced me",
     plays: rand(1000)
 })
 
 video8 = Video.create({
     creator_id: rex.id,
-    title: "EASY BAKED ZITI PASTA RECIPE _ SAM THE COOKING GUY 4K",
+    title: "EASY BAKED ZITI PASTA RECIPE SAM THE COOKING GUY 4K",
     description: "mmmmmmmm me love bake ziti",
     plays: rand(1000)
 })
@@ -103,7 +103,7 @@ video12 = Video.create({
 
 video13 = Video.create({
     creator_id: courtney.id,
-    title: "[WR] Super Mario Bros. Any% Speedrun in 4_55.646",
+    title: "[WR] Super Mario Bros. Any% Speedrun in 4:55.646",
     description: "World record B) B) B) B) B)",
     plays: rand(1000)
 })

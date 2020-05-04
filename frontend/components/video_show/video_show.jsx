@@ -7,12 +7,15 @@ class VideoShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchVideos()
+        // this.props.fetchVideos()
+        // debugger
         this.props.fetchVideo(this.props.match.params.videoId)
     }
 
     render() {
+        // debugger
         console.log(this.props)
+        if (!this.props.currentVideo) return null;
         return (
             <div>
                 <VideoDisplay 

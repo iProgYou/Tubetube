@@ -3,8 +3,13 @@
     /* height: 70vh; */
     /* GOAL: width: 359px; */
     height: 300px;
-    width: 25%;
+    width: calc(25% - 1rem);
+    padding-right: .5rem;
+    padding-left: .5rem;
     padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .thumbnail {
@@ -17,8 +22,6 @@
 }
 .thumbnailContainer {
     height: 201px;
-    padding-left: 10px;
-    padding-right: 10px;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -27,7 +30,7 @@
 
 .thumbText {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     width: 100%;
     height: 60px;
     color: rgb(161, 185, 196);
@@ -37,6 +40,13 @@
 .head {
     font-size: 1rem;
     font-weight: 900;
+    /* text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    line-height: 1rem;
+    max-height: 2rem;
+    overflow: hidden;
+    white-space: pre-wrap; */
+    
 }
 
 /* .textContainer {

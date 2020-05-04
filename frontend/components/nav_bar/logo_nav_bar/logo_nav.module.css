@@ -1,6 +1,13 @@
 .logoContainer {
-    padding-left: 15px;
+    padding-left: 17px;
+    width: 11.5%;
+    display: flex;
+    justify-content: space-between;
     /* display: block;
     height: 24;
     width: 80; */
+}
+
+.hamburgerToggle {
+    
 }

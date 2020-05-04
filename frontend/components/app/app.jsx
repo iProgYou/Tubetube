@@ -1,7 +1,5 @@
 import React from 'react';
 import NavBar from "../nav_bar/nav_bar";
-import LoginFormContainer from "../session/signin_form_container";
-import SignupFormContainer from "../session/signup_form_container";
 import VideoIndexContainer from '../video_index/video_index_container';
 import VideoShowContainer from "../video_show/video_show_container";
 import {Route} from 'react-router-dom';
@@ -22,6 +20,6 @@ const App = () => (
         
 
     </div>
-)
+);
 
 export default App;
