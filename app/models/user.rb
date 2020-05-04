@@ -14,6 +14,7 @@ class User < ApplicationRecord
     validates :username, :session_token, uniqueness: true, presence: true
     validates :password, length: { minimum: 6 }, allow_nil: true
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+    validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }
 
     has_many :videos,
         foreign_key: :creator_id,

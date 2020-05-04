@@ -5,12 +5,12 @@ import { fetchVideo } from "../../actions/video_actions";
 
 const mapSTP = (state, ownProps) => ({
     videos: state.entities.videos,
-    // video: state.entities.videos[]
+    currentVideo: state.entities.videos[ownProps.match.params.videoId]
 })
 
 const mapDTP = dispatch => ({
     // fetchVideos = Dont need because they are already in state?
-    fetchVideo = videoId = dispatch(fetchVideo(videoId))
+    fetchVideo: videoId => dispatch(fetchVideo(videoId))
 
 })
 

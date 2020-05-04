@@ -388,17 +388,22 @@ li {
 }
 
 .biggerIcon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 36px;
     width: 36px;
+    font-size:.9rem;
+    line-height: 36px;
+    text-align:center;
+    vertical-align: middle;
     background-color: #248232;
     color: white;
     border-radius: 50%;
     margin-right: 15px;
 }
 
+/* .secretDiv {
+    padding-top: 10vh;
+
+} */
 /* p {
     color: ;
 }

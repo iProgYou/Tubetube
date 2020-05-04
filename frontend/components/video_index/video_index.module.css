@@ -3,9 +3,7 @@
     /* height: 70vh; */
     /* GOAL: width: 359px; */
     height: 300px;
-    width: 359px;
-    padding-left: 10px;
-    padding-right: 10px;
+    width: 25%;
     padding-bottom: 40px;
 }
 
@@ -13,26 +11,31 @@
     /* max-width: 315px;
     height: 100%; */
     display: block;
-    width: 100%;
-    height: 100%;
-    float: left;}
-
+    max-width: 100%;
+    max-height:201px;
+    margin: 0 auto;
+}
 .thumbnailContainer {
     height: 201px;
-    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom: 1rem;
 }
 
 .thumbText {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 96px;
+    height: 60px;
     color: rgb(161, 185, 196);
-    font-size: 20px;
+    font-size: .9rem;
 }
 
 .head {
-    font-size: 0.8em;
+    font-size: 1rem;
     font-weight: 900;
 }
 
