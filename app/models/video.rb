@@ -11,6 +11,7 @@
 #  updated_at  :datetime         not null
 #
 class Video < ApplicationRecord
+    validates :title, :plays, presence: true
 
     belongs_to :creator,
         foreign_key: :creator_id,
@@ -24,7 +25,7 @@ class Video < ApplicationRecord
 
     def randomize_views
         self.plays = rand(1000)
-        self.save
+        # self.save
     end
 
     def increment_plays
