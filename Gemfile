@@ -27,6 +27,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'jquery-rails'
 
+# gem 'jquery-rails'
 gem 'aws-sdk-s3'
 
 
@@ -55,7 +56,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'jquery-rails'
 end
 
 group :test do

@@ -177,7 +177,7 @@ vid8 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/videos/8.mp4')
 thumb9 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/9.jpg')
 vid9 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/videos/9.mp4')
 
-thumb10 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/10.jpg')
+# thumb10 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/10.jpg')
 vid10 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/videos/10.mp4')
 
 thumb11 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/11.jpg')

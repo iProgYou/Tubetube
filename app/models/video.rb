@@ -21,12 +21,12 @@ class Video < ApplicationRecord
     has_one_attached :video_file
     has_one_attached :thumbnail
 
-    before_validation :randomize_views
+    # before_validation :randomize_views
 
-    def randomize_views
-        self.plays = rand(1000)
-        # self.save
-    end
+    # def randomize_views
+    #     self.plays = rand(1000)
+    #     # self.save
+    # end
 
     def increment_plays
         self.plays += 1
