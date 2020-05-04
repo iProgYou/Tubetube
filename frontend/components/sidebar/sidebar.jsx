@@ -10,7 +10,7 @@ const SideBar = props => {
         <section className={styles.sidebar}>
             <ul className={styles.unexpandedList}>
                 <li><Link to="/"></Link></li>
-                <li><Link to="/">Upload</Link></li>
+                <li><Link to="/upload">Upload</Link></li>
                 <li><Link to="/">Github</Link></li>
                 <li><Link to="/">Linkedin</Link></li>
                 <li><Link to="/">Author</Link></li>

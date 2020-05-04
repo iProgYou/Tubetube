@@ -1,0 +1,23 @@
+.videoForm {
+    background-color: #393E41;
+}
+
+.videoFormContainer {
+    width: 70%;
+    height: 80%;
+    margin: 0 auto;
+    padding-top: 10%;
+}
+
+.fileInputs {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.fileInputs > input {
+    height: 40%;
+    width: 40%;
+}

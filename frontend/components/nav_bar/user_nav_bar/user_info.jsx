@@ -74,7 +74,7 @@ class UserInfo extends React.Component {
                             />
                             <div>Home</div>
                         </Link>
-                        <Link className={styles.link} onClick={this.handleClick} to="/">
+                        <Link className={styles.link} onClick={this.handleClick} to="/upload">
                             <BsCameraVideoFill 
                                 size={28}
                                 className={`icon ${styles.dropdownIcon}`}
