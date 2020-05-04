@@ -29,7 +29,7 @@ class VideoForm extends React.Component {
         ) : (
             // need two buttons, delete and edit
             <>
-                <button onClick={e => handleDelete(e)}>Delete</button>
+                <button onClick={e => this.handleDelete(e)}>Delete</button>
                 <button>Edit</button>
             </>
         )
@@ -37,7 +37,7 @@ class VideoForm extends React.Component {
         return(
             <section className={styles.videoFormContainer}>
                 <h2>{this.props.formType}</h2>
-                <form className={styles.videoForm} onSubmit={handleSubmit}>
+                <form className={styles.videoForm} onSubmit={this.handleSubmit}>
                     <div className={styles.fileInputs}>
                         <input 
                             type="file"
