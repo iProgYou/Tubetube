@@ -24,6 +24,8 @@ video1 = Video.create({
     plays: rand(1000)
 })
 
+
+
 video2 = Video.create({
     creator_id: felicia.id,
     title: "It took the creator 50 HOURS to beat this level",

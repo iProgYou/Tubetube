@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './logo_nav.module.css';
-import SideBar from '../sidebar/sidebar';
+import SideBar from '../../sidebar/sidebar';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 
@@ -19,7 +19,7 @@ class LogoNav extends React.Component {
         return (
             <div className={styles.logoContainer}>
                 <GiHamburgerMenu
-                    // onClick affect expanded
+                    // onClick affects UI slice of state
                     className={styles.hamburgerToggle}
                     size={24}
                 />
@@ -28,6 +28,7 @@ class LogoNav extends React.Component {
                 </Link>
                 <div>
                     <SideBar expanded={this.state.expanded} />
+                    {/* this whole thing is fucked */}
                 </div>
             </div>
         )

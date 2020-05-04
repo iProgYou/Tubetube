@@ -1,5 +1,7 @@
 import React from 'react';
 import VideoDisplay from './video/video_display'
+import styles from './video_show.module.css';
+
 class VideoShow extends React.Component {
     constructor(props) {
         super(props)
@@ -17,12 +19,16 @@ class VideoShow extends React.Component {
         console.log(this.props)
         if (!this.props.currentVideo) return null;
         return (
-            <div>
-                <VideoDisplay 
-                    currentVideo={this.props.currentVideo}
-                />
-                {/* <Comments />
-                <Reccomended /> */}
+            <div className={styles.displayContainer}>
+                <div>
+                    <VideoDisplay 
+                        currentVideo={this.props.currentVideo}
+                    />
+                    {/* <Comments /> */}
+                </div>
+                <div>
+                {/* <Reccomended /> */}
+                </div>
             </div>
         )
     }
