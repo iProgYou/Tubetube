@@ -1685,6 +1685,7 @@ var VideoShow = /*#__PURE__*/function (_React$Component) {
   _createClass(VideoShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      this.props.fetchVideos();
       this.props.fetchVideo(this.props.match.params.videoId);
     }
   }, {
@@ -1732,7 +1733,9 @@ var mapSTP = function mapSTP(state, ownProps) {
 
 var mapDTP = function mapDTP(dispatch) {
   return {
-    // fetchVideos = Dont need because they are already in state?
+    fetchVideos: function fetchVideos() {
+      return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_3__["fetchVideos"])());
+    },
     fetchVideo: function fetchVideo(videoId) {
       return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_3__["fetchVideo"])(videoId));
     }
