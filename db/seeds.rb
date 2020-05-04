@@ -20,133 +20,155 @@ felicia = User.create({username: "fleesh", email: "fleesh@uhh.com", password: "j
 video1 = Video.create({
     creator_id: felicia.id,
     title: "Baby Laughing Hysterically at Ripping Paper",
-    description: "Self Explanatory"
+    description: "Self Explanatory",
+    plays: rand(1000)
 })
 
 video2 = Video.create({
     creator_id: felicia.id,
     title: "It took the creator 50 HOURS to beat this level",
-    description: "It took me 50 hours to beat this level and now I am tired"
+    description: "It took me 50 hours to beat this level and now I am tired",
+    plays: rand(1000)
 })
 
 video3 = Video.create({
     creator_id: felicia.id,
     title: "Rick Astley - Never Gonna Give You Up (Video)",
-    description: "My favorite song"
+    description: "My favorite song",
+    plays: rand(1000)
 })
 
 video4 = Video.create({
     creator_id: rex.id,
     title: "Overwatch - Reinhardt Sigma & Mei NERFS! - Sinatra Quits OWL",
-    description: "Overwatch is the most fun fun fun"
+    description: "Overwatch is the most fun fun fun",
+    plays: rand(1000)
 })
 
 video5 = Video.create({
     creator_id: rex.id,
     title: "Joe Pass - 'Ain't Misbehavin'",
-    description: "Such an incredible guitarist"
+    description: "Such an incredible guitarist",
+    plays: rand(1000)
 })
 
 video6 = Video.create({
     creator_id: rex.id,
     title: "Super Mario Bros. Warp Zones",
-    description: "Holy moly I never even new until now"
+    description: "Holy moly I never even new until now",
+    plays: rand(1000)
 })
 
 video7 = Video.create({
     creator_id: rex.id,
     title: "The 5 Music Theory_Composition Books That Most Influenced Me",
-    description: "Music theory is great, Here are some books that influenced me"
+    description: "Music theory is great, Here are some books that influenced me",
+    plays: rand(1000)
 })
 
 video8 = Video.create({
     creator_id: rex.id,
     title: "EASY BAKED ZITI PASTA RECIPE _ SAM THE COOKING GUY 4K",
-    description: "mmmmmmmm me love bake ziti"
+    description: "mmmmmmmm me love bake ziti",
+    plays: rand(1000)
 })
 
 video9 = Video.create({
     creator_id: chaz.id,
     title: "Wes Montgomery - Round Midnight",
-    description: "Holy Guac Wes kills it on this tune"
+    description: "Holy Guac Wes kills it on this tune",
+    plays: rand(1000)
 })
 
 video10 = Video.create({
     creator_id: chaz.id,
     title: "New York-style pizza at home, v2.0",
-    description: "NEW YORK PIZZA HOME TOWN EAT FOOD GOOD"
+    description: "NEW YORK PIZZA HOME TOWN EAT FOOD GOOD",
+    plays: rand(1000)
 })
 
 video11 = Video.create({
     creator_id: chaz.id,
     title: "Keyboard Cat REINCARNATED!",
-    description: "he's BACK! The keyboard cat killin it on this Duke Ellington tune"
+    description: "he's BACK! The keyboard cat killin it on this Duke Ellington tune",
+    plays: rand(1000)
 })
 
 video12 = Video.create({
     creator_id: chaz.id,
     title: "John Pizzarelli - 'I Got Rhythm' (solo) at the Fretboard Journal",
-    description: "My name is pizzarelli but tbh I am just a guitarist and I play lost o jazz"
+    description: "My name is pizzarelli but tbh I am just a guitarist and I play lost o jazz",
+    plays: rand(1000)
 })
 
 video13 = Video.create({
     creator_id: courtney.id,
     title: "[WR] Super Mario Bros. Any% Speedrun in 4_55.646",
-    description: "World record B) B) B) B) B)"
+    description: "World record B) B) B) B) B)",
+    plays: rand(1000)
 })
 
 video14 = Video.create({
     creator_id: courtney.id,
     title: "HEYYEYAAEYAAAEYAEYAA",
-    description: "You already know what it is"
+    description: "You already know what it is",
+    plays: rand(1000)
 })
 
 video15 = Video.create({
     creator_id: courtney.id,
     title: "Charlie Schmidt's Keyboard Cat! - THE ORIGINAL!",
-    description: "The cat is back and better than forever"
+    description: "The cat is back and better than forever",
+    plays: rand(1000)
 })
 
 video16 = Video.create({
     creator_id: courtney.id,
     title: "Dramatic Squirrel",
-    description: "Buh Buh BUHHHHHHHHH"
+    description: "Buh Buh BUHHHHHHHHH",
+    plays: rand(1000)
 })
 
 video17 = Video.create({
     creator_id: courtney.id,
     title: "Yardbird Suite - Mike Oria, solo guitar",
-    description: "Best arrangement of this tune that I have ever seen on guitar"
+    description: "Best arrangement of this tune that I have ever seen on guitar",
+    plays: rand(1000)
 })
 
 video18 = Video.create({
     creator_id: chaz.id,
     title: "TSM Bjergsen picks Rumble & duo TSM Doublelift",
-    description: "Destroying solo q"
+    description: "Destroying solo q",
+    plays: rand(1000)
 })
 
 video19 = Video.create({
     creator_id: felicia.id,
     title: "30 MOUTH-WATERING FOOD IDEAS THAT YOU'LL WANT TO TRY",
-    description: ""
+    description: "",
+    plays: rand(1000)
 })
 
 video20 = Video.create({
     creator_id: felicia.id,
     title: "Charlie bit my finger! ORIGINAL",
-    description: "Charlie likes to bite fingers"
+    description: "Charlie likes to bite fingers",
+    plays: rand(1000)
 })
 
 video21 = Video.create({
     creator_id: felicia.id,
     title: "25 UNUSUAL WAYS OF COOKING YOU NEED TO TRY",
-    description: "So many different styles of cooking what will you discover next???"
+    description: "So many different styles of cooking what will you discover next???",
+    plays: rand(1000)
 })
 
 video22 = Video.create({
     creator_id: felicia.id,
     title: "'Chocolate Rain' Original Song by Tay Zonday",
-    description: "The OG"
+    description: "The OG",
+    plays: rand(1000)
 })
 
 thumb1 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/1.jpg')
@@ -177,7 +199,7 @@ vid8 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/videos/8.mp4')
 thumb9 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/9.jpg')
 vid9 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/videos/9.mp4')
 
-# thumb10 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/10.jpg')
+thumb10 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/10.jpg')
 vid10 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/videos/10.mp4')
 
 thumb11 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/11.jpg')
