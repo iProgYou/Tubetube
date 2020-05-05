@@ -27,20 +27,28 @@ class VideoForm extends React.Component {
     }
 
     handleChange(inputType) {
-        return (e) => (
+        return (e) => {
+            let temp = {...this.state.video};
+            temp[inputType] = e.target.value
             this.setState({
-                [inputType]:e.target.value
+                video:temp 
             })
-        )
+        }
     }
+    
 
     handleFile(inputType) {
         return (e) => {
             console.log(e.currentTarget.files[0])
             console.log(this.state)
+            // this.setState({
+            //     [inputType]:e.currentTarget.files[0]
+            //     // videoFile:e.currentTarget.files[0]
+            // })
+            let temp = {...this.state.video};
+            temp[inputType] = e.currentTarget.files[0]
             this.setState({
-                [inputType]:e.currentTarget.files[0]
-                // videoFile:e.currentTarget.files[0]
+                video:temp 
             })
         }
     }
@@ -56,19 +64,23 @@ class VideoForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
-        if (this.props.match.params.id) {
-            formData.append('video[id]',this.props.match.params.id)
+        if (this.props.match.params.videoId) {
+            formData.append('video[id]',this.props.match.params.videoId)
         }
         formData.append('video[title]',this.state.video.title)
         formData.append('video[description]',this.state.video.description)
-        formData.append('video[creator_id]',this.props.currentUserId)
         formData.append('video[thumbnail]',this.state.video.thumbnailFile)
         formData.append('video[video_file]',this.state.video.videoFile)
-        debugger
-        this.props.action(formData)
-            .then(() => {
+        this.props.action(formData,)
+            .then((res) => {
                 // this.props.history.replace('/video')
-                this.props.history.replace('/')
+                if (this.props.formType === "Update Form") {
+                    console.log(this.props.match.params.id)
+                    this.props.history.replace(`/video/${this.props.match.params.id}`)
+                } else {
+                    console.log(res)
+                    this.props.history.replace(`/video/${res.video.id}`)
+                }
             })
             .fail(() => {
                 console.log('baddddddddddd')
@@ -107,7 +119,7 @@ class VideoForm extends React.Component {
                             type="file"
                             accept="video/*"
                             onChange={this.handleFile('videoFile')}
-                            value=""
+                            value= ""// {this.state.video.videoFile ? this.state.video.videoFile : ""}
                         />
                         {/* </label> */}
                         
@@ -116,7 +128,7 @@ class VideoForm extends React.Component {
                             accept="image/*"
                             placeholder=""
                             onChange={this.handleFile('thumbnailFile')}
-                            value=""
+                            value=""// {this.state.video.thumbnailFile ? this.state.video.thumbnailFile : ""}
                         />
                     </div>
                     <div className={styles.textInput}>

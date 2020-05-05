@@ -9,7 +9,7 @@ const videosReducer = (state = {},action) => {
             return Object.assign({},state,{[action.video.id]:action.video})
         case REMOVE_VIDEO:
             let new_state = Object.assign({},state)
-            delete new_state[action.video.id]
+            delete new_state[action.videoId]
             return new_state
         default:
             return state;

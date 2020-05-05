@@ -13,7 +13,6 @@ class Api::VideosController < ApplicationController
     def create
         @video = Video.new(video_params)
         @video.creator_id = current_user.id
-
         if @video.save
             render :show
         else
@@ -24,7 +23,10 @@ class Api::VideosController < ApplicationController
 
     def update
         @video = Video.find(params[:id])
+        @video.creator_id = current_user.id
+        # debugger
         if @video.update(video_params)
+            render :show
         else
             render json: video.errors.full_messages
         end
@@ -32,7 +34,6 @@ class Api::VideosController < ApplicationController
 
     def destroy
         @video = Video.find(params[:id])
-        debugger
         if @video.delete()
         else
             render json: video.errors.full_messages
@@ -42,6 +43,6 @@ class Api::VideosController < ApplicationController
     private
 
     def video_params
-        params.require(:video).permit(:title,:description,:creator_id,:thumbnail,:video_file)
+        params.require(:video).permit(:title,:description,:thumbnail,:video_file)
     end
 end

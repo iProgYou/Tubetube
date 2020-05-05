@@ -20,9 +20,9 @@ export const createVideo = formData => (
     })
 )
 
-export const updateVideo = formData => (
+export const updateVideo = (formData,videoId) => (
     $.ajax({
-        url: `/api/videos/${formData.id}`,
+        url: `/api/videos/${videoId}`,
         method: 'PATCH',
         data: formData ,
         contentType: false,
