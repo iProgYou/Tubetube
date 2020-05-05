@@ -79,10 +79,11 @@ class VideoForm extends React.Component {
         if (this.props.match.params.videoId) {
             formData.append('video[id]',this.props.match.params.videoId)
         }
-        formData.append('video[title]',this.state.video.title)
+        if (this.state.thumbnailFile) formData.append('video[thumbnail]',this.state.video.thumbnailFile);
+        if (this.state.videoFile) formData.append('video[video_file]',this.state.video.videoFile);
+        if (this.state.title) formData.append('video[title]',this.state.video.title);
         formData.append('video[description]',this.state.video.description)
-        formData.append('video[thumbnail]',this.state.video.thumbnailFile)
-        formData.append('video[video_file]',this.state.video.videoFile)
+
         this.props.action(formData,)
             .then((res) => {
                 // this.props.history.replace('/video')
@@ -118,7 +119,7 @@ class VideoForm extends React.Component {
             </div>
         )
 
-        const imgPreview = this.state.thumbnailUrl ? <img src={this.state.thumbnailUrl}/> : null;
+        const imgPreview = this.state.thumbnailUrl ? <img src={this.state.thumbnailUrl}/> : <div>No image for some reason</div>;
 
         if (!this.state.video) return null;
         return(

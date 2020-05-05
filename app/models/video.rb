@@ -13,6 +13,9 @@
 class Video < ApplicationRecord
     validates :title, :plays, presence: true
 
+    validate :ensure_video_file
+    validate :ensure_thumbnail
+
     belongs_to :creator,
         foreign_key: :creator_id,
         class_name: "User"
@@ -21,6 +24,17 @@ class Video < ApplicationRecord
     has_one_attached :video_file
     has_one_attached :thumbnail
 
+    def ensure_video_file
+        unless self.video_file.attached?
+            errors[:video_file] << "Must be attached"
+        end
+    end
+
+    def ensure_thumbnail
+        unless self.thumbnail.attached?
+            errors[:thumbnail] << "Must be attached"
+        end
+    end
     # before_validation :randomize_views
 
     # def randomize_views

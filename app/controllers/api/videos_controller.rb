@@ -7,6 +7,7 @@ class Api::VideosController < ApplicationController
 
     def show
         @video = Video.find(params[:id])
+        @video.plays += 1
         render :show
     end
 
