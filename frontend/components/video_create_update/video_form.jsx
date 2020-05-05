@@ -75,6 +75,7 @@ class VideoForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        console.log(this.state)
         const formData = new FormData();
         if (this.props.match.params.videoId) {
             formData.append('video[id]',this.props.match.params.videoId)
@@ -84,7 +85,7 @@ class VideoForm extends React.Component {
         if (this.state.title) formData.append('video[title]',this.state.video.title);
         formData.append('video[description]',this.state.video.description)
 
-        this.props.action(formData,)
+        this.props.action(formData,this.props.match.params.videoId)
             .then((res) => {
                 // this.props.history.replace('/video')
                 if (this.props.formType === "Update Form") {
@@ -127,7 +128,7 @@ class VideoForm extends React.Component {
                 <form className={styles.videoForm} onSubmit={this.handleSubmit}>
                     <h2 className={styles.head}>{this.props.formType}</h2>
                     <div className={styles.fileInputs}>
-                        {/* <label for="video-form-video-upload" className={styles.uploadVideoIcon}>
+                        {/* <label htmlFor="video-form-video-upload" className={styles.uploadVideoIcon}>
                             <BsCameraVideoFill 
                                 size={28}
                                 className={styles.uploadIcon}
