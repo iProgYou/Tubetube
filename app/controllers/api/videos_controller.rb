@@ -23,13 +23,24 @@ class Api::VideosController < ApplicationController
     end
 
     def update
-        
+        @video = Video.find(params[:id])
+        if @video.update(video_params)
+        else
+            render json: video.errors.full_messages
+        end
     end
 
     def destroy
-
+        @video = Video.find(params[:id])
+        debugger
+        if @video.delete()
+        else
+            render json: video.errors.full_messages
+        end
     end
+
     private
+
     def video_params
         params.require(:video).permit(:title,:description,:creator_id,:thumbnail,:video_file)
     end

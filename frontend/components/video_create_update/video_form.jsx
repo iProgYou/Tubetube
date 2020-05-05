@@ -46,7 +46,8 @@ class VideoForm extends React.Component {
     }
 
     handleDelete() {
-        this.props.deleteVideo(this.props.match.params.id)
+        // debugger
+        this.props.deleteVideo(this.props.match.params.videoId)
             .then(() => {
                 this.props.history.replace('/')
             })
