@@ -12,7 +12,9 @@ class VideoForm extends React.Component {
                 description: "",
                 creator_id: undefined,
                 thumbnailFile: null,
-                videoFile: null
+                thumbnailUrl: null,
+                videoFile: null,
+                videoUrl: null
             }
         };
         this.handleChange = this.handleChange.bind(this)
@@ -38,6 +40,7 @@ class VideoForm extends React.Component {
     
 
     handleFile(inputType) {
+        let inputUrl = inputType.slice(0,-4) + "Url"
         return (e) => {
             console.log(e.currentTarget.files[0])
             console.log(this.state)
@@ -45,11 +48,20 @@ class VideoForm extends React.Component {
             //     [inputType]:e.currentTarget.files[0]
             //     // videoFile:e.currentTarget.files[0]
             // })
-            let temp = {...this.state.video};
-            temp[inputType] = e.currentTarget.files[0]
-            this.setState({
-                video:temp 
-            })
+            const file = e.currentTarget.files[0];
+            const fileReader = new FileReader();
+            fileReader.onloadend = () => {
+                let temp = {...this.state.video};
+                temp[inputType] = file;
+                temp[inputUrl] = fileReader.result
+                this.setState({
+                    video:temp 
+                })
+            }
+            // debugger
+            if (file) {
+                fileReader.readAsDataURL(file);
+            }
         }
     }
 
@@ -88,8 +100,10 @@ class VideoForm extends React.Component {
     }
 
     render() {
-        // console.log(this.state);
+        console.log(this.state);
         // console.log(this.props);
+        // debugger
+
         const { formType } = this.props;
         const formButtons = formType === "Upload Video" ? (
             // need one button here for upload
@@ -103,6 +117,9 @@ class VideoForm extends React.Component {
                 <button>Edit</button>
             </div>
         )
+
+        const imgPreview = this.state.thumbnailUrl ? <img src={this.state.thumbnailUrl}/> : null;
+
         if (!this.state.video) return null;
         return(
             <div className={styles.videoFormContainer}>
@@ -119,7 +136,7 @@ class VideoForm extends React.Component {
                             type="file"
                             accept="video/*"
                             onChange={this.handleFile('videoFile')}
-                            value= ""// {this.state.video.videoFile ? this.state.video.videoFile : ""}
+                            // value= ""// {this.state.video.videoFile ? this.state.video.videoFile : ""}
                         />
                         {/* </label> */}
                         
@@ -128,8 +145,9 @@ class VideoForm extends React.Component {
                             accept="image/*"
                             placeholder=""
                             onChange={this.handleFile('thumbnailFile')}
-                            value=""// {this.state.video.thumbnailFile ? this.state.video.thumbnailFile : ""}
+                            // value=""// {this.state.video.thumbnailFile ? this.state.video.thumbnailFile : ""}
                         />
+                        {imgPreview}
                     </div>
                     <div className={styles.textInput}>
                         <input 
