@@ -14,6 +14,8 @@ class VideoIndex extends React.Component {
     render() {     
         // console.log(this.props)
         // console.log(Object.values(this.props.videos))
+        if (!this.props.videos) return null;
+        // debugger
         return(
             <div className={styles.videoIndexContainer}>
                 {Object.values(this.props.videos).map(( video ) => (

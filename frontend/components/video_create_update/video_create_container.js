@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import VideoForm from './video_form';
 import { createVideo } from "../../actions/video_actions";
 
-const mapSTP = () => ({
+const mapSTP = state => ({
     formType: "Upload Video",
-    video: {}
+    video: {},
+    currentUserId: state.session.id
 })
 
 const mapDTP = dispatch => ({
