@@ -6,13 +6,7 @@ import { BsCameraVideoFill } from 'react-icons/bs';
 class VideoForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            title: "",
-            description: "",
-            creator_id: undefined,
-            thumbnailFile: null,
-            videoFile: null
-        }
+        this.state = this.props.video;
         this.handleChange = this.handleChange.bind(this)
         this.handleFile = this.handleFile.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -37,18 +31,25 @@ class VideoForm extends React.Component {
         }
     }
 
-    handleDelete(e) {
-
+    handleDelete() {
+        this.props.deleteVideo(this.props.match.params.id)
+            .then(() => {
+                this.props.history.replace('/')
+            })
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
+        if (this.props.match.params.id) {
+            formData.append('video[id]',this.props.match.params.id)
+        }
         formData.append('video[title]',this.state.title)
         formData.append('video[description]',this.state.description)
         formData.append('video[creator_id]',this.props.currentUserId)
         formData.append('video[thumbnail]',this.state.thumbnailFile)
         formData.append('video[video_file]',this.state.videoFile)
+
         this.props.action(formData)
             .then(() => {
                 // this.props.history.replace('/video')
@@ -71,7 +72,7 @@ class VideoForm extends React.Component {
         ) : (
             // need two buttons, delete and edit
             <div>
-                <button onClick={e => this.handleDelete(e)}>Delete</button>
+                <button type="button" onClick={e => this.handleDelete(e)}>Delete</button>
                 <button>Edit</button>
             </div>
         )

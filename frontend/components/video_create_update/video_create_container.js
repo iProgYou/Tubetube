@@ -5,7 +5,13 @@ import { createVideo } from "../../actions/video_actions";
 
 const mapSTP = state => ({
     formType: "Upload Video",
-    video: {},
+    video: {
+        title: "",
+        description: "",
+        creator_id: undefined,
+        thumbnailFile: null,
+        videoFile: null
+    },
     currentUserId: state.session.id
 })
 

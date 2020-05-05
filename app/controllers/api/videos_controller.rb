@@ -6,10 +6,7 @@ class Api::VideosController < ApplicationController
     end
 
     def show
-        # print(params)
-        # debugger
         @video = Video.find(params[:id])
-        # @video.increment_plays
         render :show
     end
 

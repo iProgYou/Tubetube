@@ -20,17 +20,19 @@ export const createVideo = formData => (
     })
 )
 
-export const updateVideo = video => (
+export const updateVideo = formData => (
     $.ajax({
-        url: `/api/users/${video.creator_id}/videos/${video.id}`,
+        url: `/api/videos/${formData.id}`,
         method: 'PATCH',
-        data: { video }
+        data: formData ,
+        contentType: false,
+        processData: false
     })
 )
 
-export const deleteVideo = video => (
+export const deleteVideo = videoId => (
     $.ajax({
-        url: `/api/users/${video.creator_id}/videos/${video.id}`,
+        url: `/api/videos/${videoId}`,
         method: 'DELETE'
     })
 )
