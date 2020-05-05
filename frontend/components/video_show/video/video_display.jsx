@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './video_display.module.css';
 import { Player } from 'video-react';
 import "../../../../node_modules/video-react/dist/video-react.css"; // import css
+import { Link } from 'react-router-dom';
 
 
 class VideoDisplay extends React.Component {
@@ -11,8 +12,10 @@ class VideoDisplay extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         const { currentVideo } = this.props;
+        const editLink = this.props.hasEditPowers ? (
+            <Link to={`/edit/${currentVideo.id}`}><button>Edit Video</button></Link>
+        ) : ("")
         return(
             <div className={styles.videoPage}>
                 <Player 
@@ -26,6 +29,7 @@ class VideoDisplay extends React.Component {
                     autoPlay={true}
                     // poster={this.props.video}
                 />
+                {editLink}
             </div>
         )
     }

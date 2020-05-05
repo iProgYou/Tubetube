@@ -6,10 +6,24 @@ import { BsCameraVideoFill } from 'react-icons/bs';
 class VideoForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.video;
+        this.state = {
+            video: {
+                title: "",
+                description: "",
+                creator_id: undefined,
+                thumbnailFile: null,
+                videoFile: null
+            }
+        };
         this.handleChange = this.handleChange.bind(this)
         this.handleFile = this.handleFile.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    componentDidMount() {
+        this.setState({
+            video: this.props.video
+        })
     }
 
     handleChange(inputType) {
@@ -44,12 +58,12 @@ class VideoForm extends React.Component {
         if (this.props.match.params.id) {
             formData.append('video[id]',this.props.match.params.id)
         }
-        formData.append('video[title]',this.state.title)
-        formData.append('video[description]',this.state.description)
+        formData.append('video[title]',this.state.video.title)
+        formData.append('video[description]',this.state.video.description)
         formData.append('video[creator_id]',this.props.currentUserId)
-        formData.append('video[thumbnail]',this.state.thumbnailFile)
-        formData.append('video[video_file]',this.state.videoFile)
-
+        formData.append('video[thumbnail]',this.state.video.thumbnailFile)
+        formData.append('video[video_file]',this.state.video.videoFile)
+        debugger
         this.props.action(formData)
             .then(() => {
                 // this.props.history.replace('/video')
@@ -61,7 +75,7 @@ class VideoForm extends React.Component {
     }
 
     render() {
-        console.log(this.state);
+        // console.log(this.state);
         // console.log(this.props);
         const { formType } = this.props;
         const formButtons = formType === "Upload Video" ? (
@@ -76,7 +90,7 @@ class VideoForm extends React.Component {
                 <button>Edit</button>
             </div>
         )
-
+        if (!this.state.video) return null;
         return(
             <div className={styles.videoFormContainer}>
                 <form className={styles.videoForm} onSubmit={this.handleSubmit}>
@@ -110,13 +124,13 @@ class VideoForm extends React.Component {
                             className={styles.title}
                             placeholder="Title"
                             onChange={this.handleChange('title')}
-                            value={this.state.title}
+                            value={this.state.video.title}
                         />
                         <textarea 
                             className={styles.description}
                             placeholder="Description"
                             onChange={this.handleChange('description')}
-                            value={this.state.description}
+                            value={this.state.video.description}
                         />
                     </div>
                     {formButtons}

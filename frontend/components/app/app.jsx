@@ -2,7 +2,8 @@ import React from 'react';
 import NavBar from "../nav_bar/nav_bar";
 import VideoIndexContainer from '../video_index/video_index_container';
 import VideoShowContainer from "../video_show/video_show_container";
-import CreateVideoContainer from '../video_create_update/video_create_container'
+import CreateVideoContainer from '../video_create_update/video_create_container';
+import UpdateVideoContainer from '../video_create_update/video_update_container';
 import { Route,Switch } from 'react-router-dom';
 import SideBar from '../sidebar/sidebar'
 // import {AuthRoute} from '../util/route_util';
@@ -18,6 +19,8 @@ const App = () => (
         </header>
         {/* <Route path={`/video/${videoId}`} component={VideoShowContainer}/> */}
         <Switch>
+            <Route path="/edit/:videoId" component={UpdateVideoContainer}/>
+            {/* Need protecxted for these ^ and below */}
             <Route path="/upload" component={CreateVideoContainer}/>
             <Route path="/video/:videoId" component={VideoShowContainer}/>
             <Route exact path="/" component={VideoIndexContainer}/>

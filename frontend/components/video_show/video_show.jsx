@@ -23,6 +23,7 @@ class VideoShow extends React.Component {
                 <div>
                     <VideoDisplay 
                         currentVideo={this.props.currentVideo}
+                        hasEditPowers={ this.props.hasEditPowers }
                     />
                     {/* <Comments /> */}
                 </div>
