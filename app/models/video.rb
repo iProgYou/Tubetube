@@ -20,7 +20,16 @@ class Video < ApplicationRecord
         foreign_key: :creator_id,
         class_name: "User"
 
-        
+    # Trying to find out why seeds isn't working
+    has_many :comments
+
+    has_many :topic_inclusions,
+        foreign_key: :video_id,
+        class_name: "TopicInclusion"
+
+    has_many :topics,
+        through: :topic_inclusions
+
     has_one_attached :video_file
     has_one_attached :thumbnail
 
@@ -35,16 +44,10 @@ class Video < ApplicationRecord
             errors[:thumbnail] << "Must be attached"
         end
     end
-    # before_validation :randomize_views
+    before_validation :randomize_views
 
-    # def randomize_views
-    #     self.plays = rand(1000)
-    #     # self.save
+    # def increment_plays
+    #     self.plays += 1
     # end
-
-    def increment_plays
-        self.plays += 1
-        # video.save
-    end
 
 end

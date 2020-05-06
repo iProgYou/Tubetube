@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: topic_inclusions
+#
+#  id         :bigint           not null, primary key
+#  topic_id   :integer          not null
+#  video_id   :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  topic_id: 1
+  video_id: 1
+
+two:
+  topic_id: 1
+  video_id: 1

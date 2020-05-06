@@ -376,6 +376,7 @@ button:hover {
 }
 
 button:focus {
+    /* outline: none !important; */
     border-color: rgb(161, 185, 196);
 }
 
