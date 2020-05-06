@@ -120,8 +120,8 @@ class VideoForm extends React.Component {
             </div>
         ) : (
             // need two buttons, delete and edit
-            <div>
-                <button type="button" onClick={e => this.handleDelete(e)}>Delete</button>
+            <div className={styles.doubleButtonContainer}>
+                <button className={styles.deleteButton} type="button" onClick={e => this.handleDelete(e)}>Delete</button>
                 <button>Edit</button>
             </div>
         )

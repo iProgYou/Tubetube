@@ -6,6 +6,8 @@ import CreateVideoContainer from '../video_create_update/video_create_container'
 import UpdateVideoContainer from '../video_create_update/video_update_container';
 import { Route,Switch } from 'react-router-dom';
 import SideBar from '../sidebar/sidebar'
+import { ProtectedRoute } from '../../util/route_util';
+
 // import {AuthRoute} from '../util/route_util';
 
 import styles from './app_style.module.css'
@@ -19,9 +21,9 @@ const App = () => (
         </header>
         {/* <Route path={`/video/${videoId}`} component={VideoShowContainer}/> */}
         <Switch>
-            <Route path="/edit/:videoId" component={UpdateVideoContainer}/>
+            <ProtectedRoute path="/edit/:videoId" component={UpdateVideoContainer}/>
             {/* Need protecxted for these ^ and below */}
-            <Route path="/upload" component={CreateVideoContainer}/>
+            <ProtectedRoute path="/upload" component={CreateVideoContainer}/>
             <Route path="/video/:videoId" component={VideoShowContainer}/>
             <Route exact path="/" component={VideoIndexContainer}/>
         </Switch>
