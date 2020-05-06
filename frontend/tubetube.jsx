@@ -6,6 +6,7 @@ import configureStore from "./store/store";
 // --test
 import { login,logout,signup } from "./actions/session_actions";
 import { fetchVideo,fetchVideos,deleteVideo } from "./actions/video_actions";
+import { fetchComments, createComment, deleteComment } from "./actions/comment_actions";
 // --test
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -35,6 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchVideos = fetchVideos;
     window.fetchVideo = fetchVideo;
     window.deleteVideo = deleteVideo;
+    window.fetchComments = fetchComments;
+    window.createComment = createComment;
+    window.deleteComment = deleteComment;
     // --test
 
     ReactDOM.render(<Root store={store}/>, root);

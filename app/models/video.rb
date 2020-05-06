@@ -44,7 +44,7 @@ class Video < ApplicationRecord
             errors[:thumbnail] << "Must be attached"
         end
     end
-    before_validation :randomize_views
+    # before_validation :randomize_views
 
     # def increment_plays
     #     self.plays += 1
