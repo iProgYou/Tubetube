@@ -27,12 +27,6 @@
 }
 
 .uploadIcon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.uploadIcon {
     /* height: 100%;
     width: 100%; */
     display: flex;
@@ -100,13 +94,34 @@
 .fileInputs > label {
     height: 80%;
     width: 40%;
-    border: none;
     background-color: #000000;
     border: solid;
     border-color: rgb(161, 185, 196);
     border-width: 2px;
+    border-radius: 3px;
 }
 .fileInputs > label:hover {
     border-color: #2ba84a;
     color: #2ba84a;
+}
+
+.uploadedVideo {
+    border: solid;
+    border-color: #2ba84a;
+    color: #2ba84a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uploadedThumbnail {
+    /* border-color: #2ba84a; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview {
+    max-width: 100%;
+    max-height: 100%;
 }

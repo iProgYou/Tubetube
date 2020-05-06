@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './video_form.module.css'
 import { BsCameraVideoFill } from 'react-icons/bs';
 import { AiFillCamera } from 'react-icons/ai';
+import { FiFilm } from 'react-icons/fi';
+
 
 
 
@@ -110,9 +112,6 @@ class VideoForm extends React.Component {
 
     render() {
         console.log(this.state);
-        // console.log(this.props);
-        // debugger
-
         const { formType } = this.props;
         const formButtons = formType === "Upload Video" ? (
             // need one button here for upload
@@ -127,7 +126,31 @@ class VideoForm extends React.Component {
             </div>
         )
 
-        const imgPreview = this.state.thumbnailUrl ? <img src={this.state.thumbnailUrl}/> : <div>No image for some reason</div>;
+        let videoConfirm;
+        let videoConfirmClass;
+        const renderUploadVideo = () => {
+            if (this.state.videoUrl) {
+                videoConfirm = <FiFilm size={60} />
+                videoConfirmClass = styles.uploadedVideo
+            } else {
+                videoConfirm = <BsCameraVideoFill size={60}/>
+                videoConfirmClass = styles.uploadIcon
+            };
+        };
+        renderUploadVideo();
+                
+        let thumbnailConfirm;
+        let thumbnailConfirmClass;
+        const renderUploadThumbnail = () => {
+            if (this.state.thumbnailUrl) {
+                thumbnailConfirm = <img className={styles.preview} src={this.state.thumbnailUrl}/>
+                thumbnailConfirmClass = styles.uploadedThumbnail
+            } else {
+                thumbnailConfirm = <AiFillCamera size={60}/>
+                thumbnailConfirmClass = styles.uploadIcon
+            }
+        }
+        renderUploadThumbnail();
 
         if (!this.state) return null;
         return(
@@ -135,10 +158,8 @@ class VideoForm extends React.Component {
                 <form className={styles.videoForm} onSubmit={this.handleSubmit}>
                     <h2 className={styles.head}>{this.props.formType}</h2>
                     <div className={styles.fileInputs}>
-                        <label htmlFor="video-form-video-upload" className={styles.uploadIcon}>
-                            <BsCameraVideoFill 
-                                size={60}
-                            />
+                        <label htmlFor="video-form-video-upload" className={videoConfirmClass}>
+                            {videoConfirm}
                             <input 
                                 id="video-form-video-upload"
                                 className={styles.inputClass}
@@ -148,11 +169,10 @@ class VideoForm extends React.Component {
                                 // value= ""// {this.state.video.videoFile ? this.state.video.videoFile : ""}
                             />
                         </label>
-                        <label htmlFor="video-form-video-upload" className={styles.uploadIcon}>
-                            <AiFillCamera 
-                                size={60}
-                            />
-                            <input 
+                        <label htmlFor="thumbnail-form-video-upload" className={styles.uploadIcon}>
+                            {thumbnailConfirm}
+                            <input
+                                id="thumbnail-form-video-upload"
                                 className={styles.inputClass}
                                 type="file"
                                 accept="image/*"
