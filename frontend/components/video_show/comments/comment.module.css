@@ -1,0 +1,15 @@
+.comment {
+    color: rgb(161, 185, 196);
+    display: flex;
+    margin-bottom: 15px;
+    /* padding-left: 2rem; */
+}
+
+.commentText {
+
+}
+
+.author {
+    font-weight: 900;
+    margin-bottom: .30rem;
+}

@@ -11,7 +11,6 @@ class CommentIndex extends React.Component {
     }
 
     render() {
-        debugger
         const { comments, currentVideo } = this.props;
         if (!comments || !currentVideo || !comments[0] ) return null;
         return (

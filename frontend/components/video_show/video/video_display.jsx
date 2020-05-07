@@ -56,8 +56,10 @@ class VideoDisplay extends React.Component {
                     </div>
                     <div className={styles.bottom}>
                         <div className="biggerIcon">{currentVideo.creator[0].toUpperCase()}</div>
-                        <p>{currentVideo.creator}</p>
-                        <p>{currentVideo.description}</p>
+                        <div>
+                            <p>{currentVideo.creator}</p>
+                            <p>{currentVideo.description}</p>
+                        </div>
                     </div>
                 </div>
             </div>

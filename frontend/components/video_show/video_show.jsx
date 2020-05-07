@@ -19,7 +19,7 @@ class VideoShow extends React.Component {
         if (!this.props.currentVideo) return null;
         return (
             <div className={styles.displayContainer}>
-                <div>
+                <div className={styles.backdrop}>
                     <VideoDisplay 
                         currentVideo={this.props.currentVideo}
                         hasEditPowers={ this.props.hasEditPowers }
@@ -30,7 +30,8 @@ class VideoShow extends React.Component {
                         currentVideo={this.props.currentVideo}
                     />
                 </div>
-                <div>
+                <div className={styles.reccomended}>
+                    <div>YOOOOOOOO Related vids</div>
                 {/* <Reccomended /> */}
                 </div>
             </div>
