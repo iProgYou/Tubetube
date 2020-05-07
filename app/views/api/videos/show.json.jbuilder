@@ -5,6 +5,7 @@ json.creator @video.creator.username
 json.thumbnailUrl url_for(@video.thumbnail)
 json.videoUrl url_for(@video.video_file)
 json.commentIds @video.comments.map { |comment| comment.id }
+json.relatedVideosIds Video.get_related_videos(@video)
 
 # json.commentIds do
 #     json.array! @video.comments do |comment|

@@ -54,4 +54,11 @@ class Video < ApplicationRecord
     #     self.plays += 1
     # end
 
+    def self.get_related_videos(video)
+        related = video.related_videos.pluck(:id)
+        related = related.uniq
+        related.delete(video.id)
+        related
+    end
+
 end

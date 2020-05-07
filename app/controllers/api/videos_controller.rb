@@ -9,6 +9,7 @@ class Api::VideosController < ApplicationController
         @video = Video.find(params[:id])
         @video.plays += 1
         @video.save
+        # @video[related_videos] = get_related_videos(@video)
         render :show
     end
 
