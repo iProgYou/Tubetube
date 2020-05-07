@@ -45,9 +45,9 @@ class SearchNav extends React.Component {
                         value={searchInput}
                         placeholder="Search"
                     />
-                    <button className={`button ${styles.searchButton}`}>
+                    <button className={styles.searchButton}>
                         <IoMdSearch
-                            // size={25}
+                            size={23}
                         />
                     </button>
                 </form>
