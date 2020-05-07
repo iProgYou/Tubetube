@@ -11,8 +11,9 @@
 }
 
 .reccomended {
-    color: white;
-    background-color: grey;
-    width: 300px;
+    /* color: white;
+    background-color: grey; */
+    width: 20rem;
     flex-shrink: 0;
+    padding-top: 5rem;
 }

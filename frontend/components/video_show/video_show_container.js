@@ -3,20 +3,25 @@ import { connect } from 'react-redux';
 import VideoShow from './video_show';
 import { fetchVideo } from "../../actions/video_actions";
 import { fetchComments, createComment } from "../../actions/comment_actions";
-import { getCommentsForVideo } from "../../reducers/selectors";
+import { getCommentsForVideo, getCommentsForVideoBeta, getRelatedVideos } from "../../reducers/selectors";
 
 const mapSTP = (state, ownProps) => {
     let creatorId;
     let currentVideo;
     let commentSelect;
+    let relatedVideoSelect;
     if (state.entities.videos[ownProps.match.params.videoId]) {
-        creatorId = state.entities.videos[ownProps.match.params.videoId].creatorId;
-        currentVideo = state.entities.videos[ownProps.match.params.videoId];
-        commentSelect = getCommentsForVideo(state,state.entities.videos[ownProps.match.params.videoId].commentIds)
+        let video = state.entities.videos[ownProps.match.params.videoId]
+        creatorId = video.creatorId;
+        currentVideo = video;
+        // commentSelect = getCommentsForVideo(state,video.commentIds)
+        commentSelect = getCommentsForVideoBeta(state,video.id)
+        relatedVideoSelect = getRelatedVideos(state,video.relatedVideosIds)
     } else {
         creatorId = null;
         currentVideo = null;
         commentSelect = null;
+        relatedVideoSelect = null;
     }
 
 
@@ -26,7 +31,8 @@ const mapSTP = (state, ownProps) => {
         hasEditPowers: creatorId === state.session.id,
         comments: commentSelect,
         currentUser: state.session.id,
-        users: state.entities.users
+        users: state.entities.users,
+        relatedVideos: relatedVideoSelect
     }
 }
 

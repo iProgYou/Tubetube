@@ -18,7 +18,7 @@ class CommentIndex extends React.Component {
     }
 
     handleChange(e) {
-        console.log("here")
+        // console.log("here")
         // return (e) => {
         this.setState({
             body: e.currentTarget.value
@@ -27,10 +27,14 @@ class CommentIndex extends React.Component {
     }
 
     handleSubmit() {
+        // debugger
+        let comment = this.state;
+        comment.video_id = this.props.currentVideo.id
+        this.props.createComment(comment)
         this.setState({
-            video_id: currentVideo.id
+            body: ""
         })
-        this.props.createComment(this.state)
+        this.props.fetchVideo(this.props.currentVideo.id)
     }
 
     handleCancel(e) {
