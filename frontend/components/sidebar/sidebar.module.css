@@ -9,9 +9,18 @@
 
 .sidebar {
     position: fixed;
+    width: 4%;
     left: 0;
-    top: 0;
-    height: 90vh;
+    /* top: 0; */
+    bottom: 0;
+    height: 92vh;
     background-color: #393E41;
     margin-top: 80px;
+}
+
+.sidebarLinks {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1.5rem;
 }

@@ -116,13 +116,13 @@ class VideoForm extends React.Component {
         const formButtons = formType === "Upload Video" ? (
             // need one button here for upload
             <div className={styles.buttonContainer}>
-                <button>Upload</button>
+                <button className="button">Upload</button>
             </div>
         ) : (
             // need two buttons, delete and edit
             <div className={styles.doubleButtonContainer}>
-                <button className={styles.deleteButton} type="button" onClick={e => this.handleDelete(e)}>Delete</button>
-                <button>Edit</button>
+                <button className={`button ${styles.deleteButton}`} type="button" onClick={e => this.handleDelete(e)}>Delete</button>
+                <button className="button">Edit</button>
             </div>
         )
 

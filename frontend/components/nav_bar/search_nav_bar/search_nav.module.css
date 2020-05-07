@@ -9,3 +9,11 @@
 .searchContainer > input {
     border-radius: 2px 0px 0px 2px;
 }
+
+.searchInput {
+    height: 2rem;
+}
+
+.searchButton {
+    height: 2.1rem;
+}

@@ -139,14 +139,14 @@ class SessionForm extends React.Component {
         const buttonContainer = formType === "Sign In" ? (
             <div className={styles.buttonContainer}>
                 <Link to="/signup">Create Account</Link>
-                <button type="button" onClick={() => this.handleDemo()}>Demo</button>
+                <button className="button" type="button" onClick={() => this.handleDemo()}>Demo</button>
                 {/* <button type="button" onClick={() => this.ghostTyping()}>Demo</button> */}
-                <button>Next</button>
+                <button className="button">Next</button>
             </div>
         ) : (
             <div className={styles.buttonContainer}>
                 <Link to="/signin">Sign In instead</Link>
-                <button>Next</button>
+                <button className="button">Next</button>
             </div>
         )
 

@@ -45,9 +45,9 @@ class CommentIndex extends React.Component {
         if (!comments || !currentVideo || !comments[0] ) return null;
 
         const submitButton = this.state.body.length > 0 ? (
-            <button className={styles.submitCommentButton}>Submit</button>
+            <button className={`button ${styles.submitCommentButton}`}>Submit</button>
         ) : (
-            <button onClick={() => {}} className={styles.submitCommentButtonGrey}>Submit</button>
+            <button onClick={() => {}} className={`button ${styles.submitCommentButtonGrey}`}>Submit</button>
         )
 
         const commentContent = currentUser ? (
@@ -63,7 +63,7 @@ class CommentIndex extends React.Component {
                         placeholder="Add a public comment..."
                     />
                     <div className={styles.buttonContainer}>
-                        <button onClick={(e) => this.handleCancel(e)} className={styles.cancelCommentButton}>Cancel</button>
+                        <button onClick={(e) => this.handleCancel(e)} className={`button ${styles.cancelCommentButton}`}>Cancel</button>
                         {submitButton}
                     </div>
                 </form>

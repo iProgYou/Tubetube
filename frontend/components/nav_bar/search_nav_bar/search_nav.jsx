@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './search_nav.module.css';
 import { connect } from 'react-redux';
+import { IoMdSearch } from 'react-icons/io';
 
 class SearchNav extends React.Component {
     constructor(props) {
@@ -38,13 +39,17 @@ class SearchNav extends React.Component {
             <div>
                 <form className={styles.searchContainer} onSubmit={e => handleSubmit(e)}>
                     <input 
-                        className="standardInput"
+                        className={`standardInput ${styles.searchInput}`}
                         type="text" 
                         onChange={this.handleChange()}
                         value={searchInput}
                         placeholder="Search"
                     />
-                    <button>Icon</button>
+                    <button className={`button ${styles.searchButton}`}>
+                        <IoMdSearch
+                            // size={25}
+                        />
+                    </button>
                 </form>
             </div>
         )

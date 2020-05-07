@@ -26,7 +26,7 @@ class VideoDisplay extends React.Component {
         const titleEdit = this.props.hasEditPowers ? (
             <div className={styles.titleEdit}>
                 <h3 className={styles.head}>{currentVideo.title}</h3>
-                <Link className={styles.titleEditButton} to={`/edit/${currentVideo.id}`}><button>Edit Video</button></Link>
+                <Link className={styles.titleEditButton} to={`/edit/${currentVideo.id}`}><button className="button">Edit Video</button></Link>
             </div>
         ) : (
             <h3 className={styles.head}>{currentVideo.title}</h3>
