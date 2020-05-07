@@ -16,12 +16,24 @@
 User.destroy_all
 Video.destroy_all
 Comment.destroy_all
+Topic.destroy_all
+TopicInclusion.destroy_all
 
 user1 = User.create!({username: "Demo", email: "demo@demo.com", password: "123456"})
 rex = User.create!({username: "dinoman", email: "dino@man.com", password: "654321"})
 chaz = User.create!({username: "chaz", email: "chaz@zambony.com", password: "zambony"})
 courtney = User.create!({username: "court", email: "dork@town.com", password: "dorksss"})
 felicia = User.create!({username: "fleesh", email: "fleesh@uhh.com", password: "jammin"})
+
+memes = Topic.create!({name: "memes"})
+food = Topic.create!({name: "food"})
+funny = Topic.create!({name: "funny"})
+gaming = Topic.create!({name: "gaming"})
+music = Topic.create!({name: "music"})
+guitar = Topic.create!({name: "guitar"})
+italian = Topic.create!({name: "italian"})
+animals = Topic.create!({name: "animals"})
+
 
 video1 = Video.create!({
     creator_id: felicia.id,
@@ -30,7 +42,8 @@ video1 = Video.create!({
     plays: rand(1000)
 })
 
-
+inclusion1 = TopicInclusion.create!(topic_id: memes.id, video_id: video1.id)
+inclusion2 = TopicInclusion.create!(topic_id: funny.id, video_id: video1.id)
 
 video2 = Video.create!({
     creator_id: felicia.id,
@@ -39,12 +52,19 @@ video2 = Video.create!({
     plays: rand(1000)
 })
 
+inclusion3 = TopicInclusion.create!(topic_id: gaming.id, video_id: video2.id)
+inclusion4 = TopicInclusion.create!(topic_id: funny.id, video_id: video2.id)
+
+
 video3 = Video.create!({
     creator_id: felicia.id,
     title: "Rick Astley - Never Gonna Give You Up (Video)",
     description: "My favorite song",
     plays: rand(1000)
 })
+
+inclusion5 = TopicInclusion.create!(topic_id: music.id, video_id: video3.id)
+inclusion6 = TopicInclusion.create!(topic_id: memes.id, video_id: video3.id)
 
 video4 = Video.create!({
     creator_id: rex.id,
@@ -53,12 +73,17 @@ video4 = Video.create!({
     plays: rand(1000)
 })
 
+inclusion7 = TopicInclusion.create!(topic_id: gaming.id, video_id: video4.id)
+
 video5 = Video.create!({
     creator_id: rex.id,
     title: "Joe Pass - 'Ain't Misbehavin'",
     description: "Such an incredible guitarist",
     plays: rand(1000)
 })
+
+inclusion8 = TopicInclusion.create!(topic_id: music.id, video_id: video5.id)
+inclusion9 = TopicInclusion.create!(topic_id: guitar.id, video_id: video5.id)
 
 video6 = Video.create!({
     creator_id: rex.id,
@@ -67,12 +92,16 @@ video6 = Video.create!({
     plays: rand(1000)
 })
 
+inclusion10 = TopicInclusion.create!(topic_id: gaming.id, video_id: video6.id)
+
 video7 = Video.create!({
     creator_id: rex.id,
     title: "The 5 Music Theory Composition Books That Most Influenced Me",
     description: "Music theory is great, Here are some books that influenced me",
     plays: rand(1000)
 })
+
+inclusion11 = TopicInclusion.create!(topic_id: music.id, video_id: video7.id)
 
 video8 = Video.create!({
     creator_id: rex.id,
@@ -81,12 +110,18 @@ video8 = Video.create!({
     plays: rand(1000)
 })
 
+inclusion12 = TopicInclusion.create!(topic_id: food.id, video_id: video8.id)
+inclusion13 = TopicInclusion.create!(topic_id: italian.id, video_id: video8.id)
+
 video9 = Video.create!({
     creator_id: chaz.id,
     title: "Wes Montgomery - Round Midnight",
     description: "Holy Guac Wes kills it on this tune",
     plays: rand(1000)
 })
+
+inclusion14 = TopicInclusion.create!(topic_id: music.id, video_id: video9.id)
+inclusion15 = TopicInclusion.create!(topic_id: guitar.id, video_id: video9.id)
 
 video10 = Video.create!({
     creator_id: chaz.id,
@@ -95,12 +130,20 @@ video10 = Video.create!({
     plays: rand(1000)
 })
 
+inclusion16 = TopicInclusion.create!(topic_id: food.id, video_id: video10.id)
+inclusion17 = TopicInclusion.create!(topic_id: italian.id, video_id: video10.id)
+
 video11 = Video.create!({
     creator_id: chaz.id,
     title: "Keyboard Cat REINCARNATED!",
     description: "he's BACK! The keyboard cat killin it on this Duke Ellington tune",
     plays: rand(1000)
 })
+
+inclusion18 = TopicInclusion.create!(topic_id: memes.id, video_id: video11.id)
+inclusion19 = TopicInclusion.create!(topic_id: music.id, video_id: video11.id)
+inclusion28 = TopicInclusion.create!(topic_id: animals.id, video_id: video11.id)
+
 
 video12 = Video.create!({
     creator_id: chaz.id,
@@ -109,12 +152,17 @@ video12 = Video.create!({
     plays: rand(1000)
 })
 
+inclusion20 = TopicInclusion.create!(topic_id: music.id, video_id: video12.id)
+inclusion21 = TopicInclusion.create!(topic_id: guitar.id, video_id: video12.id)
+
 video13 = Video.create!({
     creator_id: courtney.id,
     title: "[WR] Super Mario Bros. Any% Speedrun in 4:55.646",
     description: "World record B) B) B) B) B)",
     plays: rand(1000)
 })
+
+inclusion22 = TopicInclusion.create!(topic_id: gaming.id, video_id: video13.id)
 
 video14 = Video.create!({
     creator_id: courtney.id,
@@ -123,12 +171,20 @@ video14 = Video.create!({
     plays: rand(1000)
 })
 
+inclusion23 = TopicInclusion.create!(topic_id: music.id, video_id: video14.id)
+inclusion24 = TopicInclusion.create!(topic_id: memes.id, video_id: video14.id)
+
 video15 = Video.create!({
     creator_id: courtney.id,
     title: "Charlie Schmidt's Keyboard Cat! - THE ORIGINAL!",
     description: "The cat is back and better than forever",
     plays: rand(1000)
 })
+
+inclusion25 = TopicInclusion.create!(topic_id: memes.id, video_id: video15.id)
+inclusion26 = TopicInclusion.create!(topic_id: music.id, video_id: video15.id)
+inclusion29 = TopicInclusion.create!(topic_id: animals.id, video_id: video15.id)
+
 
 video16 = Video.create!({
     creator_id: courtney.id,
@@ -137,12 +193,18 @@ video16 = Video.create!({
     plays: rand(1000)
 })
 
+inclusion27 = TopicInclusion.create!(topic_id: memes.id, video_id: video16.id)
+inclusion30 = TopicInclusion.create!(topic_id: animals.id, video_id: video16.id)
+
 video17 = Video.create!({
     creator_id: courtney.id,
     title: "Yardbird Suite - Mike Oria, solo guitar",
     description: "Best arrangement of this tune that I have ever seen on guitar",
     plays: rand(1000)
 })
+
+inclusion31 = TopicInclusion.create!(topic_id: music.id, video_id: video17.id)
+inclusion32 = TopicInclusion.create!(topic_id: guitar.id, video_id: video17.id)
 
 video18 = Video.create!({
     creator_id: chaz.id,
@@ -151,12 +213,16 @@ video18 = Video.create!({
     plays: rand(1000)
 })
 
+inclusion33 = TopicInclusion.create!(topic_id: gaming.id, video_id: video18.id)
+
 video19 = Video.create!({
     creator_id: felicia.id,
     title: "30 MOUTH-WATERING FOOD IDEAS THAT YOU'LL WANT TO TRY",
     description: "",
     plays: rand(1000)
 })
+
+inclusion34 = TopicInclusion.create!(topic_id: food.id, video_id: video19.id)
 
 video20 = Video.create!({
     creator_id: felicia.id,
@@ -165,6 +231,9 @@ video20 = Video.create!({
     plays: rand(1000)
 })
 
+inclusion35 = TopicInclusion.create!(topic_id: funny.id, video_id: video20.id)
+inclusion36 = TopicInclusion.create!(topic_id: memes.id, video_id: video20.id)
+
 video21 = Video.create!({
     creator_id: felicia.id,
     title: "25 UNUSUAL WAYS OF COOKING YOU NEED TO TRY",
@@ -172,12 +241,20 @@ video21 = Video.create!({
     plays: rand(1000)
 })
 
+inclusion37 = TopicInclusion.create!(topic_id: food.id, video_id: video21.id)
+
+
 video22 = Video.create!({
     creator_id: felicia.id,
     title: "'Chocolate Rain' Original Song by Tay Zonday",
     description: "The OG",
     plays: rand(1000)
 })
+
+inclusion38 = TopicInclusion.create!(topic_id: food.id, video_id: video22.id)
+inclusion39 = TopicInclusion.create!(topic_id: memes.id, video_id: video22.id)
+inclusion40 = TopicInclusion.create!(topic_id: music.id, video_id: video22.id)
+
 
 thumb1 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/thumbnails/1.jpg')
 vid1 = open('https://tubetube-seed.s3-us-west-1.amazonaws.com/videos/1.mp4')
@@ -314,48 +391,48 @@ video22.video_file.attach(io:vid22, filename:'22.mp4')
 
 #############################################
 
-comment1 = Comment.create(body: "First!", author_id: user1.id, video_id: video1.id)
-comment2 = Comment.create(body: "dang, second", author_id: rex.id, video_id: video1.id)
-comment3 = Comment.create(body: "First!", author_id: chaz.id, video_id: video3.id)
-comment4 = Comment.create(body: "dang, second", author_id: courtney.id, video_id: video3.id)
-comment5 = Comment.create(body: "First!", author_id: felicia.id, video_id: video5.id)
-comment6 = Comment.create(body: "dang, second", author_id: user1.id, video_id: video5.id)
-comment7 = Comment.create(body: "First!", author_id: rex.id, video_id: video7.id)
-comment8 = Comment.create(body: "dang, second", author_id: chaz.id, video_id: video7.id)
-comment9 = Comment.create(body: "First!", author_id: courtney.id, video_id: video9.id)
-comment10 = Comment.create(body: "dang, second", author_id: felicia.id, video_id: video9.id)
-comment11 = Comment.create(body: "First!", author_id: user1.id, video_id: video11.id)
-comment12 = Comment.create(body: "dang, second", author_id: rex.id, video_id: video11.id)
-comment13 = Comment.create(body: "First!", author_id: chaz.id, video_id: video13.id)
-comment14 = Comment.create(body: "dang, second", author_id: courtney.id, video_id: video13.id)
-comment15 = Comment.create(body: "First!", author_id: felicia.id, video_id: video15.id)
-comment16 = Comment.create(body: "dang, second", author_id: user1.id, video_id: video15.id)
-comment17 = Comment.create(body: "First!", author_id: rex.id, video_id: video17.id)
-comment18 = Comment.create(body: "dang, second", author_id: chaz.id, video_id: video17.id)
-comment19 = Comment.create(body: "First!", author_id: courtney.id, video_id: video19.id)
-comment20 = Comment.create(body: "dang, second", author_id: felicia.id, video_id: video19.id)
-comment21 = Comment.create(body: "First!", author_id: user1.id, video_id: video21.id)
-comment22 = Comment.create(body: "dang, second", author_id: rex.id, video_id: video21.id)
-comment25 = Comment.create(body: "First!", author_id: felicia.id, video_id: video2.id)
-comment26 = Comment.create(body: "dang, second", author_id: user1.id, video_id: video2.id)
-comment27 = Comment.create(body: "First!", author_id: rex.id, video_id: video4.id)
-comment28 = Comment.create(body: "dang, second", author_id: chaz.id, video_id: video4.id)
-comment29 = Comment.create(body: "First!", author_id: courtney.id, video_id: video6.id)
-comment30 = Comment.create(body: "dang, second", author_id: felicia.id, video_id: video6.id)
-comment31 = Comment.create(body: "First!", author_id: user1.id, video_id: video8.id)
-comment32 = Comment.create(body: "dang, second", author_id: rex.id, video_id: video8.id)
-comment33 = Comment.create(body: "First!", author_id: chaz.id, video_id: video10.id)
-comment34 = Comment.create(body: "dang, second", author_id: courtney.id, video_id: video10.id)
-comment35 = Comment.create(body: "First!", author_id: felicia.id, video_id: video12.id)
-comment36 = Comment.create(body: "dang, second", author_id: user1.id, video_id: video12.id)
-comment37 = Comment.create(body: "First!", author_id: rex.id, video_id: video14.id)
-comment38 = Comment.create(body: "dang, second", author_id: chaz.id, video_id: video14.id)
-comment39 = Comment.create(body: "First!", author_id: courtney.id, video_id: video16.id)
-comment40 = Comment.create(body: "dang, second", author_id: felicia.id, video_id: video16.id)
-comment41 = Comment.create(body: "First!", author_id: user1.id, video_id: video18.id)
-comment42 = Comment.create(body: "dang, second", author_id: rex.id, video_id: video18.id)
-comment43 = Comment.create(body: "First!", author_id: chaz.id, video_id: video20.id)
-comment44 = Comment.create(body: "dang, second", author_id: courtney.id, video_id: video20.id)
-comment45 = Comment.create(body: "First!", author_id: felicia.id, video_id: video22.id)
-comment46 = Comment.create(body: "dang, second", author_id: user1.id, video_id: video22.id)
+comment1 = Comment.create!(body: "First!", author_id: user1.id, video_id: video1.id)
+comment2 = Comment.create!(body: "dang, second", author_id: rex.id, video_id: video1.id)
+comment3 = Comment.create!(body: "First!", author_id: chaz.id, video_id: video3.id)
+comment4 = Comment.create!(body: "dang, second", author_id: courtney.id, video_id: video3.id)
+comment5 = Comment.create!(body: "First!", author_id: felicia.id, video_id: video5.id)
+comment6 = Comment.create!(body: "dang, second", author_id: user1.id, video_id: video5.id)
+comment7 = Comment.create!(body: "First!", author_id: rex.id, video_id: video7.id)
+comment8 = Comment.create!(body: "dang, second", author_id: chaz.id, video_id: video7.id)
+comment9 = Comment.create!(body: "First!", author_id: courtney.id, video_id: video9.id)
+comment10 = Comment.create!(body: "dang, second", author_id: felicia.id, video_id: video9.id)
+comment11 = Comment.create!(body: "First!", author_id: user1.id, video_id: video11.id)
+comment12 = Comment.create!(body: "dang, second", author_id: rex.id, video_id: video11.id)
+comment13 = Comment.create!(body: "First!", author_id: chaz.id, video_id: video13.id)
+comment14 = Comment.create!(body: "dang, second", author_id: courtney.id, video_id: video13.id)
+comment15 = Comment.create!(body: "First!", author_id: felicia.id, video_id: video15.id)
+comment16 = Comment.create!(body: "dang, second", author_id: user1.id, video_id: video15.id)
+comment17 = Comment.create!(body: "First!", author_id: rex.id, video_id: video17.id)
+comment18 = Comment.create!(body: "dang, second", author_id: chaz.id, video_id: video17.id)
+comment19 = Comment.create!(body: "First!", author_id: courtney.id, video_id: video19.id)
+comment20 = Comment.create!(body: "dang, second", author_id: felicia.id, video_id: video19.id)
+comment21 = Comment.create!(body: "First!", author_id: user1.id, video_id: video21.id)
+comment22 = Comment.create!(body: "dang, second", author_id: rex.id, video_id: video21.id)
+comment25 = Comment.create!(body: "First!", author_id: felicia.id, video_id: video2.id)
+comment26 = Comment.create!(body: "dang, second", author_id: user1.id, video_id: video2.id)
+comment27 = Comment.create!(body: "First!", author_id: rex.id, video_id: video4.id)
+comment28 = Comment.create!(body: "dang, second", author_id: chaz.id, video_id: video4.id)
+comment29 = Comment.create!(body: "First!", author_id: courtney.id, video_id: video6.id)
+comment30 = Comment.create!(body: "dang, second", author_id: felicia.id, video_id: video6.id)
+comment31 = Comment.create!(body: "First!", author_id: user1.id, video_id: video8.id)
+comment32 = Comment.create!(body: "dang, second", author_id: rex.id, video_id: video8.id)
+comment33 = Comment.create!(body: "First!", author_id: chaz.id, video_id: video10.id)
+comment34 = Comment.create!(body: "dang, second", author_id: courtney.id, video_id: video10.id)
+comment35 = Comment.create!(body: "First!", author_id: felicia.id, video_id: video12.id)
+comment36 = Comment.create!(body: "dang, second", author_id: user1.id, video_id: video12.id)
+comment37 = Comment.create!(body: "First!", author_id: rex.id, video_id: video14.id)
+comment38 = Comment.create!(body: "dang, second", author_id: chaz.id, video_id: video14.id)
+comment39 = Comment.create!(body: "First!", author_id: courtney.id, video_id: video16.id)
+comment40 = Comment.create!(body: "dang, second", author_id: felicia.id, video_id: video16.id)
+comment41 = Comment.create!(body: "First!", author_id: user1.id, video_id: video18.id)
+comment42 = Comment.create!(body: "dang, second", author_id: rex.id, video_id: video18.id)
+comment43 = Comment.create!(body: "First!", author_id: chaz.id, video_id: video20.id)
+comment44 = Comment.create!(body: "dang, second", author_id: courtney.id, video_id: video20.id)
+comment45 = Comment.create!(body: "First!", author_id: felicia.id, video_id: video22.id)
+comment46 = Comment.create!(body: "dang, second", author_id: user1.id, video_id: video22.id)
 

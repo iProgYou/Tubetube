@@ -30,6 +30,10 @@ class Video < ApplicationRecord
     has_many :topics,
         through: :topic_inclusions
 
+    has_many :related_videos,
+        through: :topics,
+        source: :videos
+
     has_one_attached :video_file
     has_one_attached :thumbnail
 
