@@ -17,12 +17,13 @@ class CommentIndex extends React.Component {
         this.props.fetchComments(this.props.currentVideo.id)
     }
 
-    handleChange() {
-        return e => (
-            this.setState({
-                body: e.currentTarget.value
-            })
-        )
+    handleChange(e) {
+        console.log("here")
+        // return (e) => {
+        this.setState({
+            body: e.currentTarget.value
+        })
+        // }
     }
 
     handleSubmit() {
@@ -32,9 +33,22 @@ class CommentIndex extends React.Component {
         this.props.createComment(this.state)
     }
 
+    handleCancel(e) {
+        e.currentTarget.value = ""
+        this.setState({
+            body: e.currentTarget.value
+        })
+    }
+
     render() {
         const { comments, currentVideo, currentUser,users } = this.props;
         if (!comments || !currentVideo || !comments[0] ) return null;
+
+        const submitButton = this.state.body.length > 0 ? (
+            <button className={styles.submitCommentButton}>Submit</button>
+        ) : (
+            <button onClick={() => {}} className={styles.submitCommentButtonGrey}>Submit</button>
+        )
 
         const commentContent = currentUser ? (
             <div className={styles.createCommentContainer}>
@@ -43,11 +57,15 @@ class CommentIndex extends React.Component {
                     <input
                         className={styles.commentInput}
                         type="text"
-                        onChange={this.handleChange}
+                        onChange={e => this.handleChange(e)}
                         value={this.state.body}
                         // placeholder="Please sign in to post a public comment..."
                         placeholder="Add a public comment..."
                     />
+                    <div className={styles.buttonContainer}>
+                        <button onClick={(e) => this.handleCancel(e)} className={styles.cancelCommentButton}>Cancel</button>
+                        {submitButton}
+                    </div>
                 </form>
             </div>
         ) : (

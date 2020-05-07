@@ -23,8 +23,8 @@
 .createCommentContainer {
     display: flex;
     justify-content: start;
-    align-items: center;
-    margin-bottom: 2rem;
+    /* align-items: center; */
+    margin-bottom: .5rem;
 }
 
 /* input {
@@ -43,6 +43,8 @@
     border-bottom: 1px solid;
     border-color: rgb(161, 185, 196);
     width: 100%;
+    color: rgb(161, 185, 196);
+    font-size: 1rem;
 }
 
 .commentInput::placeholder {
@@ -56,4 +58,36 @@
 
 .commentForm {
     width: 100%;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: .2rem;
+}
+
+.cancelCommentButton {
+    background-color: rgb(185, 3, 3);
+    margin-right: .2rem;
+}
+
+.cancelCommentButton:hover {
+    background-color: darkred;
+}
+
+.submitCommentButton {
+    background-color: #2ba84a;
+}
+
+.submitCommentButtonGrey {
+    background-color: gray;
+}
+
+.submitCommentButtonGrey:hover {
+    background-color: gray;
+    cursor: default;
+}
+
+.submitCommentButtonGrey:focus {
+    
 }
