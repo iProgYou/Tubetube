@@ -23,6 +23,7 @@
 .createCommentContainer {
     display: flex;
     justify-content: start;
+    align-items: center;
     margin-bottom: 2rem;
 }
 
@@ -39,5 +40,20 @@
 
 
 .commentInput {
-    
+    border-bottom: 1px solid;
+    border-color: rgb(161, 185, 196);
+    width: 100%;
+}
+
+.commentInput::placeholder {
+    color: rgb(161, 185, 196);
+    font-size: 1rem;
+}
+
+.commentInput:focus {
+    border-color: #2ba84a;
+}
+
+.commentForm {
+    width: 100%;
 }

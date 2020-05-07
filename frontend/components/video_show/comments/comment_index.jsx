@@ -39,7 +39,7 @@ class CommentIndex extends React.Component {
         const commentContent = currentUser ? (
             <div className={styles.createCommentContainer}>
                 <div className="biggerIcon">{users[currentUser].username[0].toUpperCase()}</div>
-                <form onSubmit={this.handleSubmit}>
+                <form className={styles.commentForm} onSubmit={this.handleSubmit}>
                     <input
                         className={styles.commentInput}
                         type="text"
@@ -53,7 +53,7 @@ class CommentIndex extends React.Component {
         ) : (
             <div></div>
         )
-
+        console.log(this.state);
         return (
             <div>
                 <div>
