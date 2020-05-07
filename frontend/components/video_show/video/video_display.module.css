@@ -1,6 +1,9 @@
 .videoPage { 
     padding-top: 11vh;
-    width: 100%;
+    width: 105%;
+    /* height: ; */
+    background-color: rgb(36, 41, 44);
+    color: rgb(161, 185, 196);
 }
 
 .display {
@@ -9,3 +12,40 @@
     width: 1vw;
     /* width: */
 }
+
+.head {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+.viewDate {
+    display: flex;
+    /* align-items: center; */
+    width: 14%;
+    justify-content: space-between;
+}
+
+.textBox {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.top {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgb(24, 22, 22);
+}
+
+.titleEdit {
+    padding-top: .2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom {
+    max-width: fit-content;
+    padding-top: 1.3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgb(24, 22, 22);
+}
+

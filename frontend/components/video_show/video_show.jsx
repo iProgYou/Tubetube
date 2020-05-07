@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoDisplay from './video/video_display'
 import styles from './video_show.module.css';
+import CommentIndex from './comments/comment_index'
 
 class VideoShow extends React.Component {
     constructor(props) {
@@ -10,9 +11,11 @@ class VideoShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchVideo(this.props.match.params.videoId)
+        // this.props.fetchComments(this.props.currentVideo.id)
     }
 
     render() {
+        // debugger
         if (!this.props.currentVideo) return null;
         return (
             <div className={styles.displayContainer}>
@@ -21,7 +24,11 @@ class VideoShow extends React.Component {
                         currentVideo={this.props.currentVideo}
                         hasEditPowers={ this.props.hasEditPowers }
                     />
-                    {/* <Comments /> */}
+                    <CommentIndex 
+                        comments={this.props.comments}
+                        fetchComments={this.props.fetchComments}
+                        currentVideo={this.props.currentVideo}
+                    />
                 </div>
                 <div>
                 {/* <Reccomended /> */}
