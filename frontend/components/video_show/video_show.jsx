@@ -28,6 +28,9 @@ class VideoShow extends React.Component {
                         comments={this.props.comments}
                         fetchComments={this.props.fetchComments}
                         currentVideo={this.props.currentVideo}
+                        currentUser={this.props.currentUser}
+                        users={this.props.users}
+                        createComment={this.props.createComment}
                     />
                 </div>
                 <div className={styles.reccomended}>

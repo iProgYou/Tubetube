@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import VideoShow from './video_show';
 import { fetchVideo } from "../../actions/video_actions";
-import { fetchComments } from "../../actions/comment_actions";
+import { fetchComments, createComment } from "../../actions/comment_actions";
 import { getCommentsForVideo } from "../../reducers/selectors";
 
 const mapSTP = (state, ownProps) => {
@@ -19,18 +19,22 @@ const mapSTP = (state, ownProps) => {
         commentSelect = null;
     }
 
+
     return {
         // relatedvideos: selectRelatedVideo(state,videoId),
         currentVideo: currentVideo,
         hasEditPowers: creatorId === state.session.id,
         comments: commentSelect,
+        currentUser: state.session.id,
+        users: state.entities.users
     }
 }
 
 const mapDTP = dispatch => ({
     // fetchVideos: () => dispatch(fetchVideos()),
     fetchVideo: videoId => dispatch(fetchVideo(videoId)),
-    fetchComments: videoId => dispatch(fetchComments(videoId))
+    fetchComments: videoId => dispatch(fetchComments(videoId)),
+    createComment: comment => dispatch(createComment(comment))
 })
 
 export default connect(mapSTP,mapDTP)(VideoShow);

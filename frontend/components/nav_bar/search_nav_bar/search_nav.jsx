@@ -38,6 +38,7 @@ class SearchNav extends React.Component {
             <div>
                 <form className={styles.searchContainer} onSubmit={e => handleSubmit(e)}>
                     <input 
+                        className="standardInput"
                         type="text" 
                         onChange={this.handleChange()}
                         value={searchInput}

@@ -318,7 +318,7 @@ html {
 
 /* ----------------- */
 
-input {
+.standardInput {
     width: 366px;
     height: 48px;
     border-radius: 5px;
@@ -329,14 +329,30 @@ input {
     border-color: rgb(161, 185, 196);
     color: black;
 }
+
+.standardInput:focus {
+    border-color: #2ba84a;
+}
+
+/* input {
+    width: 366px;
+    height: 48px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 15px;
+    background-color: rgb(161, 185, 196);
+    border: 2px solid;
+    border-color: rgb(161, 185, 196);
+    color: black;
+} */
 /* - sign up space between username and contiue need to be similar to 
     the top part
     - sign in space between inputs needs be less
 */
 
-input:focus {
+/* input:focus {
     border-color: #2ba84a;
-}
+} */
 
 ::placeholder {
     color: rgb(32, 41, 44);

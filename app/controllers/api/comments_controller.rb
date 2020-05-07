@@ -12,7 +12,7 @@ class Api::CommentsController < ApplicationController
 
     def create
         @comment = Comment.new(comment_params)
-        @comment.video_id = params[:video_id]
+        @comment.author_id = current_user.id
 
         if @comment.save
             render :show
@@ -28,7 +28,7 @@ class Api::CommentsController < ApplicationController
 
     private
     def comment_params
-        params.require(:comment).permit(:body,:author_id)
+        params.require(:comment).permit(:body,:video_id)
     end
 
 

@@ -13,3 +13,31 @@
     font-weight: 900;
     margin-bottom: .30rem;
 }
+
+.numberOfComments {
+    color: rgb(161, 185, 196);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.createCommentContainer {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 2rem;
+}
+
+/* input {
+    width: 366px;
+    height: 48px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 15px;
+    background-color: rgb(161, 185, 196);
+    border: 2px solid;
+    /* border-color: rgb(161, 185, 196); */
+    /* color: green; */
+
+
+.commentInput {
+    
+}

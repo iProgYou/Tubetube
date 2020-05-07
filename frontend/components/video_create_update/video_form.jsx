@@ -186,7 +186,7 @@ class VideoForm extends React.Component {
                     <div className={styles.textInput}>
                         <input 
                             type="text"
-                            className={styles.title}
+                            className={`standardInput ${styles.title}`}
                             placeholder="Title"
                             onChange={this.handleChange('title')}
                             value={this.state.title}

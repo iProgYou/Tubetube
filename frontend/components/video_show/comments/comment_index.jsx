@@ -1,25 +1,65 @@
 import React from 'react';
 import CommentIndexItem from './comment_index_item';
+import styles from './comment.module.css';
+
 
 class CommentIndex extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            body: "",
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchComments(this.props.currentVideo.id)
     }
 
+    handleChange() {
+        return e => (
+            this.setState({
+                body: e.currentTarget.value
+            })
+        )
+    }
+
+    handleSubmit() {
+        this.setState({
+            video_id: currentVideo.id
+        })
+        this.props.createComment(this.state)
+    }
+
     render() {
-        const { comments, currentVideo } = this.props;
+        const { comments, currentVideo, currentUser,users } = this.props;
         if (!comments || !currentVideo || !comments[0] ) return null;
+
+        const commentContent = currentUser ? (
+            <div className={styles.createCommentContainer}>
+                <div className="biggerIcon">{users[currentUser].username[0].toUpperCase()}</div>
+                <form onSubmit={this.handleSubmit}>
+                    <input
+                        className={styles.commentInput}
+                        type="text"
+                        onChange={this.handleChange}
+                        value={this.state.body}
+                        // placeholder="Please sign in to post a public comment..."
+                        placeholder="Add a public comment..."
+                    />
+                </form>
+            </div>
+        ) : (
+            <div></div>
+        )
+
         return (
             <div>
                 <div>
                     {/* Number of comments? */}
-                    <form>
-
-                    </form>
+                    <h3 className={styles.numberOfComments}>{Object.values(comments).length} comments</h3>
+                    {commentContent}
                 </div>
                 <div>
                     {comments.map(comment => (

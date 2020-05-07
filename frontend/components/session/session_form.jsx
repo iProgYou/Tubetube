@@ -128,6 +128,7 @@ class SessionForm extends React.Component {
 
         const usernameInput = formType === "Create Account" ? (
             <input 
+                className="standardInput"
                 type="text" 
                 placeholder="Username"
                 value={username}
@@ -163,6 +164,7 @@ class SessionForm extends React.Component {
                         <div className={inputClass}>
                             {usernameInput}
                             <input
+                                className="standardInput"
                                 ref={node => this.emailInput = node}
                                 type="text" 
                                 placeholder="Email"
@@ -170,6 +172,7 @@ class SessionForm extends React.Component {
                                 onChange={this.handleChange("email")}
                             />
                             <input 
+                                className="standardInput"
                                 ref={node => this.passwordInput = node}
                                 type="password"
                                 placeholder="Password"
