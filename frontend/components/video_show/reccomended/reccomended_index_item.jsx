@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import styles from './reccomended.module.css';
 
 const ReccomendedIndexItem = ({ video }) => (
-    <div>
-        <Link to={`/video/${video.id}`} className={styles.reccomendedVideoContainer}>
+    <div className={styles.reccomendedVideoContainer}>
+        <Link to={`/video/${video.id}`} className={styles.thumbContainer}>
             <img 
                 src={video.thumbnailUrl} 
                 alt=""
@@ -12,11 +12,9 @@ const ReccomendedIndexItem = ({ video }) => (
             />
         </Link>
         <Link to={`/video/${video.id}`} className={styles.reccomendedThumbText}>
-            <div>
-                <div className={styles.reccomendedHead}>{video.title}</div>
-                <div>{video.creator}</div> 
-                <div>{video.plays} views</div>
-            </div>
+            <div className={styles.reccomendedHead}>{video.title}</div>
+            <div>{video.creator}</div> 
+            <div>{video.plays} views</div>
         </Link>
     </div>
 );

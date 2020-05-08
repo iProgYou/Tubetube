@@ -5,7 +5,7 @@ import VideoShowContainer from "../video_show/video_show_container";
 import CreateVideoContainer from '../video_create_update/video_create_container';
 import UpdateVideoContainer from '../video_create_update/video_update_container';
 import { Route,Switch } from 'react-router-dom';
-import SideBar from '../sidebar/sidebar'
+import SideBar from '../nav_bar/sidebar/sidebar'
 import { ProtectedRoute } from '../../util/route_util';
 
 // import {AuthRoute} from '../util/route_util';
@@ -17,7 +17,6 @@ const App = () => (
         <header>
             {/* <h1 className={styles.header}>TubeTube</h1> */}
             <NavBar />
-            <SideBar />
         </header>
         {/* <Route path={`/video/${videoId}`} component={VideoShowContainer}/> */}
         <Switch>

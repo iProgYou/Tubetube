@@ -39,9 +39,9 @@ class VideoDisplay extends React.Component {
                     playsInline
                     src={currentVideo.videoUrl}
                     poster={currentVideo.thumbnailUrl}
-                    fluid={false}
-                    width={1124}
-                    height={632}
+                    fluid={true}
+                    // width={1124}
+                    // height={632}
                     autoPlay={true}
                     // poster={this.props.video}
                 />

@@ -5,7 +5,6 @@ export const getCommentsForVideo = (state,commentIds) => {
 
 export const getCommentsForVideoBeta = (state, videoId) => {
     let comments = Object.values(state.entities.comments);
-    debugger
     return comments.filter(comment => comment.videoId === videoId).reverse()
 }
 

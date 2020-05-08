@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './logo_nav.module.css';
-import SideBar from '../../sidebar/sidebar';
+import SideBar from '../sidebar/sidebar';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 
@@ -26,11 +26,8 @@ class LogoNav extends React.Component {
                 <Link to="/">
                     <img className="small-logo" src={window.logoURL} />                    
                 </Link>
-                <div>
-                    <SideBar expanded={this.state.expanded} />
-                    {/* this whole thing is fucked */}
-                </div>
             </div>
+            
         )
     }
 }
