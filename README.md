@@ -1,7 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![alt text](https://github.com/iProgYou/Tubetube/blob/master/app/assets/images/tubetubeBigForMD.png "Go to TubeTube")](https://tube-tube.herokuapp.com/)
+:----------------:
+**A YouTube clone with a dark theme**
 
 Things you may want to cover:
 
