@@ -37,7 +37,7 @@ const mapSTP = (state, ownProps) => {
 }
 
 const mapDTP = dispatch => ({
-    // fetchVideos: () => dispatch(fetchVideos()),
+    fetchVideos: () => dispatch(fetchVideos()),
     fetchVideo: videoId => dispatch(fetchVideo(videoId)),
     fetchComments: videoId => dispatch(fetchComments(videoId)),
     createComment: comment => dispatch(createComment(comment))

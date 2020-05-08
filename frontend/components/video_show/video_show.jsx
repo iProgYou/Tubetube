@@ -23,6 +23,7 @@ class VideoShow extends React.Component {
                 this.props.fetchComments(this.props.currentVideo.id)
             }
         } else {
+            this.props.fetchVideo(this.props.currentVideo.id)
             this.props.fetchComments(this.props.currentVideo.id)
         }
     }

@@ -10,7 +10,7 @@ class ReccomendedIndex extends React.Component {
 
     render() {
         const { relatedVideos } = this.props;
-
+        // debugger
         if (!relatedVideos || !relatedVideos[0]) return null;
         return(
             <div>

@@ -46,10 +46,11 @@ class CommentIndex extends React.Component {
 
     render() {
         const { comments, currentVideo, currentUser,users } = this.props;
-        if (!comments || !currentVideo || !comments[0] ) return null;
+        if (!comments || !currentVideo ) return null;
 
         const submitButton = this.state.body.length > 0 ? (
             <button type="submit" className={`button ${styles.submitCommentButton}`}>Submit</button>
+            // <input type="submit" className={`button ${styles.submitCommentButton}`} />
         ) : (
             <button onClick={() => {}} className={`button ${styles.submitCommentButtonGrey}`}>Submit</button>
         )
