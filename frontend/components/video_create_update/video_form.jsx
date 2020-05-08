@@ -95,10 +95,14 @@ class VideoForm extends React.Component {
         formData.append('video[description]',this.state.description)
 
         this.props.action(formData,this.props.match.params.videoId)
+        // .then(createTopics(formData.get(topics))) ????
+        // .then(createInclusions(video,topics))
+            // Topic.create_new_topics
+            // TopicInclusion.create_new_inclusions
             .then((res) => {
                 // this.props.history.replace('/video')
                 if (this.props.formType === "Update Form") {
-                    console.log(this.props.match.params.id)
+                    // console.log(this.props.match.params.id)
                     this.props.history.replace(`/video/${this.props.match.params.id}`)
                 } else {
                     console.log(res)
