@@ -13,8 +13,8 @@
 class Video < ApplicationRecord
     validates :title, :plays, presence: true
 
-    validate :ensure_video_file
-    validate :ensure_thumbnail
+    # validate :ensure_video_file
+    # validate :ensure_thumbnail
 
     belongs_to :creator,
         foreign_key: :creator_id,
