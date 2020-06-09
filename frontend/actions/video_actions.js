@@ -27,8 +27,8 @@ const receiveSearch = videos => ({
 export const fetchVideos = searchQuery => dispatch => VideoAPIUtil.fetchVideos(searchQuery)
     .then(videos => dispatch(receiveVideos(videos)))
     .then(receiveVideosAction => {
-        debugger
         if(searchQuery) dispatch(receiveSearch(receiveVideosAction.videos))
+        // The above is not triggering a re render
     })
 
 export const fetchVideo = videoId => dispatch => VideoAPIUtil.fetchVideo(videoId)

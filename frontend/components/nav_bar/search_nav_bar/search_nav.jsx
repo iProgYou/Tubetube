@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './search_nav.module.css';
-import { connect } from 'react-redux';
 import { IoMdSearch } from 'react-icons/io';
 
 class SearchNav extends React.Component {
     constructor(props) {
-        super(props),
+        super(props)
         this.state = {
             searchInput: ""
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange() {
@@ -22,8 +22,9 @@ class SearchNav extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.fetchVideos(this.state.searchInput)
-            .then(() => this.props.history.push('search'))
+        this.props.history.push(`search/${this.state.searchInput}`)
+        // this.props.fetchVideos(this.state.searchInput)
+        //     .then(() => this.props.history.push('search'))
         // this.props.submitSearch(this.state.searchInput)
         // Redirect here to search index
     }
@@ -39,7 +40,7 @@ class SearchNav extends React.Component {
         const { searchInput } = this.state;
         return(
             <div>
-                <form className={styles.searchContainer} onSubmit={e => handleSubmit(e)}>
+                <form className={styles.searchContainer} onSubmit={e => this.handleSubmit(e)}>
                     <input 
                         className={`standardInput ${styles.searchInput}`}
                         type="text" 
@@ -57,11 +58,5 @@ class SearchNav extends React.Component {
         )
     }
 }
-
-// const mapDTP = dispatch => ({
-//     submitSearch: searchInput => dispatch(search(searchInput));
-// })
-
-// export default connect(null,mapDTP)(SearchNav)
 
 export default SearchNav;

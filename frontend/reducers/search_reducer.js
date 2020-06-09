@@ -6,7 +6,6 @@ const searchReducer = (state = defaultSearch, action) => {
     Object.freeze(state)
     switch (action.type) {
         case RECEIVE_SEARCH:
-            // debugger
             return Object.keys(action.videos)
         default:
             return state;

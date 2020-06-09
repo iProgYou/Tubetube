@@ -4,7 +4,7 @@ import VideoIndexContainer from '../video_index/video_index_container';
 import VideoShowContainer from "../video_show/video_show_container";
 import CreateVideoContainer from '../video_create_update/video_create_container';
 import UpdateVideoContainer from '../video_create_update/video_update_container';
-import SearchContainer from '../search/search_container';
+import SearchContainer from '../search/search_page_container';
 import { Route,Switch } from 'react-router-dom';
 import SideBar from '../nav_bar/sidebar/sidebar'
 import { ProtectedRoute } from '../../util/route_util';
@@ -26,7 +26,7 @@ const App = () => (
             <ProtectedRoute path="/upload" component={CreateVideoContainer}/>
             <Route path="/video/:videoId" component={VideoShowContainer}/>
             <Route exact path="/" component={VideoIndexContainer}/>
-            <Route path="/search" component={SearchContainer} />
+            <Route path="/search/:searchQuery" component={SearchContainer} />
         </Switch>
         
 
