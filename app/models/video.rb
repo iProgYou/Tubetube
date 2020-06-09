@@ -61,4 +61,10 @@ class Video < ApplicationRecord
         related
     end
 
+    # def self.search(search_query)
+    #     result = 
+
+    #     result.uniq
+    # end
+
 end

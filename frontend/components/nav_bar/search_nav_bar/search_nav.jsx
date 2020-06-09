@@ -22,6 +22,8 @@ class SearchNav extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.fetchVideos(this.state.searchInput)
+            .then(() => this.props.history.push('search'))
         // this.props.submitSearch(this.state.searchInput)
         // Redirect here to search index
     }

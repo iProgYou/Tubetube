@@ -18,7 +18,7 @@ const removeVideo = videoId => ({
     videoId
 })
 
-export const fetchVideos = () => dispatch => VideoAPIUtil.fetchVideos()
+export const fetchVideos = searchQuery => dispatch => VideoAPIUtil.fetchVideos(searchQuery)
     .then(videos => dispatch(receiveVideos(videos)))
 
 export const fetchVideo = videoId => dispatch => VideoAPIUtil.fetchVideo(videoId)
@@ -32,3 +32,6 @@ export const updateVideo = (video, videoId) => dispatch => VideoAPIUtil.updateVi
 
 export const deleteVideo = video => dispatch => VideoAPIUtil.deleteVideo(video)
     .then(() => dispatch(removeVideo(video)))
+
+// export const searchVideos = searchQuery => dispatch => VideoAPIUtil.search(searchQuery)
+//     .then(videos => dispatch(receiveVideos(videos)))

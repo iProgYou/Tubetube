@@ -1,8 +1,10 @@
-export const fetchVideos = () => (
-    $.ajax({
-        url: '/api/videos'
-    })
-)
+export const fetchVideos = (searchQuery="") => {
+    return( $.ajax({
+            url: '/api/videos',
+            data: {searchQuery}
+        })
+    )
+}
 
 export const fetchVideo = videoId => (
     $.ajax({

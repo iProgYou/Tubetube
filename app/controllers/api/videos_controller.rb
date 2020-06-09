@@ -1,7 +1,12 @@
 class Api::VideosController < ApplicationController
 
     def index
-        @videos = Video.all
+        debugger
+        if params[:searchQuery] == ""
+            @videos = Video.all
+        else
+            @videos = Video.where("title ilike ?", "%#{params[:searchQuery]}%")
+        end
         render :index
     end
 
@@ -23,13 +28,11 @@ class Api::VideosController < ApplicationController
         else
             render json: video.errors.full_messages
         end
-
     end
 
     def update
         @video = Video.find(params[:id])
         @video.creator_id = current_user.id
-        # debugger
         if @video.update(video_params)
             render :show
         else
