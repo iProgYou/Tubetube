@@ -1,6 +1,7 @@
 export const RECEIVE_VIDEOS = 'RECEIVE_VIDEOS';
 export const RECEIVE_VIDEO = 'RECEIVE_VIDEO';
 export const REMOVE_VIDEO = 'REMOVE_VIDEO';
+export const RECEIVE_SEARCH = 'RECEIVE_SEARCH';
 import * as VideoAPIUtil from '../util/video_api_util';
 
 const receiveVideos = videos => ({
@@ -18,8 +19,17 @@ const removeVideo = videoId => ({
     videoId
 })
 
+const receiveSearch = videos => ({
+    type: RECEIVE_SEARCH,
+    videos
+})
+
 export const fetchVideos = searchQuery => dispatch => VideoAPIUtil.fetchVideos(searchQuery)
     .then(videos => dispatch(receiveVideos(videos)))
+    .then(receiveVideosAction => {
+        debugger
+        if(searchQuery) dispatch(receiveSearch(receiveVideosAction.videos))
+    })
 
 export const fetchVideo = videoId => dispatch => VideoAPIUtil.fetchVideo(videoId)
     .then(video => dispatch(receiveVideo(video)))

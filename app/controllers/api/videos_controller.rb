@@ -1,7 +1,6 @@
 class Api::VideosController < ApplicationController
 
     def index
-        debugger
         if params[:searchQuery] == ""
             @videos = Video.all
         else
