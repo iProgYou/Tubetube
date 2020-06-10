@@ -14,7 +14,6 @@ export const getRelatedVideos = (state,relatedVideosIds) => {
 }
 
 export const nestSearchedVideos = state => {
-    debugger
     if(!state.entities.searchResults) return [];
     let videos = [];
     state.entities.searchResults.forEach(videoId => {
