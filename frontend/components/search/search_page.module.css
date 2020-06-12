@@ -10,7 +10,7 @@
     /* justify-content: start; */
     margin: 0 auto;
     width: 1200px;
-    color: rgb(161, 185, 196)
+    color: rgb(161, 185, 196);
 }
 
 .item {
@@ -27,4 +27,10 @@
 .thumbnail {
     height: 150px;
     margin-right: 10px;
+}
+
+.head {
+    margin-bottom: 10px;
+    border-bottom: 2px solid;
+    border-color: rgb(161, 185, 196);
 }

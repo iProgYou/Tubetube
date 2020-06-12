@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SearchNav from './search_nav';
-import { fetchVideos } from '../../../util/video_api_util';
+import { fetchVideos } from '../../../actions/video_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapSTP = state => {
@@ -10,6 +10,10 @@ const mapSTP = state => {
     }
 }
 
+const mapDTP = dispatch => {
+    return {
+        fetchVideos: searchQuery => dispatch(fetchVideos(searchQuery)) 
+    }
+}
 
-
-export default withRouter(connect(mapSTP,null)(SearchNav));
+export default withRouter(connect(mapSTP,mapDTP)(SearchNav));

@@ -8,20 +8,29 @@ class SearchPage extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchVideos(this.props.match.params.searchQuery)
+        // this.props.search
+        if (!this.props.searchedVideos || this.props.searchedVideos.length === 0) {
+            this.props.fetchVideos(this.props.match.params.searchQuery)
+        }
     }
 
+    // componentDidUpdate() {
+    //     // this.props.fetchVideos(this.props.match.params.searchQuery)
+    // }
+
     render() {
-        if(this.props.searchedVideos === undefined) return null;
-        const displaySearch = this.props.searchedVideos !== [] ? (
+        if(!this.props.searchedVideos) return null;
+        const displaySearch = this.props.searchedVideos.length !== 0 ? (
             <div className={styles.searchPageItemContainer}>
-                <h2>Search Results</h2>
+                <h2 className={styles.head}>Search Results</h2>
                 {Object.values(this.props.searchedVideos).map(video => (
                     <SearchPageItem key={video.id} video={video}/>
                 ))}
             </div>
         ) : (
-            <h3>No results found, please update your search query</h3>
+            <div className={styles.searchPageItemContainer}>
+                <h3 className={styles.head}>No results found, please update your search query</h3>
+            </div>
         )
         return(
             <div className={styles.searchPageIndexContainer}>

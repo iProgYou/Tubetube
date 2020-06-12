@@ -5,8 +5,15 @@ import { IoMdSearch } from 'react-icons/io';
 class SearchNav extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            searchInput: ""
+        if (props.history.location.pathname.includes('/search/')) {
+            let oldSearch = props.history.location.pathname.slice(8)
+            this.state = {
+                searchInput: oldSearch
+            }
+        } else {
+            this.state = {
+                searchInput: ""
+            }
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -23,6 +30,8 @@ class SearchNav extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (this.state.searchInput) {
+            // debugger
+            this.props.fetchVideos(this.state.searchInput)
             this.props.history.push(`/search/${this.state.searchInput}`)
         }
         // this.props.fetchVideos(this.state.searchInput)
