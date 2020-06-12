@@ -18,11 +18,11 @@ class LogoNav extends React.Component {
     render() {
         return (
             <div className={styles.logoContainer}>
-                <GiHamburgerMenu
+                {/* <GiHamburgerMenu
                     // onClick affects UI slice of state
                     className={styles.hamburgerToggle}
                     size={24}
-                />
+                /> */}
                 <Link to="/">
                     <img className="small-logo" src={window.logoURL} />                    
                 </Link>

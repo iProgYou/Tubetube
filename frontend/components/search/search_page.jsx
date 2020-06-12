@@ -10,6 +10,7 @@ class SearchPage extends React.Component {
     componentDidMount() {
         // this.props.search
         if (!this.props.searchedVideos || this.props.searchedVideos.length === 0) {
+            // if the search returns nothing it will fetch videos twice, once in the navbar search and once here
             this.props.fetchVideos(this.props.match.params.searchQuery)
         }
     }
