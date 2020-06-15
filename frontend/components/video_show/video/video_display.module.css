@@ -22,8 +22,9 @@
 .viewDate {
     display: flex;
     /* align-items: center; */
-    width: 14%;
-    justify-content: space-between;
+    width: 200px;
+    /* justify-content: space-between; */
+    align-items: center;
 }
 
 .textBox {
@@ -49,4 +50,8 @@
     padding-bottom: 1.5rem;
     border-bottom: 1px solid rgb(24, 22, 22);
     display: flex;
+}
+
+.viewDate > * {
+    margin-right: 10px;
 }

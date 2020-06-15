@@ -20,11 +20,11 @@ const SearchPageItem = ({ video }) => {
                     <div className={styles.textContainer}>
                         <div className={styles.title}>{video.title}</div>
                         <div className={styles.videoInfo}>
-                            <div className={styles.infoItem}>{video.creator}</div> 
-                            <div className={styles.infoItem}>•</div>
-                            <div className={styles.infoItem}>{video.plays} views</div>
-                            <div className={styles.infoItem}>•</div>
-                            <div className={styles.infoItem}>{video.createdAt}</div>
+                            <div>{video.creator}</div> 
+                            <div>•</div>
+                            <div>{video.plays} views</div>
+                            <div>•</div>
+                            <div>{video.createdAt}</div>
                         </div>
                         <div className={styles.description}>{video.description}</div>
                     </div>
