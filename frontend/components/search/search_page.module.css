@@ -14,12 +14,12 @@
 }
 
 .item {
-    /* GOAL: height: 300px; */
+    height: 168px;
     /* height: 70vh; */
     /* GOAL: width: 359px; */
     padding-right: .5rem;
     padding-left: .5rem;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     display: flex;
     align-items: center;
 }
@@ -33,4 +33,34 @@
     margin-bottom: 10px;
     border-bottom: 2px solid;
     border-color: rgb(161, 185, 196);
+}
+
+.textContainer{
+
+}
+
+.text {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+}
+
+.videoInfo {
+    display: flex;
+    align-items: center;
+}
+
+.infoItem {
+    margin-right: 10px;
+}
+
+.description {
+    margin-top: 20px;
 }

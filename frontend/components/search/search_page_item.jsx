@@ -15,17 +15,21 @@ const SearchPageItem = ({ video }) => {
                     className={styles.thumbnail}
                 />
             </Link>
-            <Link to={`/video/${video.id}`} >
-                <div>
-                    <div>{video.title}</div>
-                    <div>
-                        <div>{video.creator}</div> 
-                        <div>{video.plays} views</div>
-                        <div>{video.createdAt}</div>
+            <div className={styles.text}>
+                <Link to={`/video/${video.id}`} >
+                    <div className={styles.textContainer}>
+                        <div className={styles.title}>{video.title}</div>
+                        <div className={styles.videoInfo}>
+                            <div className={styles.infoItem}>{video.creator}</div> 
+                            <div className={styles.infoItem}>•</div>
+                            <div className={styles.infoItem}>{video.plays} views</div>
+                            <div className={styles.infoItem}>•</div>
+                            <div className={styles.infoItem}>{video.createdAt}</div>
+                        </div>
+                        <div className={styles.description}>{video.description}</div>
                     </div>
-                    <div>{video.description}</div>
-                </div>
-            </Link>
+                </Link>
+            </div>
         </div>
     )
 }
