@@ -8,17 +8,25 @@ class VideoIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchVideos()
+        this.props.fetchVideos();
     }
     
+    shuffleVideos(videoArr) {
+        for (let i = 0; i < videoArr.length; i++) {
+            let randIdx = Math.floor((Math.random() * i)) % videoArr.length;
+            let temp = videoArr[i]
+            videoArr[i] = videoArr[randIdx]
+            videoArr[randIdx] = temp
+        }
+        return videoArr
+    }
+
     render() {     
-        // console.log(this.props)
-        // console.log(Object.values(this.props.videos))
         if (!this.props.videos) return null;
         // debugger
         return(
             <div className={styles.videoIndexContainer}>
-                {Object.values(this.props.videos).map(( video ) => (
+                {this.shuffleVideos(Object.values(this.props.videos)).map(( video ) => (
                     <VideoIndexItem key={video.id} video={video}/>
                 ))}
             </div>

@@ -2,9 +2,38 @@
 :----------------:
 **A YouTube clone with a dark theme**
 
+Tubetube, a Youtube clone, is a video sharing platform that allows users to upload videos, as well as watch, like, and comment on other videos.
+
+[Live Demo](https://tube-tube.herokuapp.com/)
+
+## Technologies
+
+* Rails
+* ActiveRecord
+* PostgreSQL
+* React
+* Redux
+
+## Features
+
+* Display index of uploaded videos
+
+* Search videos on the site
+
+* Create an account
+
+* Upload videos
+
+* Users can comment on other user's videos
+
+## Index
+
+When a user visits Tubetube, they are immediately greeted with an index page that displays several videos that have been uploaded to the platform.
+
+[![alt text](https://github.com/iProgYou/Tubetube/blob/master/app/assets/images/index.png)]
 
 <!-- asdfasdf -->
-Things you may want to cover:
+<!-- Things you may want to cover:
 
 * Ruby version
 
@@ -22,4 +51,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* ... -->
