@@ -32,6 +32,9 @@ When a user visits Tubetube, they are immediately greeted with an index page tha
 
 [![alt text](https://github.com/iProgYou/Tubetube/blob/master/app/assets/images/index.png)]
 
+The videos are retrieved from the backend once the react component mounts to the page. They are then shuffled using the Fisher-Yates algorithm and fed into individual video item components. 
+
+[![alt text](https://github.com/iProgYou/Tubetube/blob/master/app/assets/images/index_snippet.png)]
 <!-- asdfasdf -->
 <!-- Things you may want to cover:
 

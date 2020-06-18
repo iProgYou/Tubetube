@@ -23,7 +23,6 @@ class VideoIndex extends React.Component {
 
     render() {     
         if (!this.props.videos) return null;
-        // debugger
         return(
             <div className={styles.videoIndexContainer}>
                 {this.shuffleVideos(Object.values(this.props.videos)).map(( video ) => (
