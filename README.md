@@ -34,9 +34,32 @@ When a user visits Tubetube, they are immediately greeted with an index page tha
 
 The videos are retrieved from the backend once the react component mounts to the page. They are then shuffled using the Fisher-Yates algorithm and fed into individual video item components. 
 
-![alt text](https://github.com/iProgYou/Tubetube/blob/master/app/assets/images/index_snippet.png)
-<!-- asdfasdf -->
-<!-- Things you may want to cover:
+```javascript
+    componentDidMount() {
+        this.props.fetchVideos();
+    }
+    
+    shuffleVideos(videoArr) {
+        for (let i = 0; i < videoArr.length; i++) {
+            let randIdx = Math.floor((Math.random() * i)) % videoArr.length;
+            let temp = videoArr[i]
+            videoArr[i] = videoArr[randIdx]
+            videoArr[randIdx] = temp
+        }
+        return videoArr
+    }
+
+    render() {     
+        if (!this.props.videos) return null;
+        return(
+            <div className={styles.videoIndexContainer}>
+                {this.shuffleVideos(Object.values(this.props.videos)).map(( video ) => (
+                    <VideoIndexItem key={video.id} video={video}/>
+                ))}
+            </div>
+        )
+    }
+```
 
 * Ruby version
 
