@@ -89,21 +89,8 @@ handleSubmit(e) {
 
 ## Dropdown
 
+
+
 ![alt text](https://github.com/iProgYou/Tubetube/blob/master/app/assets/images/dropdown.png)
-* Ruby version
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ... -->
