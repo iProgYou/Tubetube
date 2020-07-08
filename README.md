@@ -26,7 +26,7 @@ Tubetube, a Youtube clone, is a video sharing platform that allows users to uplo
 
 * Users can comment on other user's videos
 
-## Index
+## Video Index
 
 When a user visits Tubetube, they are immediately greeted with an index page that displays several videos that have been uploaded to the platform.
 
@@ -61,6 +61,35 @@ The videos are retrieved from the backend once the react component mounts to the
     }
 ```
 
+## Login and Signup forms
+
+The Login and Signup form, while they look like two, are actually just one component. All of the rendering logic is handled based on the formType slice of state that is passed in from the container.  
+
+![alt text](https://github.com/iProgYou/Tubetube/blob/master/app/assets/images/signin.png)
+
+The function handleSubmit doesn't know if it is logging someone in or signing them up as a new user. This is because it is simply calling an action, and that action is passed from whichever container is being rendered.
+
+```javascript
+handleSubmit(e) {
+    e.preventDefault();
+    let user = Object.assign({},this.state);
+
+    this.props.action(user)
+        .then(() => {
+            this.props.history.replace('/')
+        }).fail(() => {
+            this.setState({
+                email: "",
+                password: "",
+                username: ""
+            })
+        });
+}
+```
+
+## Dropdown
+
+![alt text](https://github.com/iProgYou/Tubetube/blob/master/app/assets/images/dropdown.png)
 * Ruby version
 
 * System dependencies
