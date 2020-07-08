@@ -30,11 +30,11 @@ Tubetube, a Youtube clone, is a video sharing platform that allows users to uplo
 
 When a user visits Tubetube, they are immediately greeted with an index page that displays several videos that have been uploaded to the platform.
 
-[![alt text](https://github.com/iProgYou/Tubetube/blob/master/app/assets/images/index.png)]
+![alt text](https://github.com/iProgYou/Tubetube/blob/master/app/assets/images/index.png)
 
 The videos are retrieved from the backend once the react component mounts to the page. They are then shuffled using the Fisher-Yates algorithm and fed into individual video item components. 
 
-[![alt text](https://github.com/iProgYou/Tubetube/blob/master/app/assets/images/index_snippet.png)]
+![alt text](https://github.com/iProgYou/Tubetube/blob/master/app/assets/images/index_snippet.png)
 <!-- asdfasdf -->
 <!-- Things you may want to cover:
 
